@@ -1,0 +1,1202 @@
+{
+ "gate1": [
+  {
+   "id": "V1a",
+   "check": "Patched rows/fills vs pull-time portal aggregate",
+   "status": "PASS",
+   "detail": "0 year(s) differ: []"
+  },
+  {
+   "id": "V1b",
+   "check": "311 rows by year x code x dup x status vs pull-time aggregate",
+   "status": "PASS",
+   "detail": "0 cell(s) differ: []"
+  },
+  {
+   "id": "V1c",
+   "check": "Citywide totals equal the portal's live SoQL aggregate (exact for closed years; partial year within drift tolerance)",
+   "status": "PASS",
+   "detail": "0 year(s) differ: []"
+  },
+  {
+   "id": "V2",
+   "check": "Additivity: sum(geo) + UNASSIGNED = city, per count metric and period",
+   "status": "PASS",
+   "detail": "0 mismatch(es): []"
+  },
+  {
+   "id": "V3",
+   "check": "Geography loss <= 2.25% per count metric per CY",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "id": "V4",
+   "check": "No unmatched non-null origin; unmapped share <= 0.1%/yr",
+   "status": "PASS",
+   "detail": "unmatched=0, over=[]"
+  },
+  {
+   "id": "V5",
+   "check": "Linkage >= 95% per completion year; geo_time <= 3%",
+   "status": "PASS",
+   "detail": "0 year(s) out of band: []"
+  },
+  {
+   "id": "V6",
+   "check": "No negative dur_days or patch_days in published sets",
+   "status": "PASS",
+   "detail": "dur_days<0=0, patch_days<0=0, bad_close(dropped)=0"
+  },
+  {
+   "id": "V8",
+   "check": "No non-null value where \u00a77.1 fails; every null value carries a flag",
+   "status": "PASS",
+   "detail": "non-null suppressed=0, unflagged nulls=0"
+  },
+  {
+   "id": "V9a",
+   "check": "City street_mi in [3850, 4050]; sum(geo) = city +/- 0.5%",
+   "status": "PASS",
+   "detail": "city=3950.4, CA=3950.4, ward=3938.9"
+  },
+  {
+   "id": "V9b",
+   "check": "Sum pop2020 = 2,746,388 +/- 0.1%",
+   "status": "PASS",
+   "detail": "{'community_area': 2746412, 'ward2023': 2746412}"
+  },
+  {
+   "id": "V12",
+   "check": "Census variable IDs match expected labels for the configured vintage",
+   "status": "PASS",
+   "detail": "0 mismatch(es): []"
+  },
+  {
+   "id": "V10",
+   "check": "Unique key; period/metric patterns; shares in [0,1]; days >= 0",
+   "status": "PASS",
+   "detail": "dupkey=0, bad_period=[], bad_metric=[], share_oob=0, neg_days=0"
+  },
+  {
+   "id": "V13",
+   "check": "change_summary.csv matches the published *_chgcls rows",
+   "status": "PASS",
+   "detail": "0 mismatched group(s)"
+  }
+ ],
+ "gate2": [
+  {
+   "id": "V1d",
+   "check": "Current partial year drifted since the pull",
+   "status": "ok",
+   "detail": ""
+  },
+  {
+   "id": "REF",
+   "check": "Reference pull drift > 0.5%",
+   "status": "ok",
+   "detail": "[]"
+  },
+  {
+   "id": "V3w",
+   "check": "Geography loss over 1.0%",
+   "status": "WARN",
+   "detail": "[('crew_n', 'CY2019', 'community_area', np.float64(1.353)), ('crew_n', 'CY2019', 'ward2023', np.float64(1.353)), ('crew_n', 'CY2020', 'community_area', np.float64(1.432)), ('crew_n', 'CY2020', 'ward2023', np.float64(1.432)), ('crew_n', 'CY2021', 'community_area', np.float64(2.04))]"
+  },
+  {
+   "id": "W5",
+   "check": "data_currency more than 3 days older than snapshot_id",
+   "status": "ok",
+   "detail": "currency=2026-09-16 17:19:53, pulled=2026-09-16T23:56:19.791284+00:00"
+  },
+  {
+   "id": "W3",
+   "check": "Mapped geography-year with EXTREME_FILL",
+   "status": "WARN",
+   "detail": "75 cell(s)"
+  },
+  {
+   "id": "W6",
+   "check": "Race group merged into no_majority under \u00a74.7 step 5",
+   "status": "WARN",
+   "detail": "nh_asian (190.9/yr)"
+  },
+  {
+   "id": "W8",
+   "check": "Promoted rows > 15% of duplicate PHF/PHB in any year",
+   "status": "ok",
+   "detail": "[]"
+  },
+  {
+   "id": "W7",
+   "check": "community_area: >40% of geographies non-zero on rpt_per_mi_chgcls",
+   "status": "WARN",
+   "detail": "42.9%"
+  },
+  {
+   "id": "W7",
+   "check": "ward2023: >40% of geographies non-zero on rpt_per_mi_chgcls",
+   "status": "WARN",
+   "detail": "49.3%"
+  }
+ ],
+ "skipped": [],
+ "reconciliation": [
+  {
+   "metric": "fill_n",
+   "year": 2019,
+   "ours": 434689,
+   "portal_live": 434689,
+   "reference": 434689,
+   "drift_vs_reference_pct": 0.0,
+   "ours_vs_live_pct": 0.0
+  },
+  {
+   "metric": "fill_n",
+   "year": 2020,
+   "ours": 371877,
+   "portal_live": 371877,
+   "reference": 371877,
+   "drift_vs_reference_pct": 0.0,
+   "ours_vs_live_pct": 0.0
+  },
+  {
+   "metric": "fill_n",
+   "year": 2021,
+   "ours": 274918,
+   "portal_live": 274918,
+   "reference": 274918,
+   "drift_vs_reference_pct": 0.0,
+   "ours_vs_live_pct": 0.0
+  },
+  {
+   "metric": "fill_n",
+   "year": 2022,
+   "ours": 489943,
+   "portal_live": 489943,
+   "reference": 489943,
+   "drift_vs_reference_pct": 0.0,
+   "ours_vs_live_pct": 0.0
+  },
+  {
+   "metric": "fill_n",
+   "year": 2023,
+   "ours": 366510,
+   "portal_live": 366510,
+   "reference": 366510,
+   "drift_vs_reference_pct": 0.0,
+   "ours_vs_live_pct": 0.0
+  },
+  {
+   "metric": "fill_n",
+   "year": 2024,
+   "ours": 319240,
+   "portal_live": 319240,
+   "reference": 319240,
+   "drift_vs_reference_pct": 0.0,
+   "ours_vs_live_pct": 0.0
+  },
+  {
+   "metric": "fill_n",
+   "year": 2025,
+   "ours": 248541,
+   "portal_live": 248541,
+   "reference": 248541,
+   "drift_vs_reference_pct": 0.0,
+   "ours_vs_live_pct": 0.0
+  },
+  {
+   "metric": "fill_n",
+   "year": 2026,
+   "ours": 259402,
+   "portal_live": 259402,
+   "reference": null,
+   "drift_vs_reference_pct": null,
+   "ours_vs_live_pct": 0.0
+  },
+  {
+   "metric": "phf_rows",
+   "year": 2018,
+   "ours": null,
+   "portal_live": 1122,
+   "reference": null,
+   "drift_vs_reference_pct": null,
+   "ours_vs_live_pct": null
+  },
+  {
+   "metric": "phf_rows",
+   "year": 2019,
+   "ours": 84097,
+   "portal_live": 84097,
+   "reference": 84097,
+   "drift_vs_reference_pct": 0.0,
+   "ours_vs_live_pct": 0.0
+  },
+  {
+   "metric": "phf_rows",
+   "year": 2020,
+   "ours": 39967,
+   "portal_live": 39967,
+   "reference": 39967,
+   "drift_vs_reference_pct": 0.0,
+   "ours_vs_live_pct": 0.0
+  },
+  {
+   "metric": "phf_rows",
+   "year": 2021,
+   "ours": 38557,
+   "portal_live": 38557,
+   "reference": 38557,
+   "drift_vs_reference_pct": 0.0,
+   "ours_vs_live_pct": 0.0
+  },
+  {
+   "metric": "phf_rows",
+   "year": 2022,
+   "ours": 64138,
+   "portal_live": 64138,
+   "reference": 64138,
+   "drift_vs_reference_pct": 0.0,
+   "ours_vs_live_pct": 0.0
+  },
+  {
+   "metric": "phf_rows",
+   "year": 2023,
+   "ours": 49066,
+   "portal_live": 49066,
+   "reference": 49066,
+   "drift_vs_reference_pct": 0.0,
+   "ours_vs_live_pct": 0.0
+  },
+  {
+   "metric": "phf_rows",
+   "year": 2024,
+   "ours": 51243,
+   "portal_live": 51243,
+   "reference": 51243,
+   "drift_vs_reference_pct": 0.0,
+   "ours_vs_live_pct": 0.0
+  },
+  {
+   "metric": "phf_rows",
+   "year": 2025,
+   "ours": 44729,
+   "portal_live": 44729,
+   "reference": 44729,
+   "drift_vs_reference_pct": 0.0,
+   "ours_vs_live_pct": 0.0
+  },
+  {
+   "metric": "phf_rows",
+   "year": 2026,
+   "ours": 52469,
+   "portal_live": 52469,
+   "reference": null,
+   "drift_vs_reference_pct": null,
+   "ours_vs_live_pct": 0.0
+  }
+ ],
+ "join_loss": [
+  {
+   "metric": "alley_rpt_n",
+   "period": "CY2019",
+   "geo_type": "community_area",
+   "unassigned": 36,
+   "total": 7877,
+   "pct": 0.457
+  },
+  {
+   "metric": "alley_rpt_n",
+   "period": "CY2019",
+   "geo_type": "ward2023",
+   "unassigned": 36,
+   "total": 7877,
+   "pct": 0.457
+  },
+  {
+   "metric": "alley_rpt_n",
+   "period": "CY2020",
+   "geo_type": "community_area",
+   "unassigned": 11,
+   "total": 5712,
+   "pct": 0.193
+  },
+  {
+   "metric": "alley_rpt_n",
+   "period": "CY2020",
+   "geo_type": "ward2023",
+   "unassigned": 12,
+   "total": 5712,
+   "pct": 0.21
+  },
+  {
+   "metric": "alley_rpt_n",
+   "period": "CY2021",
+   "geo_type": "community_area",
+   "unassigned": 11,
+   "total": 4973,
+   "pct": 0.221
+  },
+  {
+   "metric": "alley_rpt_n",
+   "period": "CY2021",
+   "geo_type": "ward2023",
+   "unassigned": 11,
+   "total": 4973,
+   "pct": 0.221
+  },
+  {
+   "metric": "alley_rpt_n",
+   "period": "CY2022",
+   "geo_type": "community_area",
+   "unassigned": 19,
+   "total": 6733,
+   "pct": 0.282
+  },
+  {
+   "metric": "alley_rpt_n",
+   "period": "CY2022",
+   "geo_type": "ward2023",
+   "unassigned": 19,
+   "total": 6733,
+   "pct": 0.282
+  },
+  {
+   "metric": "alley_rpt_n",
+   "period": "CY2023",
+   "geo_type": "community_area",
+   "unassigned": 7,
+   "total": 6940,
+   "pct": 0.101
+  },
+  {
+   "metric": "alley_rpt_n",
+   "period": "CY2023",
+   "geo_type": "ward2023",
+   "unassigned": 7,
+   "total": 6940,
+   "pct": 0.101
+  },
+  {
+   "metric": "alley_rpt_n",
+   "period": "CY2024",
+   "geo_type": "community_area",
+   "unassigned": 3,
+   "total": 6392,
+   "pct": 0.047
+  },
+  {
+   "metric": "alley_rpt_n",
+   "period": "CY2024",
+   "geo_type": "ward2023",
+   "unassigned": 3,
+   "total": 6392,
+   "pct": 0.047
+  },
+  {
+   "metric": "alley_rpt_n",
+   "period": "CY2025",
+   "geo_type": "community_area",
+   "unassigned": 4,
+   "total": 5301,
+   "pct": 0.075
+  },
+  {
+   "metric": "alley_rpt_n",
+   "period": "CY2025",
+   "geo_type": "ward2023",
+   "unassigned": 5,
+   "total": 5301,
+   "pct": 0.094
+  },
+  {
+   "metric": "alley_rpt_n",
+   "period": "CY2026",
+   "geo_type": "community_area",
+   "unassigned": 5,
+   "total": 6321,
+   "pct": 0.079
+  },
+  {
+   "metric": "alley_rpt_n",
+   "period": "CY2026",
+   "geo_type": "ward2023",
+   "unassigned": 5,
+   "total": 6321,
+   "pct": 0.079
+  },
+  {
+   "metric": "crew_n",
+   "period": "CY2019",
+   "geo_type": "community_area",
+   "unassigned": 45,
+   "total": 3325,
+   "pct": 1.353
+  },
+  {
+   "metric": "crew_n",
+   "period": "CY2019",
+   "geo_type": "ward2023",
+   "unassigned": 45,
+   "total": 3325,
+   "pct": 1.353
+  },
+  {
+   "metric": "crew_n",
+   "period": "CY2020",
+   "geo_type": "community_area",
+   "unassigned": 131,
+   "total": 9149,
+   "pct": 1.432
+  },
+  {
+   "metric": "crew_n",
+   "period": "CY2020",
+   "geo_type": "ward2023",
+   "unassigned": 131,
+   "total": 9149,
+   "pct": 1.432
+  },
+  {
+   "metric": "crew_n",
+   "period": "CY2021",
+   "geo_type": "community_area",
+   "unassigned": 181,
+   "total": 8874,
+   "pct": 2.04
+  },
+  {
+   "metric": "crew_n",
+   "period": "CY2021",
+   "geo_type": "ward2023",
+   "unassigned": 192,
+   "total": 8874,
+   "pct": 2.164
+  },
+  {
+   "metric": "crew_n",
+   "period": "CY2022",
+   "geo_type": "community_area",
+   "unassigned": 189,
+   "total": 9691,
+   "pct": 1.95
+  },
+  {
+   "metric": "crew_n",
+   "period": "CY2022",
+   "geo_type": "ward2023",
+   "unassigned": 188,
+   "total": 9691,
+   "pct": 1.94
+  },
+  {
+   "metric": "crew_n",
+   "period": "CY2023",
+   "geo_type": "community_area",
+   "unassigned": 112,
+   "total": 12481,
+   "pct": 0.897
+  },
+  {
+   "metric": "crew_n",
+   "period": "CY2023",
+   "geo_type": "ward2023",
+   "unassigned": 114,
+   "total": 12481,
+   "pct": 0.913
+  },
+  {
+   "metric": "crew_n",
+   "period": "CY2024",
+   "geo_type": "community_area",
+   "unassigned": 90,
+   "total": 10285,
+   "pct": 0.875
+  },
+  {
+   "metric": "crew_n",
+   "period": "CY2024",
+   "geo_type": "ward2023",
+   "unassigned": 90,
+   "total": 10285,
+   "pct": 0.875
+  },
+  {
+   "metric": "crew_n",
+   "period": "CY2025",
+   "geo_type": "community_area",
+   "unassigned": 103,
+   "total": 8629,
+   "pct": 1.194
+  },
+  {
+   "metric": "crew_n",
+   "period": "CY2025",
+   "geo_type": "ward2023",
+   "unassigned": 103,
+   "total": 8629,
+   "pct": 1.194
+  },
+  {
+   "metric": "crew_n",
+   "period": "CY2026",
+   "geo_type": "community_area",
+   "unassigned": 120,
+   "total": 6812,
+   "pct": 1.762
+  },
+  {
+   "metric": "crew_n",
+   "period": "CY2026",
+   "geo_type": "ward2023",
+   "unassigned": 122,
+   "total": 6812,
+   "pct": 1.791
+  },
+  {
+   "metric": "fill_n",
+   "period": "CY2019",
+   "geo_type": "community_area",
+   "unassigned": 2224,
+   "total": 434689,
+   "pct": 0.512
+  },
+  {
+   "metric": "fill_n",
+   "period": "CY2019",
+   "geo_type": "ward2023",
+   "unassigned": 2255,
+   "total": 434689,
+   "pct": 0.519
+  },
+  {
+   "metric": "fill_n",
+   "period": "CY2020",
+   "geo_type": "community_area",
+   "unassigned": 1689,
+   "total": 371877,
+   "pct": 0.454
+  },
+  {
+   "metric": "fill_n",
+   "period": "CY2020",
+   "geo_type": "ward2023",
+   "unassigned": 1704,
+   "total": 371877,
+   "pct": 0.458
+  },
+  {
+   "metric": "fill_n",
+   "period": "CY2021",
+   "geo_type": "community_area",
+   "unassigned": 1814,
+   "total": 274918,
+   "pct": 0.66
+  },
+  {
+   "metric": "fill_n",
+   "period": "CY2021",
+   "geo_type": "ward2023",
+   "unassigned": 1889,
+   "total": 274918,
+   "pct": 0.687
+  },
+  {
+   "metric": "fill_n",
+   "period": "CY2022",
+   "geo_type": "community_area",
+   "unassigned": 3199,
+   "total": 489943,
+   "pct": 0.653
+  },
+  {
+   "metric": "fill_n",
+   "period": "CY2022",
+   "geo_type": "ward2023",
+   "unassigned": 3198,
+   "total": 489943,
+   "pct": 0.653
+  },
+  {
+   "metric": "fill_n",
+   "period": "CY2023",
+   "geo_type": "community_area",
+   "unassigned": 821,
+   "total": 366510,
+   "pct": 0.224
+  },
+  {
+   "metric": "fill_n",
+   "period": "CY2023",
+   "geo_type": "ward2023",
+   "unassigned": 825,
+   "total": 366510,
+   "pct": 0.225
+  },
+  {
+   "metric": "fill_n",
+   "period": "CY2024",
+   "geo_type": "community_area",
+   "unassigned": 1053,
+   "total": 319240,
+   "pct": 0.33
+  },
+  {
+   "metric": "fill_n",
+   "period": "CY2024",
+   "geo_type": "ward2023",
+   "unassigned": 1046,
+   "total": 319240,
+   "pct": 0.328
+  },
+  {
+   "metric": "fill_n",
+   "period": "CY2025",
+   "geo_type": "community_area",
+   "unassigned": 899,
+   "total": 248541,
+   "pct": 0.362
+  },
+  {
+   "metric": "fill_n",
+   "period": "CY2025",
+   "geo_type": "ward2023",
+   "unassigned": 899,
+   "total": 248541,
+   "pct": 0.362
+  },
+  {
+   "metric": "fill_n",
+   "period": "CY2026",
+   "geo_type": "community_area",
+   "unassigned": 1901,
+   "total": 259402,
+   "pct": 0.733
+  },
+  {
+   "metric": "fill_n",
+   "period": "CY2026",
+   "geo_type": "ward2023",
+   "unassigned": 1909,
+   "total": 259402,
+   "pct": 0.736
+  },
+  {
+   "metric": "fill_wo_n",
+   "period": "CY2019",
+   "geo_type": "community_area",
+   "unassigned": 169,
+   "total": 30579,
+   "pct": 0.553
+  },
+  {
+   "metric": "fill_wo_n",
+   "period": "CY2019",
+   "geo_type": "ward2023",
+   "unassigned": 173,
+   "total": 30579,
+   "pct": 0.566
+  },
+  {
+   "metric": "fill_wo_n",
+   "period": "CY2020",
+   "geo_type": "community_area",
+   "unassigned": 166,
+   "total": 31795,
+   "pct": 0.522
+  },
+  {
+   "metric": "fill_wo_n",
+   "period": "CY2020",
+   "geo_type": "ward2023",
+   "unassigned": 171,
+   "total": 31795,
+   "pct": 0.538
+  },
+  {
+   "metric": "fill_wo_n",
+   "period": "CY2021",
+   "geo_type": "community_area",
+   "unassigned": 203,
+   "total": 24908,
+   "pct": 0.815
+  },
+  {
+   "metric": "fill_wo_n",
+   "period": "CY2021",
+   "geo_type": "ward2023",
+   "unassigned": 220,
+   "total": 24908,
+   "pct": 0.883
+  },
+  {
+   "metric": "fill_wo_n",
+   "period": "CY2022",
+   "geo_type": "community_area",
+   "unassigned": 210,
+   "total": 39649,
+   "pct": 0.53
+  },
+  {
+   "metric": "fill_wo_n",
+   "period": "CY2022",
+   "geo_type": "ward2023",
+   "unassigned": 212,
+   "total": 39649,
+   "pct": 0.535
+  },
+  {
+   "metric": "fill_wo_n",
+   "period": "CY2023",
+   "geo_type": "community_area",
+   "unassigned": 125,
+   "total": 34885,
+   "pct": 0.358
+  },
+  {
+   "metric": "fill_wo_n",
+   "period": "CY2023",
+   "geo_type": "ward2023",
+   "unassigned": 127,
+   "total": 34885,
+   "pct": 0.364
+  },
+  {
+   "metric": "fill_wo_n",
+   "period": "CY2024",
+   "geo_type": "community_area",
+   "unassigned": 131,
+   "total": 30262,
+   "pct": 0.433
+  },
+  {
+   "metric": "fill_wo_n",
+   "period": "CY2024",
+   "geo_type": "ward2023",
+   "unassigned": 130,
+   "total": 30262,
+   "pct": 0.43
+  },
+  {
+   "metric": "fill_wo_n",
+   "period": "CY2025",
+   "geo_type": "community_area",
+   "unassigned": 118,
+   "total": 25633,
+   "pct": 0.46
+  },
+  {
+   "metric": "fill_wo_n",
+   "period": "CY2025",
+   "geo_type": "ward2023",
+   "unassigned": 118,
+   "total": 25633,
+   "pct": 0.46
+  },
+  {
+   "metric": "fill_wo_n",
+   "period": "CY2026",
+   "geo_type": "community_area",
+   "unassigned": 144,
+   "total": 23083,
+   "pct": 0.624
+  },
+  {
+   "metric": "fill_wo_n",
+   "period": "CY2026",
+   "geo_type": "ward2023",
+   "unassigned": 146,
+   "total": 23083,
+   "pct": 0.633
+  },
+  {
+   "metric": "rpt_all_n",
+   "period": "CY2019",
+   "geo_type": "community_area",
+   "unassigned": 1326,
+   "total": 79902,
+   "pct": 1.66
+  },
+  {
+   "metric": "rpt_all_n",
+   "period": "CY2019",
+   "geo_type": "ward2023",
+   "unassigned": 1338,
+   "total": 79902,
+   "pct": 1.675
+  },
+  {
+   "metric": "rpt_all_n",
+   "period": "CY2020",
+   "geo_type": "community_area",
+   "unassigned": 218,
+   "total": 30598,
+   "pct": 0.712
+  },
+  {
+   "metric": "rpt_all_n",
+   "period": "CY2020",
+   "geo_type": "ward2023",
+   "unassigned": 222,
+   "total": 30598,
+   "pct": 0.726
+  },
+  {
+   "metric": "rpt_all_n",
+   "period": "CY2021",
+   "geo_type": "community_area",
+   "unassigned": 218,
+   "total": 29121,
+   "pct": 0.749
+  },
+  {
+   "metric": "rpt_all_n",
+   "period": "CY2021",
+   "geo_type": "ward2023",
+   "unassigned": 225,
+   "total": 29121,
+   "pct": 0.773
+  },
+  {
+   "metric": "rpt_all_n",
+   "period": "CY2022",
+   "geo_type": "community_area",
+   "unassigned": 325,
+   "total": 53424,
+   "pct": 0.608
+  },
+  {
+   "metric": "rpt_all_n",
+   "period": "CY2022",
+   "geo_type": "ward2023",
+   "unassigned": 328,
+   "total": 53424,
+   "pct": 0.614
+  },
+  {
+   "metric": "rpt_all_n",
+   "period": "CY2023",
+   "geo_type": "community_area",
+   "unassigned": 133,
+   "total": 35968,
+   "pct": 0.37
+  },
+  {
+   "metric": "rpt_all_n",
+   "period": "CY2023",
+   "geo_type": "ward2023",
+   "unassigned": 136,
+   "total": 35968,
+   "pct": 0.378
+  },
+  {
+   "metric": "rpt_all_n",
+   "period": "CY2024",
+   "geo_type": "community_area",
+   "unassigned": 291,
+   "total": 40166,
+   "pct": 0.724
+  },
+  {
+   "metric": "rpt_all_n",
+   "period": "CY2024",
+   "geo_type": "ward2023",
+   "unassigned": 293,
+   "total": 40166,
+   "pct": 0.729
+  },
+  {
+   "metric": "rpt_all_n",
+   "period": "CY2025",
+   "geo_type": "community_area",
+   "unassigned": 223,
+   "total": 34952,
+   "pct": 0.638
+  },
+  {
+   "metric": "rpt_all_n",
+   "period": "CY2025",
+   "geo_type": "ward2023",
+   "unassigned": 231,
+   "total": 34952,
+   "pct": 0.661
+  },
+  {
+   "metric": "rpt_all_n",
+   "period": "CY2026",
+   "geo_type": "community_area",
+   "unassigned": 368,
+   "total": 44854,
+   "pct": 0.82
+  },
+  {
+   "metric": "rpt_all_n",
+   "period": "CY2026",
+   "geo_type": "ward2023",
+   "unassigned": 375,
+   "total": 44854,
+   "pct": 0.836
+  },
+  {
+   "metric": "rpt_n",
+   "period": "CY2019",
+   "geo_type": "community_area",
+   "unassigned": 891,
+   "total": 42535,
+   "pct": 2.095
+  },
+  {
+   "metric": "rpt_n",
+   "period": "CY2019",
+   "geo_type": "ward2023",
+   "unassigned": 896,
+   "total": 42535,
+   "pct": 2.107
+  },
+  {
+   "metric": "rpt_n",
+   "period": "CY2020",
+   "geo_type": "community_area",
+   "unassigned": 175,
+   "total": 24002,
+   "pct": 0.729
+  },
+  {
+   "metric": "rpt_n",
+   "period": "CY2020",
+   "geo_type": "ward2023",
+   "unassigned": 180,
+   "total": 24002,
+   "pct": 0.75
+  },
+  {
+   "metric": "rpt_n",
+   "period": "CY2021",
+   "geo_type": "community_area",
+   "unassigned": 158,
+   "total": 22707,
+   "pct": 0.696
+  },
+  {
+   "metric": "rpt_n",
+   "period": "CY2021",
+   "geo_type": "ward2023",
+   "unassigned": 164,
+   "total": 22707,
+   "pct": 0.722
+  },
+  {
+   "metric": "rpt_n",
+   "period": "CY2022",
+   "geo_type": "community_area",
+   "unassigned": 216,
+   "total": 35847,
+   "pct": 0.603
+  },
+  {
+   "metric": "rpt_n",
+   "period": "CY2022",
+   "geo_type": "ward2023",
+   "unassigned": 221,
+   "total": 35847,
+   "pct": 0.617
+  },
+  {
+   "metric": "rpt_n",
+   "period": "CY2023",
+   "geo_type": "community_area",
+   "unassigned": 103,
+   "total": 28181,
+   "pct": 0.365
+  },
+  {
+   "metric": "rpt_n",
+   "period": "CY2023",
+   "geo_type": "ward2023",
+   "unassigned": 106,
+   "total": 28181,
+   "pct": 0.376
+  },
+  {
+   "metric": "rpt_n",
+   "period": "CY2024",
+   "geo_type": "community_area",
+   "unassigned": 217,
+   "total": 27828,
+   "pct": 0.78
+  },
+  {
+   "metric": "rpt_n",
+   "period": "CY2024",
+   "geo_type": "ward2023",
+   "unassigned": 216,
+   "total": 27828,
+   "pct": 0.776
+  },
+  {
+   "metric": "rpt_n",
+   "period": "CY2025",
+   "geo_type": "community_area",
+   "unassigned": 136,
+   "total": 20911,
+   "pct": 0.65
+  },
+  {
+   "metric": "rpt_n",
+   "period": "CY2025",
+   "geo_type": "ward2023",
+   "unassigned": 142,
+   "total": 20911,
+   "pct": 0.679
+  },
+  {
+   "metric": "rpt_n",
+   "period": "CY2026",
+   "geo_type": "community_area",
+   "unassigned": 278,
+   "total": 26966,
+   "pct": 1.031
+  },
+  {
+   "metric": "rpt_n",
+   "period": "CY2026",
+   "geo_type": "ward2023",
+   "unassigned": 281,
+   "total": 26966,
+   "pct": 1.042
+  },
+  {
+   "metric": "staff_n",
+   "period": "CY2019",
+   "geo_type": "community_area",
+   "unassigned": 3,
+   "total": 169,
+   "pct": 1.775
+  },
+  {
+   "metric": "staff_n",
+   "period": "CY2019",
+   "geo_type": "ward2023",
+   "unassigned": 3,
+   "total": 169,
+   "pct": 1.775
+  },
+  {
+   "metric": "staff_n",
+   "period": "CY2020",
+   "geo_type": "community_area",
+   "unassigned": 0,
+   "total": 84,
+   "pct": 0.0
+  },
+  {
+   "metric": "staff_n",
+   "period": "CY2020",
+   "geo_type": "ward2023",
+   "unassigned": 0,
+   "total": 84,
+   "pct": 0.0
+  },
+  {
+   "metric": "staff_n",
+   "period": "CY2021",
+   "geo_type": "community_area",
+   "unassigned": 1,
+   "total": 396,
+   "pct": 0.253
+  },
+  {
+   "metric": "staff_n",
+   "period": "CY2021",
+   "geo_type": "ward2023",
+   "unassigned": 1,
+   "total": 396,
+   "pct": 0.253
+  },
+  {
+   "metric": "staff_n",
+   "period": "CY2022",
+   "geo_type": "community_area",
+   "unassigned": 0,
+   "total": 339,
+   "pct": 0.0
+  },
+  {
+   "metric": "staff_n",
+   "period": "CY2022",
+   "geo_type": "ward2023",
+   "unassigned": 0,
+   "total": 339,
+   "pct": 0.0
+  },
+  {
+   "metric": "staff_n",
+   "period": "CY2023",
+   "geo_type": "community_area",
+   "unassigned": 0,
+   "total": 227,
+   "pct": 0.0
+  },
+  {
+   "metric": "staff_n",
+   "period": "CY2023",
+   "geo_type": "ward2023",
+   "unassigned": 0,
+   "total": 227,
+   "pct": 0.0
+  },
+  {
+   "metric": "staff_n",
+   "period": "CY2024",
+   "geo_type": "community_area",
+   "unassigned": 0,
+   "total": 276,
+   "pct": 0.0
+  },
+  {
+   "metric": "staff_n",
+   "period": "CY2024",
+   "geo_type": "ward2023",
+   "unassigned": 0,
+   "total": 276,
+   "pct": 0.0
+  },
+  {
+   "metric": "staff_n",
+   "period": "CY2025",
+   "geo_type": "community_area",
+   "unassigned": 0,
+   "total": 261,
+   "pct": 0.0
+  },
+  {
+   "metric": "staff_n",
+   "period": "CY2025",
+   "geo_type": "ward2023",
+   "unassigned": 0,
+   "total": 261,
+   "pct": 0.0
+  },
+  {
+   "metric": "staff_n",
+   "period": "CY2026",
+   "geo_type": "community_area",
+   "unassigned": 0,
+   "total": 323,
+   "pct": 0.0
+  },
+  {
+   "metric": "staff_n",
+   "period": "CY2026",
+   "geo_type": "ward2023",
+   "unassigned": 0,
+   "total": 323,
+   "pct": 0.0
+  }
+ ],
+ "snapshot_id": "2026-09-16T221105Z",
+ "data_currency": "2026-09-16 17:19:53",
+ "methods_version": "0.3",
+ "has_census": true
+}

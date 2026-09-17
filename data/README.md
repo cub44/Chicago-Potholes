@@ -80,7 +80,7 @@ trend is within what chance would produce for an area that size.
 |---|---|
 | `PARTIAL_YEAR` | The calendar year has not ended. Not comparable to a full year |
 | `YTD` | A January 1 – August 31 window, matched across years |
-| `TRANSITION_2019` | Includes 2019, the first full year of the current 311 system. Duplicate flagging and entry practice differ from later years |
+| `TRANSITION_2019` | Includes 2019, the first full year of the current 311 system. Duplicate flagging and entry practice differ from later years, and its records are misallocated at several times the later rate — see the limitation below |
 | `PRE2023_WARD` | A ward figure for a period ending before the 2023 remap, shown on today's map |
 | `SPLIT_2023` | A ward figure for a period straddling the May 15, 2023 remap |
 | `SUPPRESSED_LOW_N` | Too few records for a stable figure. `value` is empty, `n` is not |
@@ -123,6 +123,24 @@ mapped area-years where extreme fill entries dominate.
 
 ## Limitations
 
+- **2019 is published, but it is not shown on the website map.** It is the first
+  full year of the current 311 system and its records are misallocated at
+  several times the rate of any later year:
+
+  | Full year | Reports not placed in a community area | Duplicate-flagged share |
+  |---|---:|---:|
+  | 2019 | **2.09%** (891 of 42,535) | **46.8%** |
+  | 2020 | 0.73% | 21.6% |
+  | 2021 | 0.70% | 22.0% |
+  | 2022 | 0.60% | 32.9% |
+  | 2023 | 0.37% | 21.7% |
+  | 2024 | 0.78% | 30.7% |
+  | 2025 | 0.65% | 40.2% |
+
+  The rows stay in this release — excluding data from a chart is not a reason to
+  withhold it from the record — and carry `TRANSITION_2019` wherever they
+  appear. Treat 2019 as a weak baseline rather than a comparable year, and say
+  so if you publish a comparison against it.
 - **These are not counts of potholes.** No dataset here measures how many
   potholes exist or the condition of any street. Reports measure attention;
   fills measure work.

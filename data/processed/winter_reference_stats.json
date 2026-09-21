@@ -1,0 +1,95 @@
+{
+ "methods_version": "0.4",
+ "station": "USW00094846",
+ "reference_winters": [
+  "W1992",
+  "W2021"
+ ],
+ "n": 30,
+ "components": {
+  "wet_ft_days": {
+   "mean": 33.133333,
+   "sd": 7.356598
+  },
+  "fdd": {
+   "mean": 725.183333,
+   "sd": 275.452558
+  },
+  "prcp_in": {
+   "mean": 14.521,
+   "sd": 3.742146
+  },
+  "snow_in": {
+   "mean": 38.056667,
+   "sd": 14.890212
+  },
+  "ft_days": {
+   "mean": 67.633333,
+   "sd": 9.319921
+  }
+ },
+ "reference_harshness": {
+  "W1992": -0.22,
+  "W1993": 0.75,
+  "W1994": -0.3,
+  "W1995": -0.51,
+  "W1996": -0.58,
+  "W1997": 0.28,
+  "W1998": -1.18,
+  "W1999": 0.14,
+  "W2000": -0.68,
+  "W2001": 0.41,
+  "W2002": -0.69,
+  "W2003": -0.61,
+  "W2004": -0.62,
+  "W2005": 0.22,
+  "W2006": -0.49,
+  "W2007": 0.19,
+  "W2008": 0.89,
+  "W2009": 1.11,
+  "W2010": -0.01,
+  "W2011": 0.59,
+  "W2012": -0.99,
+  "W2013": 0.18,
+  "W2014": 1.64,
+  "W2015": 0.07,
+  "W2016": 0.07,
+  "W2017": -0.33,
+  "W2018": 0.23,
+  "W2019": 0.96,
+  "W2020": -0.14,
+  "W2021": -0.38
+ },
+ "reference_data_gaps": {
+  "W1996": {
+   "missing_days": 50,
+   "snwd_missing_days": 27,
+   "filled_days": 0,
+   "unfilled_days": 0
+  },
+  "W1997": {
+   "missing_days": 39,
+   "snwd_missing_days": 96,
+   "filled_days": 0,
+   "unfilled_days": 0
+  },
+  "W1998": {
+   "missing_days": 78,
+   "snwd_missing_days": 107,
+   "filled_days": 0,
+   "unfilled_days": 0
+  },
+  "W1999": {
+   "missing_days": 0,
+   "snwd_missing_days": 61,
+   "filled_days": 0,
+   "unfilled_days": 0
+  },
+  "W2002": {
+   "missing_days": 0,
+   "snwd_missing_days": 31,
+   "filled_days": 0,
+   "unfilled_days": 0
+  }
+ }
+}

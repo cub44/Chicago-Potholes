@@ -1,4 +1,56 @@
 {
+ "gate0": [
+  {
+   "id": "D10",
+   "check": "Spearman of winter harshness vs citywide rpt_n, full CY periods (report only)",
+   "rho": 0.5,
+   "n": 7,
+   "pairs": [
+    {
+     "winter": "W2019",
+     "harshness": 0.96,
+     "cy_period": "CY2019",
+     "rpt_n": 42535
+    },
+    {
+     "winter": "W2020",
+     "harshness": -0.14,
+     "cy_period": "CY2020",
+     "rpt_n": 24002
+    },
+    {
+     "winter": "W2021",
+     "harshness": -0.38,
+     "cy_period": "CY2021",
+     "rpt_n": 22707
+    },
+    {
+     "winter": "W2022",
+     "harshness": -0.23,
+     "cy_period": "CY2022",
+     "rpt_n": 35847
+    },
+    {
+     "winter": "W2023",
+     "harshness": -0.72,
+     "cy_period": "CY2023",
+     "rpt_n": 28181
+    },
+    {
+     "winter": "W2024",
+     "harshness": -0.95,
+     "cy_period": "CY2024",
+     "rpt_n": 27828
+    },
+    {
+     "winter": "W2025",
+     "harshness": -0.77,
+     "cy_period": "CY2025",
+     "rpt_n": 20911
+    }
+   ]
+  }
+ ],
  "gate1": [
   {
    "id": "V1a",
@@ -108,7 +160,7 @@
    "id": "W5",
    "check": "data_currency more than 3 days older than snapshot_id",
    "status": "ok",
-   "detail": "currency=2026-09-16 17:19:53, pulled=2026-09-16T23:56:19.791284+00:00"
+   "detail": "currency=2026-09-20 19:02:51, pulled=2026-09-21T01:29:48.062991+00:00"
   },
   {
    "id": "W3",
@@ -139,6 +191,12 @@
    "check": "ward2023: >40% of geographies non-zero on rpt_per_mi_chgcls",
    "status": "WARN",
    "detail": "49.3%"
+  },
+  {
+   "id": "W9",
+   "check": "Midway vs O'Hare harshness: Spearman < 0.85 over reference winters",
+   "status": "WARN",
+   "detail": "rho=0.748 over 23 winters W1999-W2021; Midway index uses wet_ft_days, fdd, prcp_in; by component {'wet_ft_days': 0.4807, 'fdd': 0.9872, 'prcp_in': 0.9002}"
   }
  ],
  "skipped": [],
@@ -209,8 +267,8 @@
   {
    "metric": "fill_n",
    "year": 2026,
-   "ours": 259402,
-   "portal_live": 259402,
+   "ours": 260883,
+   "portal_live": 260883,
    "reference": null,
    "drift_vs_reference_pct": null,
    "ours_vs_live_pct": 0.0
@@ -290,8 +348,8 @@
   {
    "metric": "phf_rows",
    "year": 2026,
-   "ours": 52469,
-   "portal_live": 52469,
+   "ours": 52853,
+   "portal_live": 52853,
    "reference": null,
    "drift_vs_reference_pct": null,
    "ours_vs_live_pct": 0.0
@@ -415,16 +473,16 @@
    "period": "CY2026",
    "geo_type": "community_area",
    "unassigned": 5,
-   "total": 6321,
-   "pct": 0.079
+   "total": 6404,
+   "pct": 0.078
   },
   {
    "metric": "alley_rpt_n",
    "period": "CY2026",
    "geo_type": "ward2023",
    "unassigned": 5,
-   "total": 6321,
-   "pct": 0.079
+   "total": 6404,
+   "pct": 0.078
   },
   {
    "metric": "crew_n",
@@ -543,7 +601,7 @@
    "period": "CY2026",
    "geo_type": "community_area",
    "unassigned": 120,
-   "total": 6812,
+   "total": 6811,
    "pct": 1.762
   },
   {
@@ -551,7 +609,7 @@
    "period": "CY2026",
    "geo_type": "ward2023",
    "unassigned": 122,
-   "total": 6812,
+   "total": 6811,
    "pct": 1.791
   },
   {
@@ -671,16 +729,16 @@
    "period": "CY2026",
    "geo_type": "community_area",
    "unassigned": 1901,
-   "total": 259402,
-   "pct": 0.733
+   "total": 260883,
+   "pct": 0.729
   },
   {
    "metric": "fill_n",
    "period": "CY2026",
    "geo_type": "ward2023",
    "unassigned": 1909,
-   "total": 259402,
-   "pct": 0.736
+   "total": 260883,
+   "pct": 0.732
   },
   {
    "metric": "fill_wo_n",
@@ -799,16 +857,16 @@
    "period": "CY2026",
    "geo_type": "community_area",
    "unassigned": 144,
-   "total": 23083,
-   "pct": 0.624
+   "total": 23305,
+   "pct": 0.618
   },
   {
    "metric": "fill_wo_n",
    "period": "CY2026",
    "geo_type": "ward2023",
    "unassigned": 146,
-   "total": 23083,
-   "pct": 0.633
+   "total": 23305,
+   "pct": 0.626
   },
   {
    "metric": "rpt_all_n",
@@ -927,16 +985,16 @@
    "period": "CY2026",
    "geo_type": "community_area",
    "unassigned": 368,
-   "total": 44854,
-   "pct": 0.82
+   "total": 45233,
+   "pct": 0.814
   },
   {
    "metric": "rpt_all_n",
    "period": "CY2026",
    "geo_type": "ward2023",
    "unassigned": 375,
-   "total": 44854,
-   "pct": 0.836
+   "total": 45233,
+   "pct": 0.829
   },
   {
    "metric": "rpt_n",
@@ -1055,16 +1113,16 @@
    "period": "CY2026",
    "geo_type": "community_area",
    "unassigned": 278,
-   "total": 26966,
-   "pct": 1.031
+   "total": 27275,
+   "pct": 1.019
   },
   {
    "metric": "rpt_n",
    "period": "CY2026",
    "geo_type": "ward2023",
    "unassigned": 281,
-   "total": 26966,
-   "pct": 1.042
+   "total": 27275,
+   "pct": 1.03
   },
   {
    "metric": "staff_n",
@@ -1183,7 +1241,7 @@
    "period": "CY2026",
    "geo_type": "community_area",
    "unassigned": 0,
-   "total": 323,
+   "total": 324,
    "pct": 0.0
   },
   {
@@ -1191,12 +1249,12 @@
    "period": "CY2026",
    "geo_type": "ward2023",
    "unassigned": 0,
-   "total": 323,
+   "total": 324,
    "pct": 0.0
   }
  ],
- "snapshot_id": "2026-09-16T221105Z",
- "data_currency": "2026-09-16 17:19:53",
- "methods_version": "0.3",
+ "snapshot_id": "2026-09-21T012058Z",
+ "data_currency": "2026-09-20 19:02:51",
+ "methods_version": "0.4",
  "has_census": true
 }

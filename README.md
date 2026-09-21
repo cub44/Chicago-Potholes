@@ -13,6 +13,9 @@ No software is required. Open the CSVs in a spreadsheet or your preferred analys
 | [ward_legacy_mix.csv](data/processed/ward_legacy_mix.csv) | 2,439 | One current ward's overlap with one pre-2023 ward, in one period |
 | [strata_tracts.csv](data/processed/strata_tracts.csv) | 799 | One census tract, with its poverty quintile and majority race/ethnicity group |
 | [change_summary.csv](data/processed/change_summary.csv) | 27 | One comparison, counting places that rose, fell, held flat, or were withheld |
+| [winter_harshness.csv](data/processed/winter_harshness.csv) | 8 | One winter (November–April), scored for how hard its weather was on pavement. Weather records only |
+| [winter_sensitivity.csv](data/processed/winter_sensitivity.csv) | 56 | One winter's rank under one variant of that score |
+| [winter_reference_stats.json](data/processed/winter_reference_stats.json) | — | The 30-winter averages the score is measured against |
 | [breaks.json](data/processed/breaks.json) | — | The frozen colour-class boundaries the map uses |
 | [qa_report.json](data/processed/qa_report.json) | — | Every validation check, with its result |
 
@@ -58,10 +61,10 @@ Response times are estimated with a Kaplan–Meier survival curve rather than by
 - **`UNASSIGNED` is a bucket, not a place.** Records whose coordinates fall outside every boundary are totalled under that id for count measures only. It is never mapped, and it should not be charted beside real places.
 - **Portal datasets get revised retroactively.** The build reads a dated snapshot, so these figures stay reproducible after an upstream revision — and will differ from a query run against the live portal today.
 
-Five validation warnings are open at this snapshot, including geography loss above 1% on some measures and drift in the current partial year since the pull. All of them are written out in [qa_report.json](data/processed/qa_report.json); the fourteen build-blocking checks all pass.
+Six validation warnings are open at this snapshot, including geography loss above 1% on some measures, drift in the current partial year since the pull, and a weak match between the O'Hare winter score and a check run on Midway's thinner weather record. All of them are written out in [qa_report.json](data/processed/qa_report.json); the fourteen build-blocking checks all pass.
 
 ## Reuse and corrections
 
 Data and prose are CC BY 4.0; code is MIT. See [LICENSE](LICENSE). The underlying City of Chicago and Census records remain subject to their publishers' terms.
 
-Suggested attribution: "Chicago potholes, Connor Ulrich Blandford, source snapshot 16 September 2026," with a link to this repository. Cite the snapshot date and the file you used. Report corrections through [Issues](https://github.com/cub44/POTHOLES_REPO/issues), including the filename and the `geo_type`, `geo_id`, `period` and `metric` of the disputed row.
+Suggested attribution: "Chicago potholes, Connor Ulrich Blandford, source snapshot 20 September 2026," with a link to this repository. Cite the snapshot date and the file you used. Report corrections through [Issues](https://github.com/cub44/POTHOLES_REPO/issues), including the filename and the `geo_type`, `geo_id`, `period` and `metric` of the disputed row.

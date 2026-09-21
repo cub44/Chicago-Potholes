@@ -1,6 +1,6 @@
 # Data dictionary and limitations
 
-Seven files, verified by `../checksums.sha256`. `METHODS.md` in the repository
+Ten files, verified by `../checksums.sha256`. `METHODS.md` in the repository
 root is the authority for every definition; this file is the working reference.
 
 Read the limitations at the bottom before using any of it. They are not
@@ -89,6 +89,7 @@ trend is within what chance would produce for an area that size.
 | `EXTREME_FILL` | At least 10% of this area-year's fills came from entries of 150+ potholes on one block |
 | `GEO_UNASSIGNED` | The `UNASSIGNED` bucket: records that could not be placed in a geography |
 | `CHANGE_UNCLEAR` | The change is within normal variation for an area this size. Read as "close to the city trend", not "no change" |
+| `WX_GAP_FILLED`, `WX_MISSING_OBS` | `winter_harshness.csv` only: a temperature reading was filled from Midway, or a precipitation or snow reading was missing and counted as zero. Neither occurs in the winters published so far |
 
 ## Companion tables
 
@@ -117,9 +118,42 @@ so adding a year does not recolor earlier ones.
 `down`, `flat`, `suppressed`.
 
 **`qa_report.json`** — every Gate 0–2 check with status and detail. At this
-snapshot Gate 1 passes 14 of 14. Five Gate 2 warnings are open, including
-geography loss above 1%, drift in the current partial year since the pull, and
-mapped area-years where extreme fill entries dominate.
+snapshot Gate 1 passes 14 of 14. Six Gate 2 warnings are open, including
+geography loss above 1%, drift in the current partial year since the pull,
+mapped area-years where extreme fill entries dominate, and W9 (below).
+
+**`winter_harshness.csv`** (8 rows) — `winter`, `cy_period`, `ytd_period`,
+`wet_ft_days`, `ft_days`, `fdd`, `prcp_in`, `snow_in`, `z_wet_ft`, `z_fdd`,
+`z_prcp`, `z_snow`, `harshness`, `harshness_pctile`, `category`,
+`nov_dec_share`, `filled_days`, `missing_days`, `flags`. One row per winter,
+`W2019` (Nov 1, 2018 – Apr 30, 2019) onward, built only from NOAA daily weather
+records at O'Hare and never from 311 or patch data. Four components — wet
+freeze–thaw days, freezing degree-days, precipitation and snowfall — are each
+turned into a z-score against the 30 winters 1991–92 to 2020–21; `harshness` is
+their plain average, and `category` labels it Mild (below −0.5), Typical,
+Harsh (above 0.5) or Severe (above 1.0). `cy_period` and `ytd_period` are the
+`potholes_long.csv` periods a winter is read beside. It is context only: no
+pothole figure is adjusted for it, and a harsh winter beside a high report
+count does not show that one caused the other. METHODS §11.
+
+**`winter_reference_stats.json`** — the reference mean and standard deviation
+behind each z-score, the 30 reference winters' own scores, and the reference
+winters in which O'Hare's snow readings have gaps (1995–96 to 1998–99 and
+2001–02; missing readings count as zero, which makes published snow z-scores
+marginally high).
+
+**`winter_sensitivity.csv`** (56 rows) — `winter`, `variant`, `value`, `rank`.
+How each winter ranks (1 = harshest) under the published score and six
+variants: each component alone, all freeze–thaw days in place of wet ones, and
+wet freeze–thaw days counted twice. The 2018–19 winter ranks first under every
+variant; the order of the milder winters depends on the variant.
+
+The Midway check (W9 in `qa_report.json`) is open: Midway's record begins in
+1997 and has almost no snowfall or snow-depth readings, so its version of the
+score rests on three components and tracks O'Hare's at a rank correlation of
+0.75 against a target of 0.85. Its cold and precipitation components agree
+closely (0.99 and 0.90); the wet freeze–thaw count, which needs snow depth,
+does not (0.48).
 
 ## Limitations
 

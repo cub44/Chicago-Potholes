@@ -1,6 +1,6 @@
 # Chicago Potholes — Methods
 
-**Version:** 0.3 (draft) · **Drafted:** 2026-09-16 · **Applies to:** snapshot pulls on or after 2026-09-16
+**Version:** 0.4 (draft) · **Drafted:** 2026-09-20 · **Applies to:** snapshot pulls on or after 2026-09-20
 
 This document defines every published number. If code and this document disagree, the code is wrong. Changing a definition, filter, threshold, or class break requires a version bump and a changelog entry (§13).
 
@@ -32,6 +32,7 @@ No dataset measures the stock or condition of potholes. Nothing on the site shou
 | Street centerlines | "transportation" (source table of the `6imu-meau` map view) | `pr57-gg9e` | `class`, `status`, `street_nam`, `the_geom`, `length` (QA) |
 | Population, race/ethnicity | 2020 Census P.L. 94-171, blocks, Cook County (state 17, county 031) | Census API `2020/dec/pl` | `P1_001N`, `P2_001N`, `P2_002N`, `P2_005N`, `P2_006N`, `P2_008N` |
 | Block/tract geometry | TIGER/Line 2020 | — | block internal points (`INTPTLAT20`, `INTPTLON20`), tract polygons |
+| Winter weather (§11, context only) | NOAA GHCN-Daily via the NCEI Access Data Service, `daily-summaries` | `USW00094846` (O'Hare); `USW00014819` (Midway, gap-filling and QA only) | `TMAX`, `TMIN`, `PRCP`, `SNOW`, `SNWD` |
 | Socioeconomic covariates | ACS 5-year, tract | Census API `acs/acs5` (latest vintage available at build; record in `config/params.json`) | `B17001_001E`, `B17001_002E`; `C16002_001E`, `_004E`, `_007E`, `_010E`, `_013E`; `B28002_001E`, `B28002_004E` |
 
 **Do not use:**
@@ -45,6 +46,7 @@ No dataset measures the stock or condition of potholes. Nothing on the site shou
 - At pull time, run the reconciliation aggregate queries in V1 against the portal and save their results beside the raw files.
 - Socrata `calendar_date` values are floating timestamps in Chicago local time. Never convert time zones. All year, month, and day boundaries use local wall-clock time.
 - `data_currency` = max(`created_date`) across PHF rows in the snapshot.
+- The pull also saves the two GHCN-Daily station files (§11) as `ghcnd_ohare.csv` and `ghcnd_midway.csv`, byte-for-byte as NCEI returned them, with `pull_meta.json` (request URL, row count, and min/max `DATE` per file).
 - **Parent lookup.** After the main pull, collect every non-null `parent_sr_number` that is not an `sr_number` in the pull. Query `v6vf-nfxy` by `sr_number` in batches of about 300, with no code, date, or legacy filter, and repeat for newly found parents until none remain or 10 rounds have run. Store `sr_number`, `sr_short_code`, `created_date`, `status`, `legacy_record`, and `parent_sr_number` as `parents.parquet` in the snapshot. Parents that the portal does not return are recorded as not found.
 
 ---
@@ -435,6 +437,9 @@ Suppressed cells have `value = null` and the flag `SUPPRESSED_LOW_N`. Their `n` 
 - `breaks.json`: `{methods_version, level: {cy: {geo_type: {metric: [b1..b4]}}, ytd: {MM: {geo_type: {metric: [b1..b4]}}}}, change: {rate_pct: [t1, t2], share_pts: [t1, t2]}}`. It is written only at a version bump (§7.2).
 - `change_summary.csv`: `geo_type, period, metric, up, down, flat, suppressed`. Counts of geographies with `*_chgcls` > 0, < 0, = 0, and null. Feeds §8.4.
 - `qa_report.json`: outputs of every Gate 0–2 check, with snapshot metadata
+- `winter_harshness.csv` (§11), one row per published winter: `winter, cy_period, ytd_period, wet_ft_days, ft_days, fdd, prcp_in, snow_in, z_wet_ft, z_fdd, z_prcp, z_snow, harshness, harshness_pctile, category, nov_dec_share, filled_days, missing_days, flags`
+- `winter_reference_stats.json` (§11): `{methods_version, station, reference_winters, n, components: {name: {mean, sd}}, reference_harshness: {winter: value}, reference_data_gaps}`
+- `winter_sensitivity.csv` (§11): `winter, variant, value, rank`. One row per published winter × variant; rank 1 = harshest.
 
 All companion tables are listed in `checksums.sha256` under the existing release contract.
 
@@ -453,6 +458,8 @@ All companion tables are listed in `checksums.sha256` under the existing release
 | `EXTREME_FILL` | `fill_extreme_share ≥ 0.10` (on `fill_*` rows) | C-EXTREME |
 | `GEO_UNASSIGNED` | `geo_id = UNASSIGNED` | — |
 | `CHANGE_UNCLEAR` | change metric row whose §6.6 test is not met | C-CHANGE |
+| `WX_GAP_FILLED` | `winter_harshness.csv` row with `filled_days` > 0 (§11) | C-WEATHER |
+| `WX_MISSING_OBS` | `winter_harshness.csv` row with `missing_days` > 0 (§11) | C-WEATHER |
 
 **Caveat text** (≤ 40 words each; dates are templated):
 
@@ -470,6 +477,7 @@ All companion tables are listed in `checksums.sha256` under the existing release
 - **C-EQUITY** — Groups are census tracts ranked by poverty rate (ACS) or grouped by majority race/ethnicity (2020 Census). Differences are descriptive and don't show why service differs or how any individual was treated.
 - **C-SUPPRESS** — Not shown: too few requests, or too little street mileage or population, for a stable figure.
 - **C-CHANGE** — Change compares the same months or years before and after. Areas are colored only where the gap from the citywide trend exceeds normal variation for an area that size. This shows where things moved, not why.
+- **C-WEATHER** — Winter harshness comes only from O'Hare weather records: wet freeze–thaw days, cold, precipitation, and snow, scored against 30 past winters. It is context for reading reports and response times. It never adjusts them and doesn't measure street damage.
 - **C-WARDOFFICE** — Ward office requests are pothole reports filed by an alderperson's office, often for residents who called it. A high share can reflect how an office handles calls, not how many potholes there are.
 
 ### 8.4 Generated sentences
@@ -512,6 +520,7 @@ Race and poverty are strongly collinear in Chicago. Do not cross-tabulate them.
 | D7 | 2020 population deviation across `ward2023` | If max \|dev\| ≤ 5%, add a tooltip note that per-capita ≈ raw count on wards |
 | D8 | Citywide `rpt_n` and `close_p50_d` by year under three variants: as defined; with `crew_logged` included; with `Salesforce Mobile App` moved into demand; with the raw `duplicate` flag in place of `dup_eff` | Publish as a methods note |
 | D9 | 311 `ward` field vs. point-in-polygon: rows before 2023-05-15 vs. `k9yb-bpqx`; later rows vs. `p293-wvbd` | Mismatch > 2% → investigate geocoding (profile Q12's 15% compared 2021 rows against the wrong map) |
+| D10 | Spearman correlation between winter `harshness` (§11) and citywide `rpt_n`, over CY periods without `PARTIAL_YEAR` (W2019–W2025 at this snapshot). Report only; it is not used anywhere in computation. | Expected positive. If it isn't, the §11 components get re-examined, not re-weighted to fit |
 
 ### Gate 1 — build fails if any check fails
 
@@ -545,16 +554,62 @@ Race and poverty are strongly collinear in Chicago. Do not cross-tabulate them.
 | W6 | Any race group merged under §4.7 step 5 |
 | W7 | More than 40% of mapped geographies are non-zero on any Change layer (check whether a citywide shift is leaking into `vscity`) |
 | W8 | Promoted rows (§2.1.1) exceed 15% of `duplicate = true` PHF/PHB rows in any year. Report by year × reason (`other_type`, `not_found`, `cycle`), plus 10-move-cap hits. |
+| W9 | Midway's winter harshness (§11) rank-correlates with O'Hare's at Spearman < 0.85 over the reference winters |
 
 ---
 
-## 11. Optional context (not a metric)
+## 11. Winter harshness index (context, not a metric)
 
-A citywide chart of freeze–thaw days may accompany the reports series.
-- Definition: days with Tmin < 32°F and Tmax > 32°F.
-- Source: NOAA GHCN-Daily, O'Hare station.
-- Grouping: by calendar year and by winter.
-- It is never used to normalize or adjust any metric.
+**What it measures.** How much a winter's weather promoted pothole formation on Chicago streets. It is built only from daily weather observations and never from 311 or Patched data, so it can be set against reports and response times without circularity.
+
+**Window and labeling.** A winter `W{Y}` runs Nov 1 of Y−1 through Apr 30 of Y (local time). It pairs with `CY{Y}` and `YTD{Y}-{MM}`.
+- Rationale: Chicago pothole reporting peaks Feb–Apr, and Nov–Dec damage mostly surfaces after New Year.
+- Publish the share of `wet_ft_days` falling in Nov–Dec so the mismatch is visible.
+- All eight winters W2019–W2026 are complete at this snapshot.
+
+**Source.**
+- GHCN-Daily station `USW00094846` (O'Hare), fields `TMAX`, `TMIN`, `PRCP`, `SNOW`, `SNWD`, pulled via the NCEI Access Data Service (`dataset=daily-summaries`, `units=standard`) from 1991-11-01 to latest, saved to `data/raw/{snapshot_id}/ghcnd_ohare.csv`.
+- `USW00014819` (Midway) is pulled the same way for gap-filling and QA only.
+- Reference distribution: the 30 winters W1992–W2021 (Nov 1991–Apr 2021, matching the 1991–2020 normals convention). Standardizing against 30 winters rather than the 8 published ones is what keeps a single wild winter from redefining "typical."
+
+**Components.** Each is summed over the winter window. Each is a distinct damage pathway, even though the inputs correlate.
+
+| Component | Definition | Mechanism |
+|---|---|---|
+| `wet_ft_days` | Days with `TMIN` < 32 and `TMAX` > 32 AND (Σ `PRCP` over days d−2..d ≥ 0.10 in OR `SNWD` on d−1 ≥ 1 in) | Water in cracks that freezes and expands; the freeze–thaw cycles that matter are the wet ones |
+| `fdd` | Σ max(0, 32 − (`TMAX` + `TMIN`)/2) | Cumulative freezing index → frost depth (∝ √FDD) → heave and spring thaw weakening of the subgrade |
+| `prcp_in` | Σ `PRCP` (liquid equivalent) | Moisture supply to the pavement structure over the freezing season |
+| `snow_in` | Σ `SNOW` | Proxy for plow passes and deicer application; salt also drives refreeze cycles below 32°F |
+
+`ft_days` (the §11 definition in versions 0.1–0.3: `TMIN` < 32 and `TMAX` > 32, without the moisture condition) is retained as a published tooltip value and a sensitivity variant, not a component.
+
+**Index.**
+- For each component c and winter w, z_cw = (x_cw − μ_c) / σ_c, with μ and σ from the 30-winter reference (sample SD).
+- `harshness` = mean(z) over the four components, with equal weights fixed a priori. Rounded to 2 decimals.
+- Category labels for the chart: Mild < −0.5, Typical −0.5 to 0.5, Harsh 0.5 to 1.0, Severe > 1.0.
+- Also publish `harshness_pctile` = percentile rank of `harshness` within the reference winters.
+
+**Rules.**
+- Weights are never tuned against 311 or Patched data. A post-hoc Spearman correlation between `harshness` and citywide `rpt_n` (W2019–W2025) is published as a diagnostic (D10), expected positive. If it isn't, the components get re-examined, not re-weighted to fit.
+- Missing `TMAX`/`TMIN`: fill single-day gaps from Midway and record `filled_days`. The build fails if any winter has > 5 unfilled days.
+- Missing `PRCP`/`SNOW` count as 0 and are counted in `missing_days`. Trace = 0.
+- Sensitivity outputs (a methods note, like D8): the ranking of the 8 winters under each single component alone, under `ft_days` in place of `wet_ft_days`, and with `wet_ft_days` double-weighted.
+- QA: Midway's harshness over the reference winters must rank-correlate with O'Hare's at Spearman ≥ 0.85 (W9).
+- The index is never used to normalize or adjust any pothole metric. It is context for reading them.
+
+**Output.** `data/processed/winter_harshness.csv`: `winter, cy_period, ytd_period, wet_ft_days, ft_days, fdd, prcp_in, snow_in, z_wet_ft, z_fdd, z_prcp, z_snow, harshness, harshness_pctile, category, nov_dec_share, filled_days, missing_days, flags`. Plus `winter_reference_stats.json` with μ/σ per component and `methods_version`, and `winter_sensitivity.csv`. All go in `checksums.sha256`.
+
+**Implementation notes.** Points the definitions above leave open, fixed here so the code has one reading. None was chosen by looking at 311 or Patched data.
+- **Published winters:** W2019 through the latest winter whose Apr 30 is in the O'Hare file. Reference winters before W2019 appear only in `winter_reference_stats.json`.
+- **Single-day gap:** the element is missing on day d and present at O'Hare on both d−1 and d+1. Longer gaps are never filled. `TMAX` and `TMIN` are filled independently; a value O'Hare has is never replaced. A day still missing either one adds nothing to `ft_days`, `wet_ft_days`, or `fdd`, and counts as unfilled. The > 5 rule applies to reference and published winters alike.
+- **`missing_days`:** window days on which `PRCP` or `SNOW` is missing. A missing `SNWD` also counts as 0 (the snow-depth condition is not met); it is tallied separately in `winter_reference_stats.json`, because it only occurs in reference winters.
+- **Lookback:** the 3-day `PRCP` sum and prior-day `SNWD` for Nov 1–2 read Oct 30–31 from the same file. Those days are outside the window and add to no sum.
+- **Category edges:** evaluated on the published 2-decimal value. Mild < −0.50 ≤ Typical ≤ 0.50 < Harsh ≤ 1.00 < Severe.
+- **`harshness_pctile`:** the percent of the 30 reference winters whose unrounded `harshness` is at or below this winter's, as an integer. W2019–W2021 are themselves reference winters.
+- **Precision:** `fdd` and `snow_in` 1 decimal; `prcp_in` and every z 2 decimals; `nov_dec_share` 4 decimals on a 0–1 scale, empty when `wet_ft_days` = 0. Rounding is `ROUND_HALF_UP` (§6.2). Observations are held as exact decimals, so the 0.10 in, 1 in, and 32°F comparisons are exact; a value exactly at 32 is neither below nor above it.
+- **Sensitivity ranks:** 1 = harshest, computed on unrounded values; tied winters share the lower rank number. The `ft_days` variant standardizes `ft_days` against its own reference μ/σ.
+- **Known reference-period gaps (O'Hare).** `SNOW` is missing on 50, 39, and 78 window days in W1996–W1998, and `SNWD` on 27–107 days in W1996–W1999 and 31 days in W2002. Under the rule above these count as 0, which pulls the reference μ for `snow_in` down slightly and makes every published `z_snow` marginally high. Midway cannot fill them (next note). The affected winters are listed in `winter_reference_stats.json`.
+- **W9 basis.** Midway's file starts 1997-05-01 and reports `SNOW` on almost no days and `SNWD` on few. W9 therefore runs over the reference winters in which Midway has ≤ 5 missing days of `TMAX`/`TMIN` and of `PRCP` (W1999–W2021 at this snapshot), on a Midway index of `wet_ft_days`, `fdd`, and `prcp_in` standardized against Midway's own μ/σ over those winters, compared with O'Hare's published four-component `harshness`. `qa_report.json` also gives the Spearman ρ for each component separately.
 
 ---
 
@@ -569,6 +624,7 @@ A citywide chart of freeze–thaw days may accompany the reports series.
 - **That a colored change is caused by anything in particular,** or that an uncolored area had no change. Change classes mark differences from the city trend that exceed count-based chance variation. They do not account for weather, reporting habits, or crew deployment.
 - **That crew-logged records are definitely proactive.** That classification is inferred from the entering department and same-day closure.
 - **Coverage of expressways, other limited-access roads, or private drives,** or of problems reported outside 311.
+- **That a harsh winter caused a rise in reports, or how much of one.** The winter harshness index (§11) is built from weather records alone and sits beside the series as context. No figure is adjusted for it, and the site makes no estimate of how much of any change is due to weather.
 - **Anything before 2019,** or any forecast.
 
 ---
@@ -580,3 +636,4 @@ A citywide chart of freeze–thaw days may accompany the reports series.
 | 0.1 | 2026-09-16 | Initial draft following methods review. Pending Gate 0 results and open questions. |
 | 0.2 | 2026-09-16 | Map design review (MAP_SPEC 1.0). Added: §6.6 change metrics, `CHG_*` periods, and pooled change windows; the Change map layer, now the default view; the `CHANGE_UNCLEAR` flag; C-CHANGE and C-WARDOFFICE caveats; §8.4 sentence rules; `change_summary.csv`; checks V13–V15 and W7. Fixed: double-counting of boundary segments in §4.5. Considered and rejected: segment-level fill metrics (every segment fails §7.1, even pooled) and bivariate covariate classes (they conflict with §4.7 and §9). |
 | 0.3 | 2026-09-16 | Decisions on open questions. **Duplicates:** effective-duplicate rule and multi-hop `root_sr` (§2.1.1); parent lookup at fetch (§1); report metrics use each row's own channel; W8; D8 raw-flag variant. **Strata:** out-of-city points go to `UNASSIGNED` (§4.2). **Pooled rates:** annualized values; `expected_n` on the window total; `fill_per_mi` gated on work orders (§6.1, §7.1). **YTD breaks:** 12 frozen sets keyed by `MM`, current year excluded (§7.2, §8.2). **Quantiles:** nearest-rank for uncensored quantiles; `ROUND_HALF_UP` for `*_d` (§6.2). |
+| 0.4 | 2026-09-20 | **Winter harshness index.** §11 rewritten: the freeze–thaw-days context chart becomes a four-component, weather-only index (`wet_ft_days`, `fdd`, `prcp_in`, `snow_in`) standardized against W1992–W2021, with `ft_days` kept as a tooltip value and sensitivity variant. Added: GHCN-Daily station files in the snapshot (§1); `winter_harshness.csv`, `winter_reference_stats.json`, and `winter_sensitivity.csv` (§8.2); flags `WX_GAP_FILLED` and `WX_MISSING_OBS` and caveat C-WEATHER (§8.3); D10 and W9 (§10); a §12 bullet. No pothole metric, period, threshold, or class break changed, so `breaks.json` is not recomputed. |

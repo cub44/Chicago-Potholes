@@ -1,52 +1,201 @@
 {
  "gate0": [
   {
+   "id": "D1",
+   "check": "Reverse linkage: lowest-year share of closed reports with a linked patch",
+   "result": "69.8%",
+   "threshold": ">= ~50%",
+   "status": "met",
+   "decision": "close time stays the headline speed metric"
+  },
+  {
+   "id": "D2",
+   "check": "Linked SRs with more than one work order",
+   "result": "0.06%",
+   "threshold": "<= 5%",
+   "status": "met",
+   "decision": "min(completion_date) rule stands"
+  },
+  {
+   "id": "D3",
+   "check": "Work orders linked to an alley (PHB) request",
+   "result": "0.0%",
+   "threshold": "< 1%",
+   "status": "met",
+   "decision": "street and alley fills are not split"
+  },
+  {
+   "id": "D4",
+   "check": "Patch completion minus 311 close, linked pairs",
+   "result": "99.95% within 60 seconds; 100.0% within a day (n = 234,815)",
+   "threshold": "report only",
+   "status": "report only",
+   "decision": "patch_* is 311 close time on the linked subset, not an independent clock; disclosed"
+  },
+  {
+   "id": "D5",
+   "check": "Lake Shore Drive share of fill_n",
+   "result": "0.595%",
+   "threshold": "> 0.5% adds LSD",
+   "status": "tripped",
+   "decision": "Lake Shore Drive is in both the per-mile numerators and the street-mile denominator, although it is class 1 (limited access)"
+  },
+  {
+   "id": "D6",
+   "check": "311 points snapped to a centerline within 100 ft",
+   "result": "93.69%",
+   "threshold": ">= 97.0%",
+   "status": "not met",
+   "decision": "100 ft radius kept; the 6.31% unsnapped are road_class other_unsnapped: counted in per-mile numerators, absent from the __arterial/__local variants"
+  },
+  {
+   "id": "D7",
+   "check": "Max |deviation| of ward population from the mean",
+   "result": "4.97%",
+   "threshold": "<= 5% adds tooltip note",
+   "status": "report only",
+   "decision": "per-capita ~ raw count on wards"
+  },
+  {
+   "id": "D8",
+   "check": "Citywide rpt_n under four demand definitions (methods note)",
+   "threshold": "report only",
+   "status": "report only",
+   "result": [
+    {
+     "yr": 2019,
+     "as_defined": 42535,
+     "with_crew": 45872,
+     "with_salesforce": 42535,
+     "raw_dup_flag": 40278
+    },
+    {
+     "yr": 2020,
+     "as_defined": 24002,
+     "with_crew": 33156,
+     "with_salesforce": 24062,
+     "raw_dup_flag": 23679
+    },
+    {
+     "yr": 2021,
+     "as_defined": 22707,
+     "with_crew": 31587,
+     "with_salesforce": 23092,
+     "raw_dup_flag": 22288
+    },
+    {
+     "yr": 2022,
+     "as_defined": 35847,
+     "with_crew": 45549,
+     "with_salesforce": 36163,
+     "raw_dup_flag": 35070
+    },
+    {
+     "yr": 2023,
+     "as_defined": 28181,
+     "with_crew": 40678,
+     "with_salesforce": 28415,
+     "raw_dup_flag": 27528
+    },
+    {
+     "yr": 2024,
+     "as_defined": 27828,
+     "with_crew": 38156,
+     "with_salesforce": 28126,
+     "raw_dup_flag": 26150
+    },
+    {
+     "yr": 2025,
+     "as_defined": 20911,
+     "with_crew": 29612,
+     "with_salesforce": 21407,
+     "raw_dup_flag": 19402
+    },
+    {
+     "yr": 2026,
+     "as_defined": 27275,
+     "with_crew": 34124,
+     "with_salesforce": 27724,
+     "raw_dup_flag": 25885
+    }
+   ],
+   "decision": "published as a methods note"
+  },
+  {
+   "id": "D9",
+   "check": "311 ward field vs point-in-polygon, worst cohort",
+   "result": "4.18%",
+   "threshold": "<= 2%",
+   "status": "not met",
+   "decision": "records are placed by their own coordinates, never by the 311 ward field, so no published figure depends on it; the cause of the pre-remap mismatch has not been investigated"
+  },
+  {
    "id": "D10",
    "check": "Spearman of winter harshness vs citywide rpt_n, full CY periods (report only)",
-   "rho": 0.5,
-   "n": 7,
+   "result": "rho = 0.2 (n = 6, 2020-2025, exact p = 0.7139); with 2019 rho = 0.5 (n = 7, exact p = 0.2667)",
+   "threshold": "report only",
+   "status": "report only",
+   "decision": "not distinguishable from zero (exact two-sided p >= 0.05 with and without 2019)",
+   "rho": 0.2,
+   "n": 6,
+   "years": "2020-2025",
+   "p_exact": 0.7139,
+   "with_2019": {
+    "rho": 0.5,
+    "n": 7,
+    "years": "2019-2025",
+    "p_exact": 0.2667
+   },
+   "conclusion": "not distinguishable from zero (exact two-sided p >= 0.05 with and without 2019)",
    "pairs": [
     {
      "winter": "W2019",
      "harshness": 0.96,
      "cy_period": "CY2019",
-     "rpt_n": 42535
+     "rpt_n": 42535,
+     "in_headline": false
     },
     {
      "winter": "W2020",
      "harshness": -0.14,
      "cy_period": "CY2020",
-     "rpt_n": 24002
+     "rpt_n": 24002,
+     "in_headline": true
     },
     {
      "winter": "W2021",
      "harshness": -0.38,
      "cy_period": "CY2021",
-     "rpt_n": 22707
+     "rpt_n": 22707,
+     "in_headline": true
     },
     {
      "winter": "W2022",
      "harshness": -0.23,
      "cy_period": "CY2022",
-     "rpt_n": 35847
+     "rpt_n": 35847,
+     "in_headline": true
     },
     {
      "winter": "W2023",
      "harshness": -0.72,
      "cy_period": "CY2023",
-     "rpt_n": 28181
+     "rpt_n": 28181,
+     "in_headline": true
     },
     {
      "winter": "W2024",
      "harshness": -0.95,
      "cy_period": "CY2024",
-     "rpt_n": 27828
+     "rpt_n": 27828,
+     "in_headline": true
     },
     {
      "winter": "W2025",
      "harshness": -0.77,
      "cy_period": "CY2025",
-     "rpt_n": 20911
+     "rpt_n": 20911,
+     "in_headline": true
     }
    ]
   }
@@ -72,15 +221,17 @@
   },
   {
    "id": "V2",
-   "check": "Additivity: sum(geo) + UNASSIGNED = city, per count metric and period",
+   "check": "Additivity: sum(geo) + UNASSIGNED (+ EXCLUDED for strata) = city, per count metric and period",
    "status": "PASS",
-   "detail": "0 mismatch(es): []"
+   "detail": "0 mismatch(es) over community_area, ward2023, pov_quintile, race_group: []"
   },
   {
    "id": "V3",
-   "check": "Geography loss <= 2.25% per count metric per CY",
-   "status": "PASS",
-   "detail": ""
+   "check": "Geography loss <= 1.5% per count metric per CY",
+   "status": "FAIL",
+   "detail": "12 cell(s) over 1.5%: crew_n CY2021 ward2023 2.164%; rpt_n CY2019 ward2023 2.107%; rpt_n CY2019 community_area 2.095%; crew_n CY2021 community_area 2.04%; crew_n CY2022 community_area 1.95%; crew_n CY2022 ward2023 1.94%; crew_n CY2026 ward2023 1.791%; staff_n CY2019 community_area 1.775%; staff_n CY2019 ward2023 1.775%; crew_n CY2026 community_area 1.762%; rpt_all_n CY2019 ward2023 1.675%; rpt_all_n CY2019 community_area 1.66%",
+   "accepted": "Restored to METHODS' 1.5% cap (a 0.4-era config change had raised it to 2.25% without a changelog entry). These count-years exceed it and are published as they are, with each loss in join_loss: 2019 is the 311 system's first full year and is kept off the map; crew_n and staff_n are city-entered records outside demand and never mapped; CY2026 is a partial year.",
+   "accepted_cells": 12
   },
   {
    "id": "V4",
@@ -101,22 +252,42 @@
    "detail": "dur_days<0=0, patch_days<0=0, bad_close(dropped)=0"
   },
   {
-   "id": "V8",
-   "check": "No non-null value where \u00a77.1 fails; every null value carries a flag",
+   "id": "V7a",
+   "check": "KM fixtures match hand-computed and lifelines values",
    "status": "PASS",
-   "detail": "non-null suppressed=0, unflagged nulls=0"
+   "detail": "8 of 8 fixtures pass"
+  },
+  {
+   "id": "V7b",
+   "check": "KM p50 within 0.5 day of the completed-only p50 where under 0.5% of the cohort is open",
+   "status": "FAIL",
+   "detail": "2375 cohorts tested, 11 outside tolerance: [('community_area', '29', 'CY2023', 'close', 13.6, 12.97), ('community_area', '42', 'CY2024', 'close', 14.1, 12.99), ('ward2023', '18', 'CY2024', 'close', 10.7, 10.13), ('community_area', '22', 'CY2025', 'close', 32.6, 32.02)]",
+   "accepted": "KM is correct in every listed cohort (V7c: its median is the closed order statistic at rank ceil(n/2) with the one or two open reports counted). The completed-only median is one rank lower, and in these cohorts adjacent closing times are more than 0.5 day apart, so the 0.5-day tolerance cannot hold. The tolerance is kept as METHODS states it.",
+   "accepted_cells": 11
+  },
+  {
+   "id": "V7c",
+   "check": "KM p50 equals the closed-report order statistic at rank ceil(n/2), n counting open reports, in every V7b cohort whose open reports are all censored after the median",
+   "status": "PASS",
+   "detail": "2375 cohorts tested exactly, 0 differ: []"
+  },
+  {
+   "id": "V8",
+   "check": "Every \u00a77.1 rule re-derived from n: no non-null value where a rule fails, no suppression without a failing rule, every null flagged",
+   "status": "PASS",
+   "detail": "not_suppressed=0; over_suppressed=0; unflagged_null=0; chg_n_mismatch=0; partial_yoy_published=0"
   },
   {
    "id": "V9a",
    "check": "City street_mi in [3850, 4050]; sum(geo) = city +/- 0.5%",
    "status": "PASS",
-   "detail": "city=3950.4, CA=3950.4, ward=3938.9"
+   "detail": "city=3950.4, community_area=3950.4, ward2023=3938.9, pov_quintile=3950.4, race_group=3950.4"
   },
   {
    "id": "V9b",
-   "check": "Sum pop2020 = 2,746,388 +/- 0.1%",
+   "check": "Sum pop2020 = 2,746,388 +/- 0.1% for every geography type",
    "status": "PASS",
-   "detail": "{'community_area': 2746412, 'ward2023': 2746412}"
+   "detail": "{'community_area': 2746412, 'ward2023': 2746412, 'pov_quintile': 2746412, 'race_group': 2746412}"
   },
   {
    "id": "V12",
@@ -126,23 +297,53 @@
   },
   {
    "id": "V10",
-   "check": "Unique key; period/metric patterns; shares in [0,1]; days >= 0",
+   "check": "Unique key; period/metric patterns; shares in [0,1]; days >= 0; precision matches the \u00a78.1 dictionary; every mapped pair has breaks in CY and all 12 YTD months",
    "status": "PASS",
-   "detail": "dupkey=0, bad_period=[], bad_metric=[], share_oob=0, neg_days=0"
+   "detail": "dupkey=0, bad_period=[], bad_metric=[], share_oob=0, neg_days=0, precision_mismatch=[], missing_breaks=0 []"
   },
   {
    "id": "V13",
    "check": "change_summary.csv matches the published *_chgcls rows",
    "status": "PASS",
    "detail": "0 mismatched group(s)"
+  },
+  {
+   "id": "V14",
+   "check": "Change-statistic fixtures (log-ratio se, Greenwood, dispersion, BH) match hand-computed and lifelines values to 1e-9",
+   "status": "PASS",
+   "detail": "10 of 10 fixtures pass"
+  },
+  {
+   "id": "V15",
+   "check": "Caveat registry: every published flag has a caveat; every caveat <= 40 words with no causal verb, grade or name slot",
+   "status": "PASS",
+   "detail": "11 flags in use, 16 caveats; no_entry=[], dangling=[], copy=[]"
+  },
+  {
+   "id": "V11a",
+   "check": "Two builds of the same snapshot and code are byte-identical",
+   "status": "PASS",
+   "detail": "9 release files byte-identical to an earlier build of snapshot 2026-09-21T012058Z (qa_report.json excluded: it records live portal queries)"
+  },
+  {
+   "id": "V11c",
+   "check": "potholes_long.csv value text has the \u00a78.1 dictionary's decimal places",
+   "status": "PASS",
+   "detail": "every non-empty value checked"
+  },
+  {
+   "id": "V11b",
+   "check": "checksums.sha256 lists exactly the release, every hash matching",
+   "status": "PASS",
+   "detail": "10 files listed and hash-matched"
   }
  ],
  "gate2": [
   {
    "id": "V1d",
    "check": "Current partial year drifted since the pull",
-   "status": "ok",
-   "detail": ""
+   "status": "WARN",
+   "detail": "phf_rows 2026: ours 52,853 vs live 52,996 (-0.270%)"
   },
   {
    "id": "REF",
@@ -152,9 +353,33 @@
   },
   {
    "id": "V3w",
-   "check": "Geography loss over 1.0%",
+   "check": "Geography loss over 1.0% (and within the V3 cap)",
    "status": "WARN",
-   "detail": "[('crew_n', 'CY2019', 'community_area', np.float64(1.353)), ('crew_n', 'CY2019', 'ward2023', np.float64(1.353)), ('crew_n', 'CY2020', 'community_area', np.float64(1.432)), ('crew_n', 'CY2020', 'ward2023', np.float64(1.432)), ('crew_n', 'CY2021', 'community_area', np.float64(2.04))]"
+   "detail": "crew_n CY2019 community_area 1.353%; crew_n CY2019 ward2023 1.353%; crew_n CY2020 community_area 1.432%; crew_n CY2020 ward2023 1.432%; crew_n CY2025 community_area 1.194%; crew_n CY2025 ward2023 1.194%; rpt_n CY2026 community_area 1.019%; rpt_n CY2026 ward2023 1.03%"
+  },
+  {
+   "id": "W1",
+   "check": "Citywide rpt_dup_share moves > 15 pts from the prior year",
+   "status": "ok",
+   "detail": "CY2021 +0.5 pts; CY2022 +10.9 pts; CY2023 -11.3 pts; CY2024 +9.1 pts; CY2025 +9.5 pts; YTD2026-08 -1.5 pts"
+  },
+  {
+   "id": "W2",
+   "check": "Citywide crew_logged share of non-duplicate PHF moves > 10 pts from the prior year",
+   "status": "ok",
+   "detail": "2021 +0.3 pts; 2022 -6.6 pts; 2023 +9.5 pts; 2024 -3.0 pts; 2025 +2.5 pts; 2026 -9.9 pts"
+  },
+  {
+   "id": "W3",
+   "check": "Mapped geography-year with EXTREME_FILL",
+   "status": "WARN",
+   "detail": "56 cell(s) on community areas and wards, 2020 onward"
+  },
+  {
+   "id": "W4",
+   "check": "Geography-year value > 3x that geography's own 2020-2025 median",
+   "status": "WARN",
+   "detail": "125 cell(s); by metric: alley_close_p50_d 57, close_p50_d 33, patch_p50_d 25, rpt_alder_share 8, fill_crew_share 2; e.g. community_area 4 CY2020 alley_close_p50_d; community_area 5 CY2020 alley_close_p50_d; community_area 6 CY2020 alley_close_p50_d"
   },
   {
    "id": "W5",
@@ -163,34 +388,52 @@
    "detail": "currency=2026-09-20 19:02:51, pulled=2026-09-21T01:29:48.062991+00:00"
   },
   {
-   "id": "W3",
-   "check": "Mapped geography-year with EXTREME_FILL",
-   "status": "WARN",
-   "detail": "75 cell(s)"
-  },
-  {
    "id": "W6",
    "check": "Race group merged into no_majority under \u00a74.7 step 5",
    "status": "WARN",
-   "detail": "nh_asian (190.9/yr)"
+   "detail": "nh_asian (184.7/yr)"
+  },
+  {
+   "id": "W7",
+   "check": "community_area rpt_per_mi_chgcls: > 40% of published geographies non-zero",
+   "status": "ok",
+   "detail": "long 3.9% of 77 (phi 10.7758); last 0.0% of 77 (phi 3.6066); ytd 4.0% of 75 (phi 3.5865)"
+  },
+  {
+   "id": "W7",
+   "check": "community_area fill_per_mi_chgcls: > 40% of published geographies non-zero",
+   "status": "ok",
+   "detail": "long 5.2% of 77 (phi 8.2549); last 0.0% of 77 (phi 3.7805); ytd 0.0% of 77 (phi 1.9802)"
+  },
+  {
+   "id": "W7",
+   "check": "community_area close_le7_share_chgcls: > 40% of published geographies non-zero",
+   "status": "ok",
+   "detail": "long 1.3% of 77 (phi 14.13); last 0.0% of 77 (phi 10.3878); ytd 1.3% of 75 (phi 3.6358)"
+  },
+  {
+   "id": "W7",
+   "check": "ward2023 rpt_per_mi_chgcls: > 40% of published geographies non-zero",
+   "status": "ok",
+   "detail": "long 0.0% of 50 (phi 19.6042); last 0.0% of 50 (phi 4.9462); ytd 4.0% of 50 (phi 4.4296)"
+  },
+  {
+   "id": "W7",
+   "check": "ward2023 fill_per_mi_chgcls: > 40% of published geographies non-zero",
+   "status": "ok",
+   "detail": "long 0.0% of 50 (phi 15.2421); last 0.0% of 50 (phi 6.7877); ytd 0.0% of 50 (phi 2.1149)"
+  },
+  {
+   "id": "W7",
+   "check": "ward2023 close_le7_share_chgcls: > 40% of published geographies non-zero",
+   "status": "ok",
+   "detail": "long 0.0% of 50 (phi 28.4153); last 0.0% of 50 (phi 15.797); ytd 8.0% of 50 (phi 5.4125)"
   },
   {
    "id": "W8",
    "check": "Promoted rows > 15% of duplicate PHF/PHB in any year",
    "status": "ok",
    "detail": "[]"
-  },
-  {
-   "id": "W7",
-   "check": "community_area: >40% of geographies non-zero on rpt_per_mi_chgcls",
-   "status": "WARN",
-   "detail": "42.9%"
-  },
-  {
-   "id": "W7",
-   "check": "ward2023: >40% of geographies non-zero on rpt_per_mi_chgcls",
-   "status": "WARN",
-   "detail": "49.3%"
   },
   {
    "id": "W9",
@@ -349,10 +592,10 @@
    "metric": "phf_rows",
    "year": 2026,
    "ours": 52853,
-   "portal_live": 52853,
+   "portal_live": 52996,
    "reference": null,
    "drift_vs_reference_pct": null,
-   "ours_vs_live_pct": 0.0
+   "ours_vs_live_pct": -0.2698
   }
  ],
  "join_loss": [
@@ -1255,6 +1498,81 @@
  ],
  "snapshot_id": "2026-09-21T012058Z",
  "data_currency": "2026-09-20 19:02:51",
- "methods_version": "0.4",
- "has_census": true
+ "methods_version": "0.5",
+ "has_census": true,
+ "summary": {
+  "gate1": {
+   "defined": 15,
+   "passed": [
+    "V1",
+    "V2",
+    "V4",
+    "V5",
+    "V6",
+    "V8",
+    "V9",
+    "V10",
+    "V11",
+    "V12",
+    "V13",
+    "V14",
+    "V15"
+   ],
+   "failed_published": [
+    "V3",
+    "V7"
+   ],
+   "failed": [],
+   "skipped": [],
+   "not_run": []
+  },
+  "gate2": {
+   "defined": [
+    "W1",
+    "W2",
+    "W3",
+    "W4",
+    "W5",
+    "W6",
+    "W7",
+    "W8",
+    "W9"
+   ],
+   "open": [
+    {
+     "id": "V1d",
+     "check": "Current partial year drifted since the pull"
+    },
+    {
+     "id": "V3w",
+     "check": "Geography loss over 1.0% (and within the V3 cap)"
+    },
+    {
+     "id": "W3",
+     "check": "Mapped geography-year with EXTREME_FILL"
+    },
+    {
+     "id": "W4",
+     "check": "Geography-year value > 3x that geography's own 2020-2025 median"
+    },
+    {
+     "id": "W6",
+     "check": "Race group merged into no_majority under \u00a74.7 step 5"
+    },
+    {
+     "id": "W9",
+     "check": "Midway vs O'Hare harshness: Spearman < 0.85 over reference winters"
+    }
+   ],
+   "open_count": 6,
+   "open_ids": [
+    "V1",
+    "V3",
+    "W3",
+    "W4",
+    "W6",
+    "W9"
+   ]
+  }
+ }
 }

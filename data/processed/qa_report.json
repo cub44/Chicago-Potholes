@@ -261,7 +261,7 @@
    "id": "V7b",
    "check": "KM p50 within 0.5 day of the completed-only p50 where under 0.5% of the cohort is open",
    "status": "FAIL",
-   "detail": "2375 cohorts tested, 11 outside tolerance: [('community_area', '29', 'CY2023', 'close', 13.6, 12.97), ('community_area', '42', 'CY2024', 'close', 14.1, 12.99), ('ward2023', '18', 'CY2024', 'close', 10.7, 10.13), ('community_area', '22', 'CY2025', 'close', 32.6, 32.02)]",
+   "detail": "2375 cohorts tested, 11 outside tolerance: [('community_area', '29', 'CY2023', 'close', 13.6, 12.97), ('ward2023', '18', 'CY2024', 'close', 10.7, 10.13), ('community_area', '42', 'CY2024', 'close', 14.1, 12.99), ('ward2023', '34', 'CY2025', 'close', 9.7, 9.03)]",
    "accepted": "KM is correct in every listed cohort (V7c: its median is the closed order statistic at rank ceil(n/2) with the one or two open reports counted). The completed-only median is one rank lower, and in these cohorts adjacent closing times are more than 0.5 day apart, so the 0.5-day tolerance cannot hold. The tolerance is kept as METHODS states it.",
    "accepted_cells": 11
   },
@@ -343,7 +343,7 @@
    "id": "V1d",
    "check": "Current partial year drifted since the pull",
    "status": "WARN",
-   "detail": "phf_rows 2026: ours 52,853 vs live 52,996 (-0.270%)"
+   "detail": "phf_rows 2026: ours 52,853 vs live 53,001 (-0.279%)"
   },
   {
    "id": "REF",
@@ -385,7 +385,7 @@
    "id": "W5",
    "check": "data_currency more than 3 days older than snapshot_id",
    "status": "ok",
-   "detail": "currency=2026-09-20 19:02:51, pulled=2026-09-21T01:29:48.062991+00:00"
+   "detail": "currency=2026-09-20 19:02:51, snapshot_id=2026-09-21T012058Z (pull finished 2026-09-21T01:29:48.062991+00:00)"
   },
   {
    "id": "W6",
@@ -397,7 +397,7 @@
    "id": "W7",
    "check": "community_area rpt_per_mi_chgcls: > 40% of published geographies non-zero",
    "status": "ok",
-   "detail": "long 3.9% of 77 (phi 10.7758); last 0.0% of 77 (phi 3.6066); ytd 4.0% of 75 (phi 3.5865)"
+   "detail": "long 3.9% of 77 (phi 10.7755); last 0.0% of 77 (phi 3.6066); ytd 4.0% of 75 (phi 3.5865)"
   },
   {
    "id": "W7",
@@ -415,7 +415,7 @@
    "id": "W7",
    "check": "ward2023 rpt_per_mi_chgcls: > 40% of published geographies non-zero",
    "status": "ok",
-   "detail": "long 0.0% of 50 (phi 19.6042); last 0.0% of 50 (phi 4.9462); ytd 4.0% of 50 (phi 4.4296)"
+   "detail": "long 0.0% of 50 (phi 19.6057); last 0.0% of 50 (phi 4.9452); ytd 4.0% of 50 (phi 4.4296)"
   },
   {
    "id": "W7",
@@ -592,10 +592,10 @@
    "metric": "phf_rows",
    "year": 2026,
    "ours": 52853,
-   "portal_live": 52996,
+   "portal_live": 53001,
    "reference": null,
    "drift_vs_reference_pct": null,
-   "ours_vs_live_pct": -0.2698
+   "ours_vs_live_pct": -0.2792
   }
  ],
  "join_loss": [
@@ -1566,8 +1566,8 @@
    ],
    "open_count": 6,
    "open_ids": [
-    "V1",
-    "V3",
+    "V1d",
+    "V3w",
     "W3",
     "W4",
     "W6",

@@ -10,7 +10,7 @@ city,CHG_YTD2025-08_YTD2026-08,fill_per_mi_chgcls,0,0,1,0,
 city,CHG_YTD2025-08_YTD2026-08,rpt_per_mi_chgcls,0,0,1,0,
 community_area,CHG_CY2020-2022_CY2023-2025,close_le7_share_chgcls,1,0,76,0,14.13
 community_area,CHG_CY2020-2022_CY2023-2025,fill_per_mi_chgcls,3,1,73,0,8.2549
-community_area,CHG_CY2020-2022_CY2023-2025,rpt_per_mi_chgcls,2,1,74,0,10.7758
+community_area,CHG_CY2020-2022_CY2023-2025,rpt_per_mi_chgcls,2,1,74,0,10.7755
 community_area,CHG_CY2024_CY2025,close_le7_share_chgcls,0,0,77,0,10.3878
 community_area,CHG_CY2024_CY2025,fill_per_mi_chgcls,0,0,77,0,3.7805
 community_area,CHG_CY2024_CY2025,rpt_per_mi_chgcls,0,0,77,0,3.6066
@@ -19,10 +19,10 @@ community_area,CHG_YTD2025-08_YTD2026-08,fill_per_mi_chgcls,0,0,77,0,1.9802
 community_area,CHG_YTD2025-08_YTD2026-08,rpt_per_mi_chgcls,0,3,72,2,3.5865
 ward2023,CHG_CY2020-2022_CY2023-2025,close_le7_share_chgcls,0,0,50,0,28.4153
 ward2023,CHG_CY2020-2022_CY2023-2025,fill_per_mi_chgcls,0,0,50,0,15.2421
-ward2023,CHG_CY2020-2022_CY2023-2025,rpt_per_mi_chgcls,0,0,50,0,19.6042
+ward2023,CHG_CY2020-2022_CY2023-2025,rpt_per_mi_chgcls,0,0,50,0,19.6057
 ward2023,CHG_CY2024_CY2025,close_le7_share_chgcls,0,0,50,0,15.797
 ward2023,CHG_CY2024_CY2025,fill_per_mi_chgcls,0,0,50,0,6.7877
-ward2023,CHG_CY2024_CY2025,rpt_per_mi_chgcls,0,0,50,0,4.9462
+ward2023,CHG_CY2024_CY2025,rpt_per_mi_chgcls,0,0,50,0,4.9452
 ward2023,CHG_YTD2025-08_YTD2026-08,close_le7_share_chgcls,3,1,46,0,5.4125
 ward2023,CHG_YTD2025-08_YTD2026-08,fill_per_mi_chgcls,0,0,50,0,2.1149
 ward2023,CHG_YTD2025-08_YTD2026-08,rpt_per_mi_chgcls,0,2,48,0,4.4296

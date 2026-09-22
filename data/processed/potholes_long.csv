@@ -5,9 +5,9 @@ city,CHI,Chicago,CHG_CY2020-2022_CY2023-2025,close_le7_share_vscity_pts,0.0,7692
 city,CHI,Chicago,CHG_CY2020-2022_CY2023-2025,fill_per_mi_chg_pct,-18.0,90077,CHANGE_UNCLEAR
 city,CHI,Chicago,CHG_CY2020-2022_CY2023-2025,fill_per_mi_chgcls,0,90077,CHANGE_UNCLEAR
 city,CHI,Chicago,CHG_CY2020-2022_CY2023-2025,fill_per_mi_vscity_pct,0.0,90077,CHANGE_UNCLEAR
-city,CHI,Chicago,CHG_CY2020-2022_CY2023-2025,rpt_per_mi_chg_pct,-7.2,76055,CHANGE_UNCLEAR
-city,CHI,Chicago,CHG_CY2020-2022_CY2023-2025,rpt_per_mi_chgcls,0,76055,CHANGE_UNCLEAR
-city,CHI,Chicago,CHG_CY2020-2022_CY2023-2025,rpt_per_mi_vscity_pct,0.0,76055,CHANGE_UNCLEAR
+city,CHI,Chicago,CHG_CY2020-2022_CY2023-2025,rpt_per_mi_chg_pct,-7.2,76054,CHANGE_UNCLEAR
+city,CHI,Chicago,CHG_CY2020-2022_CY2023-2025,rpt_per_mi_chgcls,0,76054,CHANGE_UNCLEAR
+city,CHI,Chicago,CHG_CY2020-2022_CY2023-2025,rpt_per_mi_vscity_pct,0.0,76054,CHANGE_UNCLEAR
 city,CHI,Chicago,CHG_CY2024_CY2025,close_le7_share_chg_pts,-13.6,20911,CHANGE_UNCLEAR
 city,CHI,Chicago,CHG_CY2024_CY2025,close_le7_share_chgcls,0,20911,CHANGE_UNCLEAR
 city,CHI,Chicago,CHG_CY2024_CY2025,close_le7_share_vscity_pts,0.0,20911,CHANGE_UNCLEAR
@@ -68,13 +68,13 @@ city,CHI,Chicago,CY2020,alley_rpt_n,5712,5712,
 city,CHI,Chicago,CY2020,close_le7_share,0.5320,24002,
 city,CHI,Chicago,CY2020,close_le7_share__alderman,0.5415,3629,
 city,CHI,Chicago,CY2020,close_le7_share__arterial,0.5072,5554,
-city,CHI,Chicago,CY2020,close_le7_share__local,0.5441,17066,
+city,CHI,Chicago,CY2020,close_le7_share__local,0.5441,17067,
 city,CHI,Chicago,CY2020,close_le7_share__resident,0.5304,20373,
 city,CHI,Chicago,CY2020,close_open_share,0.0000,24002,
 city,CHI,Chicago,CY2020,close_p50_d,6.2,24002,
 city,CHI,Chicago,CY2020,close_p50_d__alderman,6.2,3629,
 city,CHI,Chicago,CY2020,close_p50_d__arterial,6.9,5554,
-city,CHI,Chicago,CY2020,close_p50_d__local,6.0,17066,
+city,CHI,Chicago,CY2020,close_p50_d__local,6.0,17067,
 city,CHI,Chicago,CY2020,close_p50_d__resident,6.2,20373,
 city,CHI,Chicago,CY2020,close_p90_d,65.2,24002,
 city,CHI,Chicago,CY2020,crew_n,9149,9149,
@@ -105,13 +105,13 @@ city,CHI,Chicago,CY2020-2022,alley_rpt_n,17418,17418,
 city,CHI,Chicago,CY2020-2022,close_le7_share,0.4364,82556,
 city,CHI,Chicago,CY2020-2022,close_le7_share__alderman,0.4235,13310,
 city,CHI,Chicago,CY2020-2022,close_le7_share__arterial,0.4384,19692,
-city,CHI,Chicago,CY2020-2022,close_le7_share__local,0.4358,57449,
+city,CHI,Chicago,CY2020-2022,close_le7_share__local,0.4358,57450,
 city,CHI,Chicago,CY2020-2022,close_le7_share__resident,0.4388,69246,
 city,CHI,Chicago,CY2020-2022,close_open_share,0.0001,82556,
 city,CHI,Chicago,CY2020-2022,close_p50_d,9.0,82556,
 city,CHI,Chicago,CY2020-2022,close_p50_d__alderman,9.8,13310,
 city,CHI,Chicago,CY2020-2022,close_p50_d__arterial,9.0,19692,
-city,CHI,Chicago,CY2020-2022,close_p50_d__local,9.1,57449,
+city,CHI,Chicago,CY2020-2022,close_p50_d__local,9.1,57450,
 city,CHI,Chicago,CY2020-2022,close_p50_d__resident,9.0,69246,
 city,CHI,Chicago,CY2020-2022,close_p90_d,88.0,82556,
 city,CHI,Chicago,CY2020-2022,crew_n,27714,27714,
@@ -141,7 +141,7 @@ city,CHI,Chicago,CY2020-2025,alley_rpt_n,36051,36051,
 city,CHI,Chicago,CY2020-2025,close_le7_share,0.4370,159476,
 city,CHI,Chicago,CY2020-2025,close_le7_share__alderman,0.4041,24595,
 city,CHI,Chicago,CY2020-2025,close_le7_share__arterial,0.4498,38742,
-city,CHI,Chicago,CY2020-2025,close_le7_share__local,0.4312,107516,
+city,CHI,Chicago,CY2020-2025,close_le7_share__local,0.4313,107516,
 city,CHI,Chicago,CY2020-2025,close_le7_share__resident,0.4430,134881,
 city,CHI,Chicago,CY2020-2025,close_open_share,0.0015,159476,
 city,CHI,Chicago,CY2020-2025,close_p50_d,9.0,159476,
@@ -169,7 +169,7 @@ city,CHI,Chicago,CY2020-2025,rpt_dup_share,0.2888,224229,
 city,CHI,Chicago,CY2020-2025,rpt_n,159476,159476,
 city,CHI,Chicago,CY2020-2025,rpt_patched_share,0.7631,159240,
 city,CHI,Chicago,CY2020-2025,rpt_per_1k,9.68,159476,
-city,CHI,Chicago,CY2020-2025,rpt_per_mi,6.67,158029,
+city,CHI,Chicago,CY2020-2025,rpt_per_mi,6.67,158028,
 city,CHI,Chicago,CY2020-2025,staff_n,1583,1583,
 city,CHI,Chicago,CY2021,alley_close_le7_share,0.3175,4973,
 city,CHI,Chicago,CY2021,alley_close_p50_d,26.2,4973,
@@ -288,13 +288,13 @@ city,CHI,Chicago,CY2023-2025,alley_rpt_n,18633,18633,
 city,CHI,Chicago,CY2023-2025,close_le7_share,0.4376,76920,
 city,CHI,Chicago,CY2023-2025,close_le7_share__alderman,0.3812,11285,
 city,CHI,Chicago,CY2023-2025,close_le7_share__arterial,0.4617,19050,
-city,CHI,Chicago,CY2023-2025,close_le7_share__local,0.4261,50067,
+city,CHI,Chicago,CY2023-2025,close_le7_share__local,0.4261,50066,
 city,CHI,Chicago,CY2023-2025,close_le7_share__resident,0.4474,65635,
 city,CHI,Chicago,CY2023-2025,close_open_share,0.0029,76920,
 city,CHI,Chicago,CY2023-2025,close_p50_d,9.0,76920,
 city,CHI,Chicago,CY2023-2025,close_p50_d__alderman,11.9,11285,
 city,CHI,Chicago,CY2023-2025,close_p50_d__arterial,8.0,19050,
-city,CHI,Chicago,CY2023-2025,close_p50_d__local,9.7,50067,
+city,CHI,Chicago,CY2023-2025,close_p50_d__local,9.7,50066,
 city,CHI,Chicago,CY2023-2025,close_p50_d__resident,8.7,65635,
 city,CHI,Chicago,CY2023-2025,close_p90_d,103.8,76920,
 city,CHI,Chicago,CY2023-2025,crew_n,31395,31395,
@@ -316,7 +316,7 @@ city,CHI,Chicago,CY2023-2025,rpt_dup_share,0.3076,111086,
 city,CHI,Chicago,CY2023-2025,rpt_n,76920,76920,
 city,CHI,Chicago,CY2023-2025,rpt_patched_share,0.7592,76695,
 city,CHI,Chicago,CY2023-2025,rpt_per_1k,9.34,76920,
-city,CHI,Chicago,CY2023-2025,rpt_per_mi,6.42,76055,
+city,CHI,Chicago,CY2023-2025,rpt_per_mi,6.42,76054,
 city,CHI,Chicago,CY2023-2025,staff_n,764,764,
 city,CHI,Chicago,CY2024,alley_close_le7_share,0.3016,6392,
 city,CHI,Chicago,CY2024,alley_close_p50_d,21.9,6392,
@@ -324,13 +324,13 @@ city,CHI,Chicago,CY2024,alley_rpt_n,6392,6392,
 city,CHI,Chicago,CY2024,close_le7_share,0.4519,27828,
 city,CHI,Chicago,CY2024,close_le7_share__alderman,0.3654,3883,
 city,CHI,Chicago,CY2024,close_le7_share__arterial,0.4877,7181,
-city,CHI,Chicago,CY2024,close_le7_share__local,0.4337,17857,
+city,CHI,Chicago,CY2024,close_le7_share__local,0.4337,17856,
 city,CHI,Chicago,CY2024,close_le7_share__resident,0.4659,23945,
 city,CHI,Chicago,CY2024,close_open_share,0.0021,27828,
 city,CHI,Chicago,CY2024,close_p50_d,8.8,27828,
 city,CHI,Chicago,CY2024,close_p50_d__alderman,16.1,3883,
 city,CHI,Chicago,CY2024,close_p50_d__arterial,7.2,7181,
-city,CHI,Chicago,CY2024,close_p50_d__local,9.9,17857,
+city,CHI,Chicago,CY2024,close_p50_d__local,9.9,17856,
 city,CHI,Chicago,CY2024,close_p50_d__resident,8.0,23945,
 city,CHI,Chicago,CY2024,close_p90_d,150.8,27828,
 city,CHI,Chicago,CY2024,crew_n,10285,10285,
@@ -352,7 +352,7 @@ city,CHI,Chicago,CY2024,rpt_dup_share,0.3072,40166,
 city,CHI,Chicago,CY2024,rpt_n,27828,27828,
 city,CHI,Chicago,CY2024,rpt_patched_share,0.7668,27770,
 city,CHI,Chicago,CY2024,rpt_per_1k,10.13,27828,
-city,CHI,Chicago,CY2024,rpt_per_mi,6.97,27523,
+city,CHI,Chicago,CY2024,rpt_per_mi,6.97,27522,
 city,CHI,Chicago,CY2024,rpt_yoy_pct,-1.3,28181,
 city,CHI,Chicago,CY2024,staff_n,276,276,
 city,CHI,Chicago,CY2025,alley_close_le7_share,0.1802,5301,
@@ -468,13 +468,13 @@ city,CHI,Chicago,YTD2020-08,alley_rpt_n,4312,4312,YTD
 city,CHI,Chicago,YTD2020-08,close_le7_share,0.5422,19585,YTD
 city,CHI,Chicago,YTD2020-08,close_le7_share__alderman,0.5619,2974,YTD
 city,CHI,Chicago,YTD2020-08,close_le7_share__arterial,0.5208,4545,YTD
-city,CHI,Chicago,YTD2020-08,close_le7_share__local,0.5536,13936,YTD
+city,CHI,Chicago,YTD2020-08,close_le7_share__local,0.5536,13937,YTD
 city,CHI,Chicago,YTD2020-08,close_le7_share__resident,0.5387,16611,YTD
 city,CHI,Chicago,YTD2020-08,close_open_share,0.0924,19585,YTD
 city,CHI,Chicago,YTD2020-08,close_p50_d,6.1,19585,YTD
 city,CHI,Chicago,YTD2020-08,close_p50_d__alderman,6.0,2974,YTD
 city,CHI,Chicago,YTD2020-08,close_p50_d__arterial,6.6,4545,YTD
-city,CHI,Chicago,YTD2020-08,close_p50_d__local,5.9,13936,YTD
+city,CHI,Chicago,YTD2020-08,close_p50_d__local,5.9,13937,YTD
 city,CHI,Chicago,YTD2020-08,close_p50_d__resident,6.1,16611,YTD
 city,CHI,Chicago,YTD2020-08,close_p90_d,69.9,19585,YTD
 city,CHI,Chicago,YTD2020-08,crew_n,6235,6235,YTD
@@ -604,13 +604,13 @@ city,CHI,Chicago,YTD2024-08,alley_rpt_n,5219,5219,YTD
 city,CHI,Chicago,YTD2024-08,close_le7_share,0.4941,24042,YTD
 city,CHI,Chicago,YTD2024-08,close_le7_share__alderman,0.4016,3274,YTD
 city,CHI,Chicago,YTD2024-08,close_le7_share__arterial,0.5277,6297,YTD
-city,CHI,Chicago,YTD2024-08,close_le7_share__local,0.4769,15322,YTD
+city,CHI,Chicago,YTD2024-08,close_le7_share__local,0.4769,15321,YTD
 city,CHI,Chicago,YTD2024-08,close_le7_share__resident,0.5087,20768,YTD
 city,CHI,Chicago,YTD2024-08,close_open_share,0.1638,24042,YTD
 city,CHI,Chicago,YTD2024-08,close_p50_d,7.1,24042,YTD
 city,CHI,Chicago,YTD2024-08,close_p50_d__alderman,13.0,3274,YTD
 city,CHI,Chicago,YTD2024-08,close_p50_d__arterial,6.6,6297,YTD
-city,CHI,Chicago,YTD2024-08,close_p50_d__local,7.9,15322,YTD
+city,CHI,Chicago,YTD2024-08,close_p50_d__local,7.9,15321,YTD
 city,CHI,Chicago,YTD2024-08,close_p50_d__resident,6.9,20768,YTD
 city,CHI,Chicago,YTD2024-08,close_p90_d,160.7,24042,YTD
 city,CHI,Chicago,YTD2024-08,crew_n,8859,8859,YTD
@@ -629,7 +629,7 @@ city,CHI,Chicago,YTD2024-08,rpt_digital_share,0.6898,20768,YTD
 city,CHI,Chicago,YTD2024-08,rpt_dup_share,0.2803,33406,YTD
 city,CHI,Chicago,YTD2024-08,rpt_n,24042,24042,YTD
 city,CHI,Chicago,YTD2024-08,rpt_per_1k,8.75,24042,YTD
-city,CHI,Chicago,YTD2024-08,rpt_per_mi,6.02,23777,YTD
+city,CHI,Chicago,YTD2024-08,rpt_per_mi,6.02,23776,YTD
 city,CHI,Chicago,YTD2024-08,rpt_yoy_pct,6.0,22688,YTD
 city,CHI,Chicago,YTD2024-08,staff_n,241,241,YTD
 city,CHI,Chicago,YTD2025-08,alley_close_le7_share,0.1810,4260,YTD
@@ -15529,18 +15529,18 @@ community_area,28,Near West Side,CHG_CY2020-2022_CY2023-2025,close_le7_share_vsc
 community_area,28,Near West Side,CHG_CY2020-2022_CY2023-2025,fill_per_mi_chg_pct,-22.5,3124,CHANGE_UNCLEAR
 community_area,28,Near West Side,CHG_CY2020-2022_CY2023-2025,fill_per_mi_chgcls,0,3124,CHANGE_UNCLEAR
 community_area,28,Near West Side,CHG_CY2020-2022_CY2023-2025,fill_per_mi_vscity_pct,-5.5,3124,CHANGE_UNCLEAR
-community_area,28,Near West Side,CHG_CY2020-2022_CY2023-2025,rpt_per_mi_chg_pct,-5.0,2503,CHANGE_UNCLEAR
-community_area,28,Near West Side,CHG_CY2020-2022_CY2023-2025,rpt_per_mi_chgcls,0,2503,CHANGE_UNCLEAR
-community_area,28,Near West Side,CHG_CY2020-2022_CY2023-2025,rpt_per_mi_vscity_pct,2.4,2503,CHANGE_UNCLEAR
+community_area,28,Near West Side,CHG_CY2020-2022_CY2023-2025,rpt_per_mi_chg_pct,-5.0,2502,CHANGE_UNCLEAR
+community_area,28,Near West Side,CHG_CY2020-2022_CY2023-2025,rpt_per_mi_chgcls,0,2502,CHANGE_UNCLEAR
+community_area,28,Near West Side,CHG_CY2020-2022_CY2023-2025,rpt_per_mi_vscity_pct,2.3,2502,CHANGE_UNCLEAR
 community_area,28,Near West Side,CHG_CY2024_CY2025,close_le7_share_chg_pts,-16.0,660,CHANGE_UNCLEAR
 community_area,28,Near West Side,CHG_CY2024_CY2025,close_le7_share_chgcls,0,660,CHANGE_UNCLEAR
 community_area,28,Near West Side,CHG_CY2024_CY2025,close_le7_share_vscity_pts,-2.4,660,CHANGE_UNCLEAR
 community_area,28,Near West Side,CHG_CY2024_CY2025,fill_per_mi_chg_pct,-40.4,773,CHANGE_UNCLEAR
 community_area,28,Near West Side,CHG_CY2024_CY2025,fill_per_mi_chgcls,0,773,CHANGE_UNCLEAR
 community_area,28,Near West Side,CHG_CY2024_CY2025,fill_per_mi_vscity_pct,-23.3,773,CHANGE_UNCLEAR
-community_area,28,Near West Side,CHG_CY2024_CY2025,rpt_per_mi_chg_pct,-36.0,628,CHANGE_UNCLEAR
+community_area,28,Near West Side,CHG_CY2024_CY2025,rpt_per_mi_chg_pct,-35.9,628,CHANGE_UNCLEAR
 community_area,28,Near West Side,CHG_CY2024_CY2025,rpt_per_mi_chgcls,0,628,CHANGE_UNCLEAR
-community_area,28,Near West Side,CHG_CY2024_CY2025,rpt_per_mi_vscity_pct,-14.8,628,CHANGE_UNCLEAR
+community_area,28,Near West Side,CHG_CY2024_CY2025,rpt_per_mi_vscity_pct,-14.7,628,CHANGE_UNCLEAR
 community_area,28,Near West Side,CHG_YTD2025-08_YTD2026-08,close_le7_share_chg_pts,7.3,501,CHANGE_UNCLEAR|YTD
 community_area,28,Near West Side,CHG_YTD2025-08_YTD2026-08,close_le7_share_chgcls,0,501,CHANGE_UNCLEAR|YTD
 community_area,28,Near West Side,CHG_YTD2025-08_YTD2026-08,close_le7_share_vscity_pts,3.7,501,CHANGE_UNCLEAR|YTD
@@ -15661,7 +15661,7 @@ community_area,28,Near West Side,CY2020-2025,rpt_dup_share,0.3097,7728,
 community_area,28,Near West Side,CY2020-2025,rpt_n,5335,5335,
 community_area,28,Near West Side,CY2020-2025,rpt_patched_share,0.7542,5334,
 community_area,28,Near West Side,CY2020-2025,rpt_per_1k,13.10,5335,
-community_area,28,Near West Side,CY2020-2025,rpt_per_mi,7.62,5138,
+community_area,28,Near West Side,CY2020-2025,rpt_per_mi,7.62,5137,
 community_area,28,Near West Side,CY2020-2025,staff_n,2,2,
 community_area,28,Near West Side,CY2021,alley_close_le7_share,0.2623,61,
 community_area,28,Near West Side,CY2021,alley_close_p50_d,49.7,61,
@@ -15776,7 +15776,7 @@ community_area,28,Near West Side,CY2023-2025,rpt_dup_share,0.3281,3922,
 community_area,28,Near West Side,CY2023-2025,rpt_n,2635,2635,
 community_area,28,Near West Side,CY2023-2025,rpt_patched_share,0.7135,2635,
 community_area,28,Near West Side,CY2023-2025,rpt_per_1k,12.94,2635,
-community_area,28,Near West Side,CY2023-2025,rpt_per_mi,7.43,2503,
+community_area,28,Near West Side,CY2023-2025,rpt_per_mi,7.42,2502,
 community_area,28,Near West Side,CY2023-2025,staff_n,2,2,
 community_area,28,Near West Side,CY2024,alley_close_le7_share,0.2083,96,
 community_area,28,Near West Side,CY2024,alley_close_p50_d,42.8,96,
@@ -15804,7 +15804,7 @@ community_area,28,Near West Side,CY2024,rpt_dup_share,0.3433,1570,
 community_area,28,Near West Side,CY2024,rpt_n,1031,1031,
 community_area,28,Near West Side,CY2024,rpt_patched_share,0.7110,1031,
 community_area,28,Near West Side,CY2024,rpt_per_1k,15.19,1031,
-community_area,28,Near West Side,CY2024,rpt_per_mi,8.73,981,
+community_area,28,Near West Side,CY2024,rpt_per_mi,8.72,980,
 community_area,28,Near West Side,CY2024,rpt_yoy_pct,9.2,944,
 community_area,28,Near West Side,CY2024,staff_n,0,0,
 community_area,28,Near West Side,CY2025,alley_close_le7_share,0.0704,71,
@@ -16017,7 +16017,7 @@ community_area,28,Near West Side,YTD2024-08,rpt_digital_share,0.7839,856,YTD
 community_area,28,Near West Side,YTD2024-08,rpt_dup_share,0.3314,1358,YTD
 community_area,28,Near West Side,YTD2024-08,rpt_n,908,908,YTD
 community_area,28,Near West Side,YTD2024-08,rpt_per_1k,13.38,908,YTD
-community_area,28,Near West Side,YTD2024-08,rpt_per_mi,7.71,866,YTD
+community_area,28,Near West Side,YTD2024-08,rpt_per_mi,7.70,865,YTD
 community_area,28,Near West Side,YTD2024-08,rpt_yoy_pct,24.2,731,YTD
 community_area,28,Near West Side,YTD2024-08,staff_n,0,0,YTD
 community_area,28,Near West Side,YTD2025-08,alley_close_le7_share,0.0833,60,YTD
@@ -26514,7 +26514,7 @@ community_area,48,Calumet Heights,CHG_CY2024_CY2025,fill_per_mi_chgcls,0,147,CHA
 community_area,48,Calumet Heights,CHG_CY2024_CY2025,fill_per_mi_vscity_pct,20.6,147,CHANGE_UNCLEAR
 community_area,48,Calumet Heights,CHG_CY2024_CY2025,rpt_per_mi_chg_pct,-24.0,133,CHANGE_UNCLEAR
 community_area,48,Calumet Heights,CHG_CY2024_CY2025,rpt_per_mi_chgcls,0,133,CHANGE_UNCLEAR
-community_area,48,Calumet Heights,CHG_CY2024_CY2025,rpt_per_mi_vscity_pct,1.2,133,CHANGE_UNCLEAR
+community_area,48,Calumet Heights,CHG_CY2024_CY2025,rpt_per_mi_vscity_pct,1.1,133,CHANGE_UNCLEAR
 community_area,48,Calumet Heights,CHG_YTD2025-08_YTD2026-08,close_le7_share_chg_pts,0.7,106,CHANGE_UNCLEAR|YTD
 community_area,48,Calumet Heights,CHG_YTD2025-08_YTD2026-08,close_le7_share_chgcls,0,106,CHANGE_UNCLEAR|YTD
 community_area,48,Calumet Heights,CHG_YTD2025-08_YTD2026-08,close_le7_share_vscity_pts,-2.9,106,CHANGE_UNCLEAR|YTD
@@ -40231,7 +40231,7 @@ community_area,73,Washington Heights,CHG_CY2024_CY2025,fill_per_mi_chgcls,0,268,
 community_area,73,Washington Heights,CHG_CY2024_CY2025,fill_per_mi_vscity_pct,20.3,268,CHANGE_UNCLEAR
 community_area,73,Washington Heights,CHG_CY2024_CY2025,rpt_per_mi_chg_pct,-38.3,179,CHANGE_UNCLEAR
 community_area,73,Washington Heights,CHG_CY2024_CY2025,rpt_per_mi_chgcls,0,179,CHANGE_UNCLEAR
-community_area,73,Washington Heights,CHG_CY2024_CY2025,rpt_per_mi_vscity_pct,-17.8,179,CHANGE_UNCLEAR
+community_area,73,Washington Heights,CHG_CY2024_CY2025,rpt_per_mi_vscity_pct,-17.9,179,CHANGE_UNCLEAR
 community_area,73,Washington Heights,CHG_YTD2025-08_YTD2026-08,close_le7_share_chg_pts,-5.9,127,CHANGE_UNCLEAR|YTD
 community_area,73,Washington Heights,CHG_YTD2025-08_YTD2026-08,close_le7_share_chgcls,0,127,CHANGE_UNCLEAR|YTD
 community_area,73,Washington Heights,CHG_YTD2025-08_YTD2026-08,close_le7_share_vscity_pts,-9.5,127,CHANGE_UNCLEAR|YTD
@@ -43267,13 +43267,13 @@ pov_quintile,Q1,Lowest-poverty fifth,CY2020,alley_rpt_n,1103,1103,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020,close_le7_share,0.5170,4832,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020,close_le7_share__alderman,0.5562,845,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020,close_le7_share__arterial,0.5020,994,
-pov_quintile,Q1,Lowest-poverty fifth,CY2020,close_le7_share__local,0.5272,3517,
+pov_quintile,Q1,Lowest-poverty fifth,CY2020,close_le7_share__local,0.5273,3518,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020,close_le7_share__resident,0.5087,3987,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020,close_open_share,0.0000,4832,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020,close_p50_d,6.8,4832,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020,close_p50_d__alderman,6.0,845,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020,close_p50_d__arterial,7.0,994,
-pov_quintile,Q1,Lowest-poverty fifth,CY2020,close_p50_d__local,6.2,3517,
+pov_quintile,Q1,Lowest-poverty fifth,CY2020,close_p50_d__local,6.2,3518,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020,close_p50_d__resident,6.9,3987,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020,close_p90_d,74.2,4832,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020,crew_n,1606,1606,
@@ -43304,13 +43304,13 @@ pov_quintile,Q1,Lowest-poverty fifth,CY2020-2022,alley_rpt_n,3541,3541,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020-2022,close_le7_share,0.4636,17322,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020-2022,close_le7_share__alderman,0.4543,3044,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020-2022,close_le7_share__arterial,0.4743,3671,
-pov_quintile,Q1,Lowest-poverty fifth,CY2020-2022,close_le7_share__local,0.4606,12261,
+pov_quintile,Q1,Lowest-poverty fifth,CY2020-2022,close_le7_share__local,0.4607,12262,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020-2022,close_le7_share__resident,0.4656,14278,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020-2022,close_open_share,0.0001,17322,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020-2022,close_p50_d,8.0,17322,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020-2022,close_p50_d__alderman,8.1,3044,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020-2022,close_p50_d__arterial,7.9,3671,
-pov_quintile,Q1,Lowest-poverty fifth,CY2020-2022,close_p50_d__local,8.1,12261,
+pov_quintile,Q1,Lowest-poverty fifth,CY2020-2022,close_p50_d__local,8.1,12262,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020-2022,close_p50_d__resident,8.0,14278,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020-2022,close_p90_d,79.8,17322,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020-2022,crew_n,5416,5416,
@@ -43340,13 +43340,13 @@ pov_quintile,Q1,Lowest-poverty fifth,CY2020-2025,alley_rpt_n,7559,7559,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020-2025,close_le7_share,0.4634,35014,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020-2025,close_le7_share__alderman,0.4308,5819,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020-2025,close_le7_share__arterial,0.4917,7474,
-pov_quintile,Q1,Lowest-poverty fifth,CY2020-2025,close_le7_share__local,0.4540,24267,
+pov_quintile,Q1,Lowest-poverty fifth,CY2020-2025,close_le7_share__local,0.4540,24268,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020-2025,close_le7_share__resident,0.4699,29195,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020-2025,close_open_share,0.0017,35014,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020-2025,close_p50_d,8.0,35014,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020-2025,close_p50_d__alderman,9.1,5819,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020-2025,close_p50_d__arterial,7.1,7474,
-pov_quintile,Q1,Lowest-poverty fifth,CY2020-2025,close_p50_d__local,8.3,24267,
+pov_quintile,Q1,Lowest-poverty fifth,CY2020-2025,close_p50_d__local,8.3,24268,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020-2025,close_p50_d__resident,7.9,29195,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020-2025,close_p90_d,89.2,35014,
 pov_quintile,Q1,Lowest-poverty fifth,CY2020-2025,crew_n,12277,12277,
@@ -43667,13 +43667,13 @@ pov_quintile,Q1,Lowest-poverty fifth,YTD2020-08,alley_rpt_n,829,829,YTD
 pov_quintile,Q1,Lowest-poverty fifth,YTD2020-08,close_le7_share,0.5363,3962,YTD
 pov_quintile,Q1,Lowest-poverty fifth,YTD2020-08,close_le7_share__alderman,0.5736,720,YTD
 pov_quintile,Q1,Lowest-poverty fifth,YTD2020-08,close_le7_share__arterial,0.5214,817,YTD
-pov_quintile,Q1,Lowest-poverty fifth,YTD2020-08,close_le7_share__local,0.5467,2892,YTD
+pov_quintile,Q1,Lowest-poverty fifth,YTD2020-08,close_le7_share__local,0.5468,2893,YTD
 pov_quintile,Q1,Lowest-poverty fifth,YTD2020-08,close_le7_share__resident,0.5281,3242,YTD
 pov_quintile,Q1,Lowest-poverty fifth,YTD2020-08,close_open_share,0.0941,3962,YTD
 pov_quintile,Q1,Lowest-poverty fifth,YTD2020-08,close_p50_d,6.1,3962,YTD
 pov_quintile,Q1,Lowest-poverty fifth,YTD2020-08,close_p50_d__alderman,5.8,720,YTD
 pov_quintile,Q1,Lowest-poverty fifth,YTD2020-08,close_p50_d__arterial,6.7,817,YTD
-pov_quintile,Q1,Lowest-poverty fifth,YTD2020-08,close_p50_d__local,6.0,2892,YTD
+pov_quintile,Q1,Lowest-poverty fifth,YTD2020-08,close_p50_d__local,6.0,2893,YTD
 pov_quintile,Q1,Lowest-poverty fifth,YTD2020-08,close_p50_d__resident,6.2,3242,YTD
 pov_quintile,Q1,Lowest-poverty fifth,YTD2020-08,close_p90_d,71.1,3962,YTD
 pov_quintile,Q1,Lowest-poverty fifth,YTD2020-08,crew_n,1054,1054,YTD
@@ -46036,13 +46036,13 @@ pov_quintile,Q5,Highest-poverty fifth,CY2020-2025,alley_rpt_n,6443,6443,
 pov_quintile,Q5,Highest-poverty fifth,CY2020-2025,close_le7_share,0.3963,28818,
 pov_quintile,Q5,Highest-poverty fifth,CY2020-2025,close_le7_share__alderman,0.4176,4145,
 pov_quintile,Q5,Highest-poverty fifth,CY2020-2025,close_le7_share__arterial,0.3988,7641,
-pov_quintile,Q5,Highest-poverty fifth,CY2020-2025,close_le7_share__local,0.3968,18971,
+pov_quintile,Q5,Highest-poverty fifth,CY2020-2025,close_le7_share__local,0.3968,18970,
 pov_quintile,Q5,Highest-poverty fifth,CY2020-2025,close_le7_share__resident,0.3928,24673,
 pov_quintile,Q5,Highest-poverty fifth,CY2020-2025,close_open_share,0.0007,28818,
 pov_quintile,Q5,Highest-poverty fifth,CY2020-2025,close_p50_d,11.4,28818,
 pov_quintile,Q5,Highest-poverty fifth,CY2020-2025,close_p50_d__alderman,10.9,4145,
 pov_quintile,Q5,Highest-poverty fifth,CY2020-2025,close_p50_d__arterial,11.0,7641,
-pov_quintile,Q5,Highest-poverty fifth,CY2020-2025,close_p50_d__local,11.7,18971,
+pov_quintile,Q5,Highest-poverty fifth,CY2020-2025,close_p50_d__local,11.7,18970,
 pov_quintile,Q5,Highest-poverty fifth,CY2020-2025,close_p50_d__resident,11.7,24673,
 pov_quintile,Q5,Highest-poverty fifth,CY2020-2025,close_p90_d,106.0,28818,
 pov_quintile,Q5,Highest-poverty fifth,CY2020-2025,crew_n,11530,11530,
@@ -46064,7 +46064,7 @@ pov_quintile,Q5,Highest-poverty fifth,CY2020-2025,rpt_dup_share,0.2710,39532,
 pov_quintile,Q5,Highest-poverty fifth,CY2020-2025,rpt_n,28818,28818,
 pov_quintile,Q5,Highest-poverty fifth,CY2020-2025,rpt_patched_share,0.7379,28798,
 pov_quintile,Q5,Highest-poverty fifth,CY2020-2025,rpt_per_1k,8.74,28818,
-pov_quintile,Q5,Highest-poverty fifth,CY2020-2025,rpt_per_mi,5.30,28522,
+pov_quintile,Q5,Highest-poverty fifth,CY2020-2025,rpt_per_mi,5.30,28521,
 pov_quintile,Q5,Highest-poverty fifth,CY2020-2025,staff_n,114,114,
 pov_quintile,Q5,Highest-poverty fifth,CY2021,alley_close_le7_share,0.2749,873,
 pov_quintile,Q5,Highest-poverty fifth,CY2021,alley_close_p50_d,34.0,873,
@@ -46183,13 +46183,13 @@ pov_quintile,Q5,Highest-poverty fifth,CY2023-2025,alley_rpt_n,3326,3326,
 pov_quintile,Q5,Highest-poverty fifth,CY2023-2025,close_le7_share,0.3906,13691,
 pov_quintile,Q5,Highest-poverty fifth,CY2023-2025,close_le7_share__alderman,0.3933,1889,
 pov_quintile,Q5,Highest-poverty fifth,CY2023-2025,close_le7_share__arterial,0.4006,3917,
-pov_quintile,Q5,Highest-poverty fifth,CY2023-2025,close_le7_share__local,0.3873,8401,
+pov_quintile,Q5,Highest-poverty fifth,CY2023-2025,close_le7_share__local,0.3874,8400,
 pov_quintile,Q5,Highest-poverty fifth,CY2023-2025,close_le7_share__resident,0.3902,11802,
 pov_quintile,Q5,Highest-poverty fifth,CY2023-2025,close_open_share,0.0014,13691,
 pov_quintile,Q5,Highest-poverty fifth,CY2023-2025,close_p50_d,11.7,13691,
 pov_quintile,Q5,Highest-poverty fifth,CY2023-2025,close_p50_d__alderman,13.0,1889,
 pov_quintile,Q5,Highest-poverty fifth,CY2023-2025,close_p50_d__arterial,10.9,3917,
-pov_quintile,Q5,Highest-poverty fifth,CY2023-2025,close_p50_d__local,12.0,8401,
+pov_quintile,Q5,Highest-poverty fifth,CY2023-2025,close_p50_d__local,12.0,8400,
 pov_quintile,Q5,Highest-poverty fifth,CY2023-2025,close_p50_d__resident,11.5,11802,
 pov_quintile,Q5,Highest-poverty fifth,CY2023-2025,close_p90_d,117.0,13691,
 pov_quintile,Q5,Highest-poverty fifth,CY2023-2025,crew_n,5842,5842,
@@ -46211,7 +46211,7 @@ pov_quintile,Q5,Highest-poverty fifth,CY2023-2025,rpt_dup_share,0.2816,19057,
 pov_quintile,Q5,Highest-poverty fifth,CY2023-2025,rpt_n,13691,13691,
 pov_quintile,Q5,Highest-poverty fifth,CY2023-2025,rpt_patched_share,0.7262,13672,
 pov_quintile,Q5,Highest-poverty fifth,CY2023-2025,rpt_per_1k,8.30,13691,
-pov_quintile,Q5,Highest-poverty fifth,CY2023-2025,rpt_per_mi,5.02,13497,
+pov_quintile,Q5,Highest-poverty fifth,CY2023-2025,rpt_per_mi,5.02,13496,
 pov_quintile,Q5,Highest-poverty fifth,CY2023-2025,staff_n,94,94,
 pov_quintile,Q5,Highest-poverty fifth,CY2024,alley_close_le7_share,0.2211,1212,
 pov_quintile,Q5,Highest-poverty fifth,CY2024,alley_close_p50_d,46.7,1212,
@@ -46219,13 +46219,13 @@ pov_quintile,Q5,Highest-poverty fifth,CY2024,alley_rpt_n,1212,1212,
 pov_quintile,Q5,Highest-poverty fifth,CY2024,close_le7_share,0.3576,5070,
 pov_quintile,Q5,Highest-poverty fifth,CY2024,close_le7_share__alderman,0.2925,742,
 pov_quintile,Q5,Highest-poverty fifth,CY2024,close_le7_share__arterial,0.3768,1473,
-pov_quintile,Q5,Highest-poverty fifth,CY2024,close_le7_share__local,0.3462,3099,
+pov_quintile,Q5,Highest-poverty fifth,CY2024,close_le7_share__local,0.3464,3098,
 pov_quintile,Q5,Highest-poverty fifth,CY2024,close_le7_share__resident,0.3688,4328,
 pov_quintile,Q5,Highest-poverty fifth,CY2024,close_open_share,0.0016,5070,
 pov_quintile,Q5,Highest-poverty fifth,CY2024,close_p50_d,14.2,5070,
 pov_quintile,Q5,Highest-poverty fifth,CY2024,close_p50_d__alderman,34.8,742,
 pov_quintile,Q5,Highest-poverty fifth,CY2024,close_p50_d__arterial,12.3,1473,
-pov_quintile,Q5,Highest-poverty fifth,CY2024,close_p50_d__local,17.0,3099,
+pov_quintile,Q5,Highest-poverty fifth,CY2024,close_p50_d__local,17.0,3098,
 pov_quintile,Q5,Highest-poverty fifth,CY2024,close_p50_d__resident,13.1,4328,
 pov_quintile,Q5,Highest-poverty fifth,CY2024,close_p90_d,170.8,5070,
 pov_quintile,Q5,Highest-poverty fifth,CY2024,crew_n,2021,2021,
@@ -46247,7 +46247,7 @@ pov_quintile,Q5,Highest-poverty fifth,CY2024,rpt_dup_share,0.2870,7111,
 pov_quintile,Q5,Highest-poverty fifth,CY2024,rpt_n,5070,5070,
 pov_quintile,Q5,Highest-poverty fifth,CY2024,rpt_patched_share,0.7106,5062,
 pov_quintile,Q5,Highest-poverty fifth,CY2024,rpt_per_1k,9.22,5070,
-pov_quintile,Q5,Highest-poverty fifth,CY2024,rpt_per_mi,5.58,5002,
+pov_quintile,Q5,Highest-poverty fifth,CY2024,rpt_per_mi,5.58,5001,
 pov_quintile,Q5,Highest-poverty fifth,CY2024,rpt_yoy_pct,-0.9,5117,
 pov_quintile,Q5,Highest-poverty fifth,CY2024,staff_n,48,48,
 pov_quintile,Q5,Highest-poverty fifth,CY2025,alley_close_le7_share,0.1555,894,
@@ -46499,13 +46499,13 @@ pov_quintile,Q5,Highest-poverty fifth,YTD2024-08,alley_rpt_n,977,977,YTD
 pov_quintile,Q5,Highest-poverty fifth,YTD2024-08,close_le7_share,0.3968,4420,YTD
 pov_quintile,Q5,Highest-poverty fifth,YTD2024-08,close_le7_share__alderman,0.3235,646,YTD
 pov_quintile,Q5,Highest-poverty fifth,YTD2024-08,close_le7_share__arterial,0.4153,1298,YTD
-pov_quintile,Q5,Highest-poverty fifth,YTD2024-08,close_le7_share__local,0.3850,2691,YTD
+pov_quintile,Q5,Highest-poverty fifth,YTD2024-08,close_le7_share__local,0.3851,2690,YTD
 pov_quintile,Q5,Highest-poverty fifth,YTD2024-08,close_le7_share__resident,0.4094,3774,YTD
 pov_quintile,Q5,Highest-poverty fifth,YTD2024-08,close_open_share,0.2048,4420,YTD
 pov_quintile,Q5,Highest-poverty fifth,YTD2024-08,close_p50_d,11.8,4420,YTD
 pov_quintile,Q5,Highest-poverty fifth,YTD2024-08,close_p50_d__alderman,27.1,646,YTD
 pov_quintile,Q5,Highest-poverty fifth,YTD2024-08,close_p50_d__arterial,9.9,1298,YTD
-pov_quintile,Q5,Highest-poverty fifth,YTD2024-08,close_p50_d__local,13.7,2691,YTD
+pov_quintile,Q5,Highest-poverty fifth,YTD2024-08,close_p50_d__local,13.7,2690,YTD
 pov_quintile,Q5,Highest-poverty fifth,YTD2024-08,close_p50_d__resident,10.7,3774,YTD
 pov_quintile,Q5,Highest-poverty fifth,YTD2024-08,close_p90_d,,4420,KM_NOT_REACHED|YTD
 pov_quintile,Q5,Highest-poverty fifth,YTD2024-08,crew_n,1817,1817,YTD
@@ -46524,7 +46524,7 @@ pov_quintile,Q5,Highest-poverty fifth,YTD2024-08,rpt_digital_share,0.6002,3774,Y
 pov_quintile,Q5,Highest-poverty fifth,YTD2024-08,rpt_dup_share,0.2692,6048,YTD
 pov_quintile,Q5,Highest-poverty fifth,YTD2024-08,rpt_n,4420,4420,YTD
 pov_quintile,Q5,Highest-poverty fifth,YTD2024-08,rpt_per_1k,8.04,4420,YTD
-pov_quintile,Q5,Highest-poverty fifth,YTD2024-08,rpt_per_mi,4.87,4367,YTD
+pov_quintile,Q5,Highest-poverty fifth,YTD2024-08,rpt_per_mi,4.87,4366,YTD
 pov_quintile,Q5,Highest-poverty fifth,YTD2024-08,rpt_yoy_pct,6.1,4166,YTD
 pov_quintile,Q5,Highest-poverty fifth,YTD2024-08,staff_n,43,43,YTD
 pov_quintile,Q5,Highest-poverty fifth,YTD2025-08,alley_close_le7_share,0.1669,719,YTD
@@ -47036,13 +47036,13 @@ race_group,hispanic,Majority Hispanic,CY2020,alley_rpt_n,1865,1865,
 race_group,hispanic,Majority Hispanic,CY2020,close_le7_share,0.5820,6813,
 race_group,hispanic,Majority Hispanic,CY2020,close_le7_share__alderman,0.5385,1194,
 race_group,hispanic,Majority Hispanic,CY2020,close_le7_share__arterial,0.5313,1278,
-race_group,hispanic,Majority Hispanic,CY2020,close_le7_share__local,0.5957,5310,
+race_group,hispanic,Majority Hispanic,CY2020,close_le7_share__local,0.5957,5311,
 race_group,hispanic,Majority Hispanic,CY2020,close_le7_share__resident,0.5912,5619,
 race_group,hispanic,Majority Hispanic,CY2020,close_open_share,0.0000,6813,
 race_group,hispanic,Majority Hispanic,CY2020,close_p50_d,5.1,6813,
 race_group,hispanic,Majority Hispanic,CY2020,close_p50_d__alderman,6.7,1194,
 race_group,hispanic,Majority Hispanic,CY2020,close_p50_d__arterial,6.3,1278,
-race_group,hispanic,Majority Hispanic,CY2020,close_p50_d__local,5.0,5310,
+race_group,hispanic,Majority Hispanic,CY2020,close_p50_d__local,5.0,5311,
 race_group,hispanic,Majority Hispanic,CY2020,close_p50_d__resident,5.0,5619,
 race_group,hispanic,Majority Hispanic,CY2020,close_p90_d,54.7,6813,
 race_group,hispanic,Majority Hispanic,CY2020,crew_n,2016,2016,
@@ -47073,13 +47073,13 @@ race_group,hispanic,Majority Hispanic,CY2020-2022,alley_rpt_n,5556,5556,
 race_group,hispanic,Majority Hispanic,CY2020-2022,close_le7_share,0.4387,21802,
 race_group,hispanic,Majority Hispanic,CY2020-2022,close_le7_share__alderman,0.4015,3903,
 race_group,hispanic,Majority Hispanic,CY2020-2022,close_le7_share__arterial,0.4340,4514,
-race_group,hispanic,Majority Hispanic,CY2020-2022,close_le7_share__local,0.4399,16401,
+race_group,hispanic,Majority Hispanic,CY2020-2022,close_le7_share__local,0.4399,16402,
 race_group,hispanic,Majority Hispanic,CY2020-2022,close_le7_share__resident,0.4468,17899,
 race_group,hispanic,Majority Hispanic,CY2020-2022,close_open_share,0.0001,21802,
 race_group,hispanic,Majority Hispanic,CY2020-2022,close_p50_d,8.9,21802,
 race_group,hispanic,Majority Hispanic,CY2020-2022,close_p50_d__alderman,11.1,3903,
 race_group,hispanic,Majority Hispanic,CY2020-2022,close_p50_d__arterial,9.2,4514,
-race_group,hispanic,Majority Hispanic,CY2020-2022,close_p50_d__local,8.9,16401,
+race_group,hispanic,Majority Hispanic,CY2020-2022,close_p50_d__local,8.9,16402,
 race_group,hispanic,Majority Hispanic,CY2020-2022,close_p50_d__resident,8.6,17899,
 race_group,hispanic,Majority Hispanic,CY2020-2022,close_p90_d,89.7,21802,
 race_group,hispanic,Majority Hispanic,CY2020-2022,crew_n,5743,5743,
@@ -47109,13 +47109,13 @@ race_group,hispanic,Majority Hispanic,CY2020-2025,alley_rpt_n,10597,10597,
 race_group,hispanic,Majority Hispanic,CY2020-2025,close_le7_share,0.4172,39892,
 race_group,hispanic,Majority Hispanic,CY2020-2025,close_le7_share__alderman,0.3661,7935,
 race_group,hispanic,Majority Hispanic,CY2020-2025,close_le7_share__arterial,0.4291,8521,
-race_group,hispanic,Majority Hispanic,CY2020-2025,close_le7_share__local,0.4124,29151,
+race_group,hispanic,Majority Hispanic,CY2020-2025,close_le7_share__local,0.4124,29152,
 race_group,hispanic,Majority Hispanic,CY2020-2025,close_le7_share__resident,0.4298,31957,
 race_group,hispanic,Majority Hispanic,CY2020-2025,close_open_share,0.0009,39892,
 race_group,hispanic,Majority Hispanic,CY2020-2025,close_p50_d,10.0,39892,
 race_group,hispanic,Majority Hispanic,CY2020-2025,close_p50_d__alderman,13.0,7935,
 race_group,hispanic,Majority Hispanic,CY2020-2025,close_p50_d__arterial,9.6,8521,
-race_group,hispanic,Majority Hispanic,CY2020-2025,close_p50_d__local,10.5,29151,
+race_group,hispanic,Majority Hispanic,CY2020-2025,close_p50_d__local,10.5,29152,
 race_group,hispanic,Majority Hispanic,CY2020-2025,close_p50_d__resident,9.6,31957,
 race_group,hispanic,Majority Hispanic,CY2020-2025,close_p90_d,102.7,39892,
 race_group,hispanic,Majority Hispanic,CY2020-2025,crew_n,11669,11669,
@@ -47436,13 +47436,13 @@ race_group,hispanic,Majority Hispanic,YTD2020-08,alley_rpt_n,1429,1429,YTD
 race_group,hispanic,Majority Hispanic,YTD2020-08,close_le7_share,0.5861,5395,YTD
 race_group,hispanic,Majority Hispanic,YTD2020-08,close_le7_share__alderman,0.5615,919,YTD
 race_group,hispanic,Majority Hispanic,YTD2020-08,close_le7_share__arterial,0.5382,1020,YTD
-race_group,hispanic,Majority Hispanic,YTD2020-08,close_le7_share__local,0.5996,4203,YTD
+race_group,hispanic,Majority Hispanic,YTD2020-08,close_le7_share__local,0.5997,4204,YTD
 race_group,hispanic,Majority Hispanic,YTD2020-08,close_le7_share__resident,0.5912,4476,YTD
 race_group,hispanic,Majority Hispanic,YTD2020-08,close_open_share,0.0864,5395,YTD
 race_group,hispanic,Majority Hispanic,YTD2020-08,close_p50_d,5.0,5395,YTD
 race_group,hispanic,Majority Hispanic,YTD2020-08,close_p50_d__alderman,6.1,919,YTD
 race_group,hispanic,Majority Hispanic,YTD2020-08,close_p50_d__arterial,6.2,1020,YTD
-race_group,hispanic,Majority Hispanic,YTD2020-08,close_p50_d__local,4.9,4203,YTD
+race_group,hispanic,Majority Hispanic,YTD2020-08,close_p50_d__local,4.9,4204,YTD
 race_group,hispanic,Majority Hispanic,YTD2020-08,close_p50_d__resident,5.0,4476,YTD
 race_group,hispanic,Majority Hispanic,YTD2020-08,close_p90_d,63.5,5395,YTD
 race_group,hispanic,Majority Hispanic,YTD2020-08,crew_n,1377,1377,YTD
@@ -47783,13 +47783,13 @@ race_group,nh_black,Majority Black (non-Hispanic),CY2020-2025,alley_rpt_n,7976,7
 race_group,nh_black,Majority Black (non-Hispanic),CY2020-2025,close_le7_share,0.4168,43088,
 race_group,nh_black,Majority Black (non-Hispanic),CY2020-2025,close_le7_share__alderman,0.4614,6775,
 race_group,nh_black,Majority Black (non-Hispanic),CY2020-2025,close_le7_share__arterial,0.4144,11446,
-race_group,nh_black,Majority Black (non-Hispanic),CY2020-2025,close_le7_share__local,0.4186,28421,
+race_group,nh_black,Majority Black (non-Hispanic),CY2020-2025,close_le7_share__local,0.4186,28420,
 race_group,nh_black,Majority Black (non-Hispanic),CY2020-2025,close_le7_share__resident,0.4085,36313,
 race_group,nh_black,Majority Black (non-Hispanic),CY2020-2025,close_open_share,0.0010,43088,
 race_group,nh_black,Majority Black (non-Hispanic),CY2020-2025,close_p50_d,9.9,43088,
 race_group,nh_black,Majority Black (non-Hispanic),CY2020-2025,close_p50_d__alderman,8.0,6775,
 race_group,nh_black,Majority Black (non-Hispanic),CY2020-2025,close_p50_d__arterial,9.9,11446,
-race_group,nh_black,Majority Black (non-Hispanic),CY2020-2025,close_p50_d__local,9.9,28421,
+race_group,nh_black,Majority Black (non-Hispanic),CY2020-2025,close_p50_d__local,9.9,28420,
 race_group,nh_black,Majority Black (non-Hispanic),CY2020-2025,close_p50_d__resident,10.2,36313,
 race_group,nh_black,Majority Black (non-Hispanic),CY2020-2025,close_p90_d,99.0,43088,
 race_group,nh_black,Majority Black (non-Hispanic),CY2020-2025,crew_n,18580,18580,
@@ -47811,7 +47811,7 @@ race_group,nh_black,Majority Black (non-Hispanic),CY2020-2025,rpt_dup_share,0.24
 race_group,nh_black,Majority Black (non-Hispanic),CY2020-2025,rpt_n,43088,43088,
 race_group,nh_black,Majority Black (non-Hispanic),CY2020-2025,rpt_patched_share,0.7198,43044,
 race_group,nh_black,Majority Black (non-Hispanic),CY2020-2025,rpt_per_1k,9.85,43088,
-race_group,nh_black,Majority Black (non-Hispanic),CY2020-2025,rpt_per_mi,4.87,42737,
+race_group,nh_black,Majority Black (non-Hispanic),CY2020-2025,rpt_per_mi,4.87,42736,
 race_group,nh_black,Majority Black (non-Hispanic),CY2020-2025,staff_n,127,127,
 race_group,nh_black,Majority Black (non-Hispanic),CY2021,alley_close_le7_share,0.2860,1077,
 race_group,nh_black,Majority Black (non-Hispanic),CY2021,alley_close_p50_d,29.3,1077,
@@ -47930,13 +47930,13 @@ race_group,nh_black,Majority Black (non-Hispanic),CY2023-2025,alley_rpt_n,4167,4
 race_group,nh_black,Majority Black (non-Hispanic),CY2023-2025,close_le7_share,0.4227,20038,
 race_group,nh_black,Majority Black (non-Hispanic),CY2023-2025,close_le7_share__alderman,0.4516,2750,
 race_group,nh_black,Majority Black (non-Hispanic),CY2023-2025,close_le7_share__arterial,0.4203,5763,
-race_group,nh_black,Majority Black (non-Hispanic),CY2023-2025,close_le7_share__local,0.4260,12347,
+race_group,nh_black,Majority Black (non-Hispanic),CY2023-2025,close_le7_share__local,0.4260,12346,
 race_group,nh_black,Majority Black (non-Hispanic),CY2023-2025,close_le7_share__resident,0.4181,17288,
 race_group,nh_black,Majority Black (non-Hispanic),CY2023-2025,close_open_share,0.0021,20038,
 race_group,nh_black,Majority Black (non-Hispanic),CY2023-2025,close_p50_d,9.1,20038,
 race_group,nh_black,Majority Black (non-Hispanic),CY2023-2025,close_p50_d__alderman,8.1,2750,
 race_group,nh_black,Majority Black (non-Hispanic),CY2023-2025,close_p50_d__arterial,9.7,5763,
-race_group,nh_black,Majority Black (non-Hispanic),CY2023-2025,close_p50_d__local,9.0,12347,
+race_group,nh_black,Majority Black (non-Hispanic),CY2023-2025,close_p50_d__local,9.0,12346,
 race_group,nh_black,Majority Black (non-Hispanic),CY2023-2025,close_p50_d__resident,9.6,17288,
 race_group,nh_black,Majority Black (non-Hispanic),CY2023-2025,close_p90_d,107.5,20038,
 race_group,nh_black,Majority Black (non-Hispanic),CY2023-2025,crew_n,9319,9319,
@@ -47958,7 +47958,7 @@ race_group,nh_black,Majority Black (non-Hispanic),CY2023-2025,rpt_dup_share,0.25
 race_group,nh_black,Majority Black (non-Hispanic),CY2023-2025,rpt_n,20038,20038,
 race_group,nh_black,Majority Black (non-Hispanic),CY2023-2025,rpt_patched_share,0.7075,19996,
 race_group,nh_black,Majority Black (non-Hispanic),CY2023-2025,rpt_per_1k,9.16,20038,
-race_group,nh_black,Majority Black (non-Hispanic),CY2023-2025,rpt_per_mi,4.52,19815,
+race_group,nh_black,Majority Black (non-Hispanic),CY2023-2025,rpt_per_mi,4.52,19814,
 race_group,nh_black,Majority Black (non-Hispanic),CY2023-2025,staff_n,98,98,
 race_group,nh_black,Majority Black (non-Hispanic),CY2024,alley_close_le7_share,0.2133,1552,
 race_group,nh_black,Majority Black (non-Hispanic),CY2024,alley_close_p50_d,41.8,1552,
@@ -47966,13 +47966,13 @@ race_group,nh_black,Majority Black (non-Hispanic),CY2024,alley_rpt_n,1552,1552,
 race_group,nh_black,Majority Black (non-Hispanic),CY2024,close_le7_share,0.3702,7482,
 race_group,nh_black,Majority Black (non-Hispanic),CY2024,close_le7_share__alderman,0.3665,1004,
 race_group,nh_black,Majority Black (non-Hispanic),CY2024,close_le7_share__arterial,0.3852,2186,
-race_group,nh_black,Majority Black (non-Hispanic),CY2024,close_le7_share__local,0.3622,4605,
+race_group,nh_black,Majority Black (non-Hispanic),CY2024,close_le7_share__local,0.3623,4604,
 race_group,nh_black,Majority Black (non-Hispanic),CY2024,close_le7_share__resident,0.3708,6478,
 race_group,nh_black,Majority Black (non-Hispanic),CY2024,close_open_share,0.0024,7482,
 race_group,nh_black,Majority Black (non-Hispanic),CY2024,close_p50_d,13.2,7482,
 race_group,nh_black,Majority Black (non-Hispanic),CY2024,close_p50_d__alderman,14.0,1004,
 race_group,nh_black,Majority Black (non-Hispanic),CY2024,close_p50_d__arterial,11.1,2186,
-race_group,nh_black,Majority Black (non-Hispanic),CY2024,close_p50_d__local,14.8,4605,
+race_group,nh_black,Majority Black (non-Hispanic),CY2024,close_p50_d__local,14.8,4604,
 race_group,nh_black,Majority Black (non-Hispanic),CY2024,close_p50_d__resident,13.1,6478,
 race_group,nh_black,Majority Black (non-Hispanic),CY2024,close_p90_d,161.9,7482,
 race_group,nh_black,Majority Black (non-Hispanic),CY2024,crew_n,3127,3127,
@@ -47994,7 +47994,7 @@ race_group,nh_black,Majority Black (non-Hispanic),CY2024,rpt_dup_share,0.2828,10
 race_group,nh_black,Majority Black (non-Hispanic),CY2024,rpt_n,7482,7482,
 race_group,nh_black,Majority Black (non-Hispanic),CY2024,rpt_patched_share,0.6983,7464,
 race_group,nh_black,Majority Black (non-Hispanic),CY2024,rpt_per_1k,10.26,7482,
-race_group,nh_black,Majority Black (non-Hispanic),CY2024,rpt_per_mi,5.07,7411,
+race_group,nh_black,Majority Black (non-Hispanic),CY2024,rpt_per_mi,5.07,7410,
 race_group,nh_black,Majority Black (non-Hispanic),CY2024,rpt_yoy_pct,1.0,7406,
 race_group,nh_black,Majority Black (non-Hispanic),CY2024,staff_n,47,47,
 race_group,nh_black,Majority Black (non-Hispanic),CY2025,alley_close_le7_share,0.1671,1113,
@@ -48246,13 +48246,13 @@ race_group,nh_black,Majority Black (non-Hispanic),YTD2024-08,alley_rpt_n,1257,12
 race_group,nh_black,Majority Black (non-Hispanic),YTD2024-08,close_le7_share,0.4138,6477,YTD
 race_group,nh_black,Majority Black (non-Hispanic),YTD2024-08,close_le7_share__alderman,0.4055,868,YTD
 race_group,nh_black,Majority Black (non-Hispanic),YTD2024-08,close_le7_share__arterial,0.4287,1922,YTD
-race_group,nh_black,Majority Black (non-Hispanic),YTD2024-08,close_le7_share__local,0.4056,3960,YTD
+race_group,nh_black,Majority Black (non-Hispanic),YTD2024-08,close_le7_share__local,0.4057,3959,YTD
 race_group,nh_black,Majority Black (non-Hispanic),YTD2024-08,close_le7_share__resident,0.4150,5609,YTD
 race_group,nh_black,Majority Black (non-Hispanic),YTD2024-08,close_open_share,0.1931,6477,YTD
 race_group,nh_black,Majority Black (non-Hispanic),YTD2024-08,close_p50_d,10.2,6477,YTD
 race_group,nh_black,Majority Black (non-Hispanic),YTD2024-08,close_p50_d__alderman,11.1,868,YTD
 race_group,nh_black,Majority Black (non-Hispanic),YTD2024-08,close_p50_d__arterial,9.0,1922,YTD
-race_group,nh_black,Majority Black (non-Hispanic),YTD2024-08,close_p50_d__local,11.1,3960,YTD
+race_group,nh_black,Majority Black (non-Hispanic),YTD2024-08,close_p50_d__local,11.1,3959,YTD
 race_group,nh_black,Majority Black (non-Hispanic),YTD2024-08,close_p50_d__resident,10.1,5609,YTD
 race_group,nh_black,Majority Black (non-Hispanic),YTD2024-08,close_p90_d,,6477,KM_NOT_REACHED|YTD
 race_group,nh_black,Majority Black (non-Hispanic),YTD2024-08,crew_n,2819,2819,YTD
@@ -48271,7 +48271,7 @@ race_group,nh_black,Majority Black (non-Hispanic),YTD2024-08,rpt_digital_share,0
 race_group,nh_black,Majority Black (non-Hispanic),YTD2024-08,rpt_dup_share,0.2706,8880,YTD
 race_group,nh_black,Majority Black (non-Hispanic),YTD2024-08,rpt_n,6477,6477,YTD
 race_group,nh_black,Majority Black (non-Hispanic),YTD2024-08,rpt_per_1k,8.88,6477,YTD
-race_group,nh_black,Majority Black (non-Hispanic),YTD2024-08,rpt_per_mi,4.39,6420,YTD
+race_group,nh_black,Majority Black (non-Hispanic),YTD2024-08,rpt_per_mi,4.39,6419,YTD
 race_group,nh_black,Majority Black (non-Hispanic),YTD2024-08,rpt_yoy_pct,9.6,5908,YTD
 race_group,nh_black,Majority Black (non-Hispanic),YTD2024-08,staff_n,44,44,YTD
 race_group,nh_black,Majority Black (non-Hispanic),YTD2025-08,alley_close_le7_share,0.1763,919,YTD
@@ -63970,18 +63970,18 @@ ward2023,27,Ward 27,CHG_CY2020-2022_CY2023-2025,close_le7_share_vscity_pts,-12.6
 ward2023,27,Ward 27,CHG_CY2020-2022_CY2023-2025,fill_per_mi_chg_pct,-24.0,2642,CHANGE_UNCLEAR|PRE2023_WARD|SPLIT_2023
 ward2023,27,Ward 27,CHG_CY2020-2022_CY2023-2025,fill_per_mi_chgcls,0,2642,CHANGE_UNCLEAR|PRE2023_WARD|SPLIT_2023
 ward2023,27,Ward 27,CHG_CY2020-2022_CY2023-2025,fill_per_mi_vscity_pct,-7.3,2642,CHANGE_UNCLEAR|PRE2023_WARD|SPLIT_2023
-ward2023,27,Ward 27,CHG_CY2020-2022_CY2023-2025,rpt_per_mi_chg_pct,-13.7,2062,CHANGE_UNCLEAR|PRE2023_WARD|SPLIT_2023
-ward2023,27,Ward 27,CHG_CY2020-2022_CY2023-2025,rpt_per_mi_chgcls,0,2062,CHANGE_UNCLEAR|PRE2023_WARD|SPLIT_2023
-ward2023,27,Ward 27,CHG_CY2020-2022_CY2023-2025,rpt_per_mi_vscity_pct,-7.0,2062,CHANGE_UNCLEAR|PRE2023_WARD|SPLIT_2023
+ward2023,27,Ward 27,CHG_CY2020-2022_CY2023-2025,rpt_per_mi_chg_pct,-13.8,2061,CHANGE_UNCLEAR|PRE2023_WARD|SPLIT_2023
+ward2023,27,Ward 27,CHG_CY2020-2022_CY2023-2025,rpt_per_mi_chgcls,0,2061,CHANGE_UNCLEAR|PRE2023_WARD|SPLIT_2023
+ward2023,27,Ward 27,CHG_CY2020-2022_CY2023-2025,rpt_per_mi_vscity_pct,-7.1,2061,CHANGE_UNCLEAR|PRE2023_WARD|SPLIT_2023
 ward2023,27,Ward 27,CHG_CY2024_CY2025,close_le7_share_chg_pts,-25.8,582,CHANGE_UNCLEAR
 ward2023,27,Ward 27,CHG_CY2024_CY2025,close_le7_share_chgcls,0,582,CHANGE_UNCLEAR
 ward2023,27,Ward 27,CHG_CY2024_CY2025,close_le7_share_vscity_pts,-12.2,582,CHANGE_UNCLEAR
 ward2023,27,Ward 27,CHG_CY2024_CY2025,fill_per_mi_chg_pct,-54.5,591,CHANGE_UNCLEAR
 ward2023,27,Ward 27,CHG_CY2024_CY2025,fill_per_mi_chgcls,0,591,CHANGE_UNCLEAR
 ward2023,27,Ward 27,CHG_CY2024_CY2025,fill_per_mi_vscity_pct,-41.6,591,CHANGE_UNCLEAR
-ward2023,27,Ward 27,CHG_CY2024_CY2025,rpt_per_mi_chg_pct,-29.1,562,CHANGE_UNCLEAR
+ward2023,27,Ward 27,CHG_CY2024_CY2025,rpt_per_mi_chg_pct,-29.0,562,CHANGE_UNCLEAR
 ward2023,27,Ward 27,CHG_CY2024_CY2025,rpt_per_mi_chgcls,0,562,CHANGE_UNCLEAR
-ward2023,27,Ward 27,CHG_CY2024_CY2025,rpt_per_mi_vscity_pct,-5.7,562,CHANGE_UNCLEAR
+ward2023,27,Ward 27,CHG_CY2024_CY2025,rpt_per_mi_vscity_pct,-5.6,562,CHANGE_UNCLEAR
 ward2023,27,Ward 27,CHG_YTD2025-08_YTD2026-08,close_le7_share_chg_pts,6.1,467,CHANGE_UNCLEAR|YTD
 ward2023,27,Ward 27,CHG_YTD2025-08_YTD2026-08,close_le7_share_chgcls,0,467,CHANGE_UNCLEAR|YTD
 ward2023,27,Ward 27,CHG_YTD2025-08_YTD2026-08,close_le7_share_vscity_pts,2.5,467,CHANGE_UNCLEAR|YTD
@@ -64102,7 +64102,7 @@ ward2023,27,Ward 27,CY2020-2025,rpt_dup_share,0.3125,6669,SPLIT_2023
 ward2023,27,Ward 27,CY2020-2025,rpt_n,4585,4585,SPLIT_2023
 ward2023,27,Ward 27,CY2020-2025,rpt_patched_share,0.7725,4585,SPLIT_2023
 ward2023,27,Ward 27,CY2020-2025,rpt_per_1k,13.29,4585,SPLIT_2023
-ward2023,27,Ward 27,CY2020-2025,rpt_per_mi,6.13,4452,SPLIT_2023
+ward2023,27,Ward 27,CY2020-2025,rpt_per_mi,6.13,4451,SPLIT_2023
 ward2023,27,Ward 27,CY2020-2025,staff_n,11,11,SPLIT_2023
 ward2023,27,Ward 27,CY2021,alley_close_le7_share,0.1667,78,PRE2023_WARD
 ward2023,27,Ward 27,CY2021,alley_close_p50_d,45.0,78,PRE2023_WARD
@@ -64217,7 +64217,7 @@ ward2023,27,Ward 27,CY2023-2025,rpt_dup_share,0.3413,3252,SPLIT_2023
 ward2023,27,Ward 27,CY2023-2025,rpt_n,2142,2142,SPLIT_2023
 ward2023,27,Ward 27,CY2023-2025,rpt_patched_share,0.7278,2142,SPLIT_2023
 ward2023,27,Ward 27,CY2023-2025,rpt_per_1k,12.42,2142,SPLIT_2023
-ward2023,27,Ward 27,CY2023-2025,rpt_per_mi,5.68,2062,SPLIT_2023
+ward2023,27,Ward 27,CY2023-2025,rpt_per_mi,5.68,2061,SPLIT_2023
 ward2023,27,Ward 27,CY2023-2025,staff_n,8,8,SPLIT_2023
 ward2023,27,Ward 27,CY2024,alley_close_le7_share,0.2149,121,
 ward2023,27,Ward 27,CY2024,alley_close_p50_d,19.0,121,
@@ -64245,7 +64245,7 @@ ward2023,27,Ward 27,CY2024,rpt_dup_share,0.3347,1237,
 ward2023,27,Ward 27,CY2024,rpt_n,823,823,
 ward2023,27,Ward 27,CY2024,rpt_patched_share,0.7631,823,
 ward2023,27,Ward 27,CY2024,rpt_per_1k,14.32,823,
-ward2023,27,Ward 27,CY2024,rpt_per_mi,6.56,793,
+ward2023,27,Ward 27,CY2024,rpt_per_mi,6.55,792,
 ward2023,27,Ward 27,CY2024,rpt_yoy_pct,11.7,737,
 ward2023,27,Ward 27,CY2024,staff_n,2,2,
 ward2023,27,Ward 27,CY2025,alley_close_le7_share,0.1020,98,
@@ -64458,7 +64458,7 @@ ward2023,27,Ward 27,YTD2024-08,rpt_digital_share,0.7854,713,YTD
 ward2023,27,Ward 27,YTD2024-08,rpt_dup_share,0.3318,1088,YTD
 ward2023,27,Ward 27,YTD2024-08,rpt_n,727,727,YTD
 ward2023,27,Ward 27,YTD2024-08,rpt_per_1k,12.65,727,YTD
-ward2023,27,Ward 27,YTD2024-08,rpt_per_mi,5.79,700,YTD
+ward2023,27,Ward 27,YTD2024-08,rpt_per_mi,5.78,699,YTD
 ward2023,27,Ward 27,YTD2024-08,rpt_yoy_pct,23.4,589,YTD
 ward2023,27,Ward 27,YTD2024-08,staff_n,2,2,YTD
 ward2023,27,Ward 27,YTD2025-08,alley_close_le7_share,0.1053,76,YTD
@@ -75510,7 +75510,7 @@ ward2023,48,Ward 48,CHG_CY2024_CY2025,fill_per_mi_chgcls,0,312,CHANGE_UNCLEAR
 ward2023,48,Ward 48,CHG_CY2024_CY2025,fill_per_mi_vscity_pct,-6.2,312,CHANGE_UNCLEAR
 ward2023,48,Ward 48,CHG_CY2024_CY2025,rpt_per_mi_chg_pct,-29.1,319,CHANGE_UNCLEAR
 ward2023,48,Ward 48,CHG_CY2024_CY2025,rpt_per_mi_chgcls,0,319,CHANGE_UNCLEAR
-ward2023,48,Ward 48,CHG_CY2024_CY2025,rpt_per_mi_vscity_pct,-5.6,319,CHANGE_UNCLEAR
+ward2023,48,Ward 48,CHG_CY2024_CY2025,rpt_per_mi_vscity_pct,-5.7,319,CHANGE_UNCLEAR
 ward2023,48,Ward 48,CHG_YTD2025-08_YTD2026-08,close_le7_share_chg_pts,7.9,260,CHANGE_UNCLEAR|YTD
 ward2023,48,Ward 48,CHG_YTD2025-08_YTD2026-08,close_le7_share_chgcls,0,260,CHANGE_UNCLEAR|YTD
 ward2023,48,Ward 48,CHG_YTD2025-08_YTD2026-08,close_le7_share_vscity_pts,4.3,260,CHANGE_UNCLEAR|YTD

@@ -86,7 +86,7 @@ rate across every area tested on that layer. METHODS §6.6.
 | `YTD` | A January 1 – August 31 window, matched across years |
 | `TRANSITION_2019` | Includes 2019, or compares against it (a blank 2020 `rpt_yoy_pct`). 2019 is the first full year of the current 311 system; duplicate flagging and entry practice differ from later years, and its records are misallocated at several times the later rate — see the limitation below |
 | `PRE2023_WARD` | A ward figure for a period ending before the 2023 remap, shown on today's map, or a comparison that uses one |
-| `SPLIT_2023` | A ward figure for a period straddling the May 15, 2023 remap, or a comparison that uses one |
+| `SPLIT_2023` | A ward figure for a period straddling the 2023-05-15 remap, or a comparison that uses one |
 | `SUPPRESSED_LOW_N` | Too few records for a stable figure (fewer than 30; 100 for a 90th percentile). `value` is empty, `n` is not |
 | `KM_NOT_REACHED` | The survival curve never reached that quantile |
 | `COHORT_OPEN` | 1% or more of the cohort was still open, so patch metrics are withheld until the year settles |
@@ -97,14 +97,30 @@ rate across every area tested on that layer. METHODS §6.6.
 
 ## Companion tables
 
-**`geo_denominators.csv`** (<!--n:geo_denominators.csv-->143<!--/n--> rows) — `geo_type`, `geo_id`, `street_mi`,
-`pop2020`, `poverty_rate`, `lep_hh_share`, `broadband_hh_share`,
-`pct_hispanic`, `pct_nh_black`, `pct_nh_white`, `pct_nh_asian`, `acs_vintage`,
-`centerline_rows_updated`. The denominators behind every rate, for the city,
-community areas, wards, and each poverty quintile and race group. Street mileage
-excludes expressways, the Skyway and ramps but includes Lake Shore Drive, and
-splits boundary segments between the areas that share them, so summing street
-miles over all areas (or all groups, with `EXCLUDED`) gives the city total.
+**`geo_denominators.csv`** (<!--n:geo_denominators.csv-->143<!--/n--> rows) — the denominators behind every
+rate, for the city, community areas, wards, and each poverty quintile and race
+group.
+
+| Column | Values |
+|---|---|
+| `street_mi` | Street miles, 4 decimals. Excludes expressways, the Skyway and ramps; includes Lake Shore Drive. A segment on a shared boundary counts once, for the lower `geo_id` |
+| `pop2020` | Residents, 2020 Census |
+| `poverty_rate`, `lep_hh_share`, `broadband_hh_share` | **Shares on a 0–1 scale**, 6 decimals — not percentages. Poverty rate, limited-English households, households with broadband (ACS 5-year) |
+| `pct_hispanic`, `pct_nh_black`, `pct_nh_white`, `pct_nh_asian` | Also **0–1 shares** despite the `pct_` prefix, 6 decimals. 2020 Census, non-Hispanic except `pct_hispanic` |
+| `acs_vintage` | The ACS 5-year vintage the covariates come from, as a year |
+| `centerline_rows_updated` | When the city last updated the street centerline dataset, ISO-8601 UTC |
+
+The covariate columns are empty on the `UNASSIGNED` and `EXCLUDED` rows.
+
+**Do not add the `UNASSIGNED` row into a total.** It is not a place: its
+`street_mi` is city mileage that falls inside no polygon of that `geo_type`,
+and its `pop2020` is the 2020 population of Cook County *outside* the city —
+2.53 million people, which is why the row must never be read as a denominator.
+A geography's street-mile total is the sum of its real areas, `EXCLUDED`
+included for the strata, with `UNASSIGNED` dropped: that comes to 3,950.4 mi
+for community areas and for both stratum types, against the city's 3,950.4391.
+Wards come to 3,938.9 mi, 0.29% low, because the ward boundaries do not tile
+the community-area union exactly; check V9 allows 0.5%.
 
 **`ward_legacy_mix.csv`** (<!--n:ward_legacy_mix.csv-->2,437<!--/n--> rows) — `ward2023`, `period`, `ward2015`,
 `share_of_rpt_n`. For each pre-remap period, which 2015-map wards a current ward
@@ -115,10 +131,13 @@ no names anywhere.
 `pov_quintile`, `race_group`, `race_majority`, `excluded_reason`. The tract
 assignments behind the `pov_quintile` and `race_group` rows. `race_majority` is
 a tract's majority group before any merge; `race_group` is the group it is
-counted in. A group with fewer than 300 reports a year is merged into
-`no_majority`: at this release that is the six majority-Asian (non-Hispanic)
-tracts, about 21,500 residents. Poverty and race are strongly collinear in
-Chicago; they are reported separately and never cross-tabulated.
+counted in. `poverty_rate` here is the whole-tract ACS rate as a 0–1 share, at
+full floating-point precision — the fixed per-measure rounding described above
+applies to `potholes_long.csv` alone, so round it yourself before displaying
+it. A group with fewer than 300 reports a year is merged into `no_majority`:
+at this release that is the six majority-Asian (non-Hispanic) tracts, about
+20,900 residents. Poverty and race are strongly collinear in Chicago; they
+are reported separately and never cross-tabulated.
 
 **`breaks.json`** — the frozen 5-class quantile breaks, by mode, geography and
 metric, plus the fixed change thresholds. Full years are cut from 2020–2025;
@@ -143,7 +162,7 @@ published rather than fixed carries `accepted` with its reason.
 `wet_ft_days`, `ft_days`, `fdd`, `prcp_in`, `snow_in`, `z_wet_ft`, `z_fdd`,
 `z_prcp`, `z_snow`, `harshness`, `harshness_pctile`, `category`,
 `nov_dec_share`, `filled_days`, `missing_days`, `flags`. One row per winter,
-`W2019` (Nov 1, 2018 – Apr 30, 2019) onward, built only from NOAA daily weather
+`W2019` (2018-11-01 – 2019-04-30) onward, built only from NOAA daily weather
 records at O'Hare and never from 311 or patch data. Four components — wet
 freeze–thaw days, freezing degree-days, precipitation and snowfall — are each
 turned into a z-score against the 30 winters 1991–92 to 2020–21; `harshness` is
@@ -154,7 +173,7 @@ pothole figure is adjusted for it, its components stand for conditions the
 pavement literature associates with pothole formation rather than measured
 damage, and a harsh winter beside a high report count does not show that one
 produced the other. Its rank correlation with citywide reports is D10 in
-`qa_report.json`, summarised under `qa_report.json` above; with six or seven
+`qa_report.json`, summarized under `qa_report.json` above; with six or seven
 years it cannot establish an association either way. METHODS §11.
 
 **`winter_reference_stats.json`** — the reference mean and standard deviation
@@ -195,7 +214,7 @@ does not (0.48).
   The rows stay in this release — excluding data from a chart is not a reason to
   withhold it from the record — and carry `TRANSITION_2019` wherever they
   appear. Nothing else uses them: no pooled period, year-over-year change,
-  change comparison, colour class or diagnostic headline includes 2019, and the
+  change comparison, color class or diagnostic headline includes 2019, and the
   website's map and charts start at 2020. Treat 2019 as a weak baseline rather
   than a comparable year, and say so if you publish a comparison against it.
 - **These are not counts of potholes.** No dataset here measures how many

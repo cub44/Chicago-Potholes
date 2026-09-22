@@ -5,7 +5,7 @@ Licensed under the Creative Commons Attribution 4.0 International Public
 License (CC BY 4.0), reproduced in full below.
 
 Applies to everything in this repository: the files in data/, checksums.sha256,
-README.md, data/README.md and METHODS.md. The repository contains no code;
+README.md, data/README.md, METHODS.md and CITATION.cff. The repository contains no code;
 LICENSE (MIT) would cover any that is added.
 
 Licensor: Connor Ulrich Blandford.
@@ -13,7 +13,7 @@ Suggested attribution: "Chicago potholes, Connor Ulrich Blandford, source
 snapshot <date>", with a link to https://github.com/cub44/Chicago-Potholes and
 an indication of any changes made.
 
-This licence covers the project's selection, derivation, arrangement and
+This license covers the project's selection, derivation, arrangement and
 documentation. It does not relicense the underlying records, which remain
 subject to their publishers' terms: the City of Chicago Data Portal Terms of
 Use (311 Service Requests, Potholes Patched, ward, community area and street
@@ -21,7 +21,7 @@ centerline boundaries), the U.S. Census Bureau (2020 Census P.L. 94-171,
 American Community Survey 5-year, TIGER/Line), and NOAA's National Centers
 for Environmental Information (GHCN-Daily).
 
-The text below is the licence as published at
+The text below is the license as published at
 https://creativecommons.org/licenses/by/4.0/legalcode.txt
 
 =======================================================================

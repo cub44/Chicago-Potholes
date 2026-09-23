@@ -323,7 +323,7 @@
    "id": "V11a",
    "check": "Two builds of the same snapshot and code are byte-identical",
    "status": "PASS",
-   "detail": "9 release files byte-identical to an earlier build of snapshot 2026-09-21T012058Z (qa_report.json excluded: it records live portal queries)"
+   "detail": "12 release files byte-identical to an earlier build of snapshot 2026-09-21T012058Z (qa_report.json excluded: it records live portal queries)"
   },
   {
    "id": "V11c",
@@ -335,7 +335,7 @@
    "id": "V11b",
    "check": "checksums.sha256 lists exactly the release, every hash matching",
    "status": "PASS",
-   "detail": "10 files listed and hash-matched"
+   "detail": "13 files listed and hash-matched"
   }
  ],
  "gate2": [

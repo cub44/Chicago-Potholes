@@ -1,6 +1,6 @@
 # Data dictionary and limitations
 
-Ten files, verified by `../checksums.sha256`. `METHODS.md` in the repository
+Thirteen files, verified by `../checksums.sha256`. `METHODS.md` in the repository
 root is the authority for every definition; this file is the working reference.
 
 Read the limitations at the bottom before using any of it. They are not
@@ -187,6 +187,22 @@ How each winter ranks (1 = harshest) under the published score and six
 variants: each component alone, all freeze–thaw days in place of wet ones, and
 wet freeze–thaw days counted twice. The 2018–19 winter ranks first under every
 variant; the order of the milder winters depends on the variant.
+
+**`community_area_summary.csv`** (<!--n:community_area_summary.csv-->77<!--/n--> rows) and
+**`ward_summary.csv`** (<!--n:ward_summary.csv-->50<!--/n--> rows) reshape `potholes_long.csv`
+for the latest complete calendar year, `UNASSIGNED` excluded: `geo_id`, `geo_name`,
+`period`, then `rpt_n`, `rpt_per_mi`, `close_p50_d`, `rpt_patched_share` and
+`fill_per_mi`, each followed by its `n` and `flags` columns. The value text is exactly
+what the long table prints for that row; a withheld cell is empty with its `n` and flag
+intact. Nothing is recomputed, so read the flags here as you would there.
+
+**`facts.json`** — every figure the project page states, one entry per figure with
+`value` (the exact figure), `display` (the string the page prints, thousands separators
+and unit included), `label`, a one-sentence `definition`, `source_file`, `sources`,
+`rounding` and `unit`, read from the files above and the deterministic parts of
+`qa_report.json`. The top level carries the release date, `snapshot_date`,
+`data_currency`, `methods_version` and the coverage window. Percents are on a 0–100
+scale; nothing carries a metric unit. METHODS §8.2.
 
 The Midway check (W9 in `qa_report.json`) is open: Midway's record begins in
 1997 and has almost no snowfall or snow-depth readings, so its version of the

@@ -1,0 +1,545 @@
+{
+ "schema": 1,
+ "project": "chicago-potholes",
+ "release": "2026-09-23",
+ "snapshot_date": "2026-09-21",
+ "data_currency": "2026-09-20",
+ "methods_version": "0.5",
+ "coverage": {
+  "download_start": "2019",
+  "map_start": "2020",
+  "end": "2026-08",
+  "ytd_end": "08-31",
+  "default_period": "CY2025"
+ },
+ "generated_by": "pipeline export",
+ "sources": [
+  {
+   "id": "sr_311",
+   "name": "311 Service Requests (pothole codes PHF and PHB) (City of Chicago data portal, v6vf-nfxy)",
+   "url": "https://data.cityofchicago.org/d/v6vf-nfxy",
+   "pulled": "2026-09-21"
+  },
+  {
+   "id": "patched",
+   "name": "Potholes Patched (City of Chicago data portal, wqdh-9gek)",
+   "url": "https://data.cityofchicago.org/d/wqdh-9gek",
+   "pulled": "2026-09-21"
+  },
+  {
+   "id": "wards_2023",
+   "name": "Boundaries - Wards (2023-) (City of Chicago data portal, p293-wvbd)",
+   "url": "https://data.cityofchicago.org/d/p293-wvbd",
+   "pulled": "2026-09-21"
+  },
+  {
+   "id": "wards_2015",
+   "name": "Boundaries - Wards (2015-2023) (City of Chicago data portal, k9yb-bpqx)",
+   "url": "https://data.cityofchicago.org/d/k9yb-bpqx",
+   "pulled": "2026-09-21"
+  },
+  {
+   "id": "community_areas",
+   "name": "Boundaries - Community Areas (City of Chicago data portal, igwz-8jzy)",
+   "url": "https://data.cityofchicago.org/d/igwz-8jzy",
+   "pulled": "2026-09-21"
+  },
+  {
+   "id": "centerlines",
+   "name": "Street Center Lines (City of Chicago data portal, pr57-gg9e)",
+   "url": "https://data.cityofchicago.org/d/pr57-gg9e",
+   "pulled": "2026-09-21"
+  },
+  {
+   "id": "census_pl_2020",
+   "name": "2020 Census P.L. 94-171 redistricting tables (U.S. Census Bureau)",
+   "url": "https://api.census.gov/data/2020/dec/pl",
+   "pulled": "2026-09-21"
+  },
+  {
+   "id": "acs_2023",
+   "name": "American Community Survey 5-year tract tables, 2023 vintage",
+   "url": "https://api.census.gov/data/2023/acs/acs5",
+   "pulled": "2026-09-21"
+  },
+  {
+   "id": "tiger_2020",
+   "name": "TIGER/Line 2020 tract geometry (U.S. Census Bureau)",
+   "url": "https://www2.census.gov/geo/tiger/",
+   "pulled": "2026-09-21"
+  },
+  {
+   "id": "ghcnd_ohare",
+   "name": "NOAA GHCN-Daily, O'Hare (USW00094846), via the NCEI Access Data Service",
+   "url": "https://www.ncei.noaa.gov/access/services/data/v1",
+   "pulled": "2026-09-21"
+  },
+  {
+   "id": "ghcnd_midway",
+   "name": "NOAA GHCN-Daily, Midway (USW00014819), via the NCEI Access Data Service",
+   "url": "https://www.ncei.noaa.gov/access/services/data/v1",
+   "pulled": "2026-09-21"
+  }
+ ],
+ "facts": {
+  "published_figures": {
+   "value": 77274,
+   "display": "77,274",
+   "label": "Published figures",
+   "definition": "Rows of potholes_long.csv, one per place, period and measure.",
+   "source_file": "potholes_long.csv",
+   "sources": [
+    "sr_311",
+    "patched"
+   ],
+   "rounding": null,
+   "unit": "figures"
+  },
+  "long_csv_mb": {
+   "value": 5.366717,
+   "display": "5.4 MB",
+   "label": "Size of potholes_long.csv",
+   "definition": "Its size in bytes divided by 1,000,000.",
+   "source_file": "potholes_long.csv",
+   "sources": [
+    "sr_311",
+    "patched"
+   ],
+   "rounding": "nearest tenth",
+   "unit": "MB"
+  },
+  "community_areas": {
+   "value": 77,
+   "display": "77",
+   "label": "Community areas",
+   "definition": "community_area rows of geo_denominators.csv, the UNASSIGNED bucket excluded.",
+   "source_file": "geo_denominators.csv",
+   "sources": [
+    "community_areas"
+   ],
+   "rounding": null,
+   "unit": "areas"
+  },
+  "wards": {
+   "value": 50,
+   "display": "50",
+   "label": "Wards",
+   "definition": "ward2023 rows of geo_denominators.csv, the UNASSIGNED bucket excluded.",
+   "source_file": "geo_denominators.csv",
+   "sources": [
+    "wards_2023"
+   ],
+   "rounding": null,
+   "unit": "wards"
+  },
+  "winters_charted": {
+   "value": 7,
+   "display": "7",
+   "label": "Winters on the chart",
+   "definition": "Rows of winter_harshness.csv from W2020 on; W2019 is published but not charted, under the 2019 policy.",
+   "source_file": "winter_harshness.csv",
+   "sources": [
+    "ghcnd_ohare"
+   ],
+   "rounding": null,
+   "unit": "winters"
+  },
+  "winters_published": {
+   "value": 8,
+   "display": "8",
+   "label": "Winters in the download",
+   "definition": "Rows of winter_harshness.csv.",
+   "source_file": "winter_harshness.csv",
+   "sources": [
+    "ghcnd_ohare"
+   ],
+   "rounding": null,
+   "unit": "winters"
+  },
+  "reference_winters": {
+   "value": 30,
+   "display": "30",
+   "label": "Reference winters",
+   "definition": "The winters 1991–92 to 2020–21 each z-score is measured against (winter_reference_stats.json n).",
+   "source_file": "winter_reference_stats.json",
+   "sources": [
+    "ghcnd_ohare"
+   ],
+   "rounding": null,
+   "unit": "winters"
+  },
+  "reference_winters_with_snow_gaps": {
+   "value": 5,
+   "display": "5",
+   "label": "Reference winters with missing snow readings",
+   "definition": "Entries in reference_data_gaps: reference winters in which O'Hare's snow readings have gaps, counted as zero.",
+   "source_file": "winter_reference_stats.json",
+   "sources": [
+    "ghcnd_ohare"
+   ],
+   "rounding": null,
+   "unit": "winters"
+  },
+  "rpt_n_cy2025": {
+   "value": 20911,
+   "display": "20,911",
+   "label": "Pothole reports, 2025",
+   "definition": "Distinct reported pothole problems citywide in calendar 2025 (rpt_n, CY2025).",
+   "source_file": "potholes_long.csv",
+   "sources": [
+    "sr_311"
+   ],
+   "rounding": null,
+   "unit": "reports"
+  },
+  "rpt_n_cy2025_approx": {
+   "value": 20911,
+   "display": "21,000",
+   "label": "Pothole reports, 2025, rounded",
+   "definition": "The same figure to the nearest 1,000.",
+   "source_file": "potholes_long.csv",
+   "sources": [
+    "sr_311"
+   ],
+   "rounding": "nearest 1,000",
+   "unit": "reports"
+  },
+  "close_p50_d_cy2025": {
+   "value": 14.9,
+   "display": "14.9",
+   "label": "Median days to close, 2025",
+   "definition": "Survival-curve median days until 311 closed a 2025 report (close_p50_d, CY2025).",
+   "source_file": "potholes_long.csv",
+   "sources": [
+    "sr_311"
+   ],
+   "rounding": null,
+   "unit": "days"
+  },
+  "rpt_patched_share_cy2025": {
+   "value": 71.21,
+   "display": "71.2%",
+   "label": "Reports with a recorded patch, 2025",
+   "definition": "Share of completed 2025 reports with a linked Potholes Patched record (rpt_patched_share 0.7121).",
+   "source_file": "potholes_long.csv",
+   "sources": [
+    "sr_311",
+    "patched"
+   ],
+   "rounding": "nearest tenth of a percent",
+   "unit": "percent"
+  },
+  "rpt_patched_share_cy2024": {
+   "value": 76.68,
+   "display": "76.7%",
+   "label": "Reports with a recorded patch, 2024",
+   "definition": "Share of completed 2024 reports with a linked Potholes Patched record (rpt_patched_share 0.7668).",
+   "source_file": "potholes_long.csv",
+   "sources": [
+    "sr_311",
+    "patched"
+   ],
+   "rounding": "nearest tenth of a percent",
+   "unit": "percent"
+  },
+  "rpt_patched_share_cy2025_approx": {
+   "value": 71.21,
+   "display": "71%",
+   "label": "Reports with a recorded patch, 2025, rounded",
+   "definition": "The same share to the nearest percent.",
+   "source_file": "potholes_long.csv",
+   "sources": [
+    "sr_311",
+    "patched"
+   ],
+   "rounding": "nearest percent",
+   "unit": "percent"
+  },
+  "fill_n_cy2025": {
+   "value": 248541,
+   "display": "248,541",
+   "label": "Potholes filled, 2025",
+   "definition": "Per-block pothole counts crews entered on 2025 work orders, summed (fill_n, CY2025).",
+   "source_file": "potholes_long.csv",
+   "sources": [
+    "patched"
+   ],
+   "rounding": null,
+   "unit": "potholes"
+  },
+  "fill_n_cy2025_approx": {
+   "value": 248541,
+   "display": "249,000",
+   "label": "Potholes filled, 2025, rounded",
+   "definition": "The same figure to the nearest 1,000.",
+   "source_file": "potholes_long.csv",
+   "sources": [
+    "patched"
+   ],
+   "rounding": "nearest 1,000",
+   "unit": "potholes"
+  },
+  "rpt_dup_share_cy2019": {
+   "value": 46.77,
+   "display": "46.8%",
+   "label": "Reports flagged as duplicates, 2019",
+   "definition": "Share of in-demand 2019 street requests that were effective duplicates (rpt_dup_share 0.4677).",
+   "source_file": "potholes_long.csv",
+   "sources": [
+    "sr_311"
+   ],
+   "rounding": "nearest tenth of a percent",
+   "unit": "percent"
+  },
+  "rpt_n_cy2019": {
+   "value": 42535,
+   "display": "42,535",
+   "label": "Pothole reports, 2019",
+   "definition": "Distinct reported pothole problems citywide in calendar 2019 (rpt_n, CY2019).",
+   "source_file": "potholes_long.csv",
+   "sources": [
+    "sr_311"
+   ],
+   "rounding": null,
+   "unit": "reports"
+  },
+  "unplaced_2019_pct": {
+   "value": 2.0947,
+   "display": "2.09%",
+   "label": "2019 reports not placed in a community area",
+   "definition": "891 of 42,535 2019 reports fell outside every community-area polygon (qa_report.json join_loss, rpt_n, community_area).",
+   "source_file": "qa_report.json",
+   "sources": [
+    "sr_311",
+    "community_areas"
+   ],
+   "rounding": "nearest hundredth of a percent",
+   "unit": "percent"
+  },
+  "unplaced_2019_n": {
+   "value": 891,
+   "display": "891",
+   "label": "2019 reports not placed",
+   "definition": "The unassigned count behind the share above.",
+   "source_file": "qa_report.json",
+   "sources": [
+    "sr_311",
+    "community_areas"
+   ],
+   "rounding": null,
+   "unit": "reports"
+  },
+  "unplaced_later_min_pct": {
+   "value": 0.3655,
+   "display": "0.37%",
+   "label": "Lowest share unplaced, 2020 to 2025",
+   "definition": "The smallest community-area join loss for rpt_n over CY2020–CY2025 (CY2023).",
+   "source_file": "qa_report.json",
+   "sources": [
+    "sr_311",
+    "community_areas"
+   ],
+   "rounding": "nearest hundredth of a percent",
+   "unit": "percent"
+  },
+  "unplaced_later_max_pct": {
+   "value": 0.7798,
+   "display": "0.78%",
+   "label": "Highest share unplaced, 2020 to 2025",
+   "definition": "The largest over the same years (CY2024).",
+   "source_file": "qa_report.json",
+   "sources": [
+    "sr_311",
+    "community_areas"
+   ],
+   "rounding": "nearest hundredth of a percent",
+   "unit": "percent"
+  },
+  "patch_within_minute_pct": {
+   "value": 99.95,
+   "display": "99.95%",
+   "label": "Linked patch records logged within a minute of closure",
+   "definition": "Diagnostic D4: share of linked pairs whose patch completion is within 60 seconds of the 311 close.",
+   "source_file": "qa_report.json",
+   "sources": [
+    "sr_311",
+    "patched"
+   ],
+   "rounding": null,
+   "unit": "percent"
+  },
+  "patch_linked_pairs": {
+   "value": 234815,
+   "display": "234,815",
+   "label": "Linked patch–report pairs",
+   "definition": "D4's n: the linked pairs tested.",
+   "source_file": "qa_report.json",
+   "sources": [
+    "sr_311",
+    "patched"
+   ],
+   "rounding": null,
+   "unit": "pairs"
+  },
+  "alley_close_withheld_cy2024": {
+   "value": 16,
+   "display": "16",
+   "label": "Community areas with alley closing time withheld, 2024",
+   "definition": "alley_close_p50_d rows for CY2024 that are blank under the minimum-n rule, of 77 community areas with a row.",
+   "source_file": "potholes_long.csv",
+   "sources": [
+    "sr_311"
+   ],
+   "rounding": null,
+   "unit": "areas"
+  },
+  "alley_close_withheld_cy2025": {
+   "value": 23,
+   "display": "23",
+   "label": "Community areas with alley closing time withheld, 2025",
+   "definition": "alley_close_p50_d rows for CY2025 that are blank under the minimum-n rule, of 76 community areas with a row.",
+   "source_file": "potholes_long.csv",
+   "sources": [
+    "sr_311"
+   ],
+   "rounding": null,
+   "unit": "areas"
+  },
+  "alley_close_withheld_ytd2025_08": {
+   "value": 32,
+   "display": "32",
+   "label": "Community areas with alley closing time withheld, Jan–Aug 2025",
+   "definition": "alley_close_p50_d rows for YTD2025-08 that are blank under the minimum-n rule, of 76 community areas with a row.",
+   "source_file": "potholes_long.csv",
+   "sources": [
+    "sr_311"
+   ],
+   "rounding": null,
+   "unit": "areas"
+  },
+  "alley_close_withheld_ytd2026_08": {
+   "value": 26,
+   "display": "26",
+   "label": "Community areas with alley closing time withheld, Jan–Aug 2026",
+   "definition": "alley_close_p50_d rows for YTD2026-08 that are blank under the minimum-n rule, of 76 community areas with a row.",
+   "source_file": "potholes_long.csv",
+   "sources": [
+    "sr_311"
+   ],
+   "rounding": null,
+   "unit": "areas"
+  },
+  "suppression_min_n": {
+   "value": 30,
+   "display": "30",
+   "label": "Minimum records for a published figure",
+   "definition": "The §7.1 minimum expected count below which a figure is withheld.",
+   "source_file": "METHODS.md",
+   "sources": [
+    "sr_311"
+   ],
+   "rounding": null,
+   "unit": "records"
+  },
+  "suppression_min_p90_n": {
+   "value": 100,
+   "display": "100",
+   "label": "Minimum records for a 90th percentile",
+   "definition": "The §7.1 minimum n for a 90th percentile.",
+   "source_file": "METHODS.md",
+   "sources": [
+    "sr_311"
+   ],
+   "rounding": null,
+   "unit": "records"
+  },
+  "extreme_fill_threshold": {
+   "value": 150,
+   "display": "150",
+   "label": "Extreme fill entry",
+   "definition": "Potholes on one block at or above which a crew entry is extreme.",
+   "source_file": "METHODS.md",
+   "sources": [
+    "patched"
+   ],
+   "rounding": null,
+   "unit": "potholes"
+  },
+  "extreme_fill_flag_pct": {
+   "value": 10.0,
+   "display": "10%",
+   "label": "Extreme share that flags an area-year",
+   "definition": "Share of an area-year's fills from extreme entries at which EXTREME_FILL is set.",
+   "source_file": "METHODS.md",
+   "sources": [
+    "patched"
+   ],
+   "rounding": "nearest percent",
+   "unit": "percent"
+  },
+  "geography_loss_cap_pct": {
+   "value": 1.5,
+   "display": "1.5%",
+   "label": "Geography loss cap (V3)",
+   "definition": "Check V3's cap on the share of each count, in each year, that could not be placed in a geography.",
+   "source_file": "qa_report.json",
+   "sources": [
+    "sr_311"
+   ],
+   "rounding": null,
+   "unit": "percent"
+  },
+  "km_tolerance_days": {
+   "value": 0.5,
+   "display": "0.5",
+   "label": "Survival-median tolerance (V7b)",
+   "definition": "Check V7b's tolerance, in days, between the survival-curve median and the median of closed reports alone.",
+   "source_file": "qa_report.json",
+   "sources": [
+    "sr_311"
+   ],
+   "rounding": null,
+   "unit": "days"
+  },
+  "snap_target_pct": {
+   "value": 97.0,
+   "display": "97%",
+   "label": "Centerline snap target (D6)",
+   "definition": "Diagnostic D6's target share of reports within the snap distance of a street centerline.",
+   "source_file": "qa_report.json",
+   "sources": [
+    "sr_311",
+    "centerlines"
+   ],
+   "rounding": "nearest percent",
+   "unit": "percent"
+  },
+  "ward_field_trigger_pct": {
+   "value": 2.0,
+   "display": "2%",
+   "label": "Ward-field disagreement trigger (D9)",
+   "definition": "Diagnostic D9's trigger: the share of pre-remap reports whose 311 ward field disagrees with their coordinates.",
+   "source_file": "qa_report.json",
+   "sources": [
+    "sr_311",
+    "wards_2015"
+   ],
+   "rounding": null,
+   "unit": "percent"
+  },
+  "road_snap_ft": {
+   "value": 100,
+   "display": "100 ft",
+   "label": "Centerline snap distance",
+   "definition": "The distance within which a report is snapped to a street centerline for its road class, in feet.",
+   "source_file": "qa_report.json",
+   "sources": [
+    "sr_311",
+    "centerlines"
+   ],
+   "rounding": null,
+   "unit": "feet"
+  }
+ },
+ "invariants": []
+}

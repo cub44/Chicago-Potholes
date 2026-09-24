@@ -1,7 +1,7 @@
 {
  "schema": 1,
  "project": "chicago-potholes",
- "release": "2026-09-23",
+ "release": "2026-09-24",
  "snapshot_date": "2026-09-21",
  "data_currency": "2026-09-20",
  "methods_version": "0.5",
@@ -500,6 +500,18 @@
    ],
    "rounding": null,
    "unit": "days"
+  },
+  "km_open_share_pct": {
+   "value": 0.5,
+   "display": "0.5%",
+   "label": "Open-share threshold (V7b)",
+   "definition": "Check V7b's ceiling on the share of a cohort still open, below which the survival-curve median must sit within the tolerance of the median of closed reports alone.",
+   "source_file": "qa_report.json",
+   "sources": [
+    "sr_311"
+   ],
+   "rounding": null,
+   "unit": "percent"
   },
   "snap_target_pct": {
    "value": 97.0,

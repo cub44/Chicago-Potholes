@@ -1,0 +1,31 @@
+{
+ "methods_version": "0.5",
+ "snapshot_id": "2026-09-21T012058Z",
+ "data_currency": "2026-09-20T19:02:51",
+ "ytd_mm": "08",
+ "asof_label": "Sep 20",
+ "default_period": "CY2025",
+ "files": {
+  "areas.1fe0d73f.topo.json": {
+   "bytes": 141276
+  },
+  "breaks.json": {
+   "bytes": 8495
+  },
+  "caveats.json": {
+   "bytes": 3861
+  },
+  "context.92471398.topo.json": {
+   "bytes": 47819
+  },
+  "values_cy.json": {
+   "bytes": 520000
+  },
+  "values_ytd.json": {
+   "bytes": 351430
+  },
+  "ward2015.6995a6fb.topo.json": {
+   "bytes": 29457
+  }
+ }
+}

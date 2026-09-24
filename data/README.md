@@ -1,6 +1,6 @@
 # Data dictionary and limitations
 
-Thirteen files, verified by `../checksums.sha256`. `METHODS.md` in the repository
+Thirteen files, verified by `../checksums.sha256`. The map's files are under `../site/`, verified by `../site/checksums.sha256`. `METHODS.md` in the repository
 root is the authority for every definition; this file is the working reference.
 
 Read the limitations at the bottom before using any of it. They are not

@@ -1,5 +1,7 @@
 # Data dictionary and limitations
 
+<!-- gen:release -->Data release **2026-09-24** by Connor Ulrich Blandford, licensed under [CC BY 4.0](../LICENSE). Cite as: Blandford, Connor Ulrich. “Chicago potholes.” Data set, release 2026-09-24. connorblandford.com. https://connorblandford.com/data/chicago-potholes/. Source snapshot: **2026-09-21**, holding records through **2026-09-20**; methods version **0.5**; coverage **2019 to 2026-08** in full-year and year-to-date periods, with a partial **CY2026** that runs to the last record.<!-- /gen:release -->
+
 Thirteen files, verified by `../checksums.sha256`. The map's files are under `../site/`, verified by `../site/checksums.sha256`. `METHODS.md` in the repository
 root is the authority for every definition; this file is the working reference.
 
@@ -16,7 +18,7 @@ potholes are") is one the data cannot support.
 | `geo_type` | `city`, `community_area`, `ward2023`, `pov_quintile`, `race_group` |
 | `geo_id` | Community area number 1–77, ward number 1–50, `CHI` for the city, a stratum label, or `UNASSIGNED` / `EXCLUDED` |
 | `geo_name` | Display name — `Rogers Park`, `Ward 1`, `Chicago`, `Unassigned location`, `Excluded tracts`. The merged race stratum says what it holds: `No majority group (incl. majority-Asian tracts)` |
-| `period` | `CY2019`…`CY2026`, `YTD{YYYY}-08`, pooled `CY2020-2022` / `CY2023-2025` / `CY2020-2025`, or a `CHG_{base}_{recent}` comparison. No pooled period or comparison includes 2019 |
+| `period` | `CY2019`…`CY2026`, <!-- gen:ytd-period -->`YTD{YYYY}-08`<!-- /gen:ytd-period -->, pooled `CY2020-2022` / `CY2023-2025` / `CY2020-2025`, or a `CHG_{base}_{recent}` comparison. No pooled period or comparison includes 2019 |
 | `metric` | One of the 46 below |
 | `value` | Empty when suppressed, withheld, blank by rule, or not reached. Counts are integers; `*_per_*` 2 decimals; `*_d` 1 decimal; `*_share` on a 0–1 scale with 4 decimals; `*_pct` and `*_pts` 1 decimal; `*_chgcls` an integer −2…2. The ending of the name decides: `rpt_per_mi_chg_pct` is a percentage (1 decimal), `close_le7_share_vscity_pts` percentage points (1 decimal) |
 | `n` | The count behind the figure. Always populated, **including on suppressed rows**, so you can see how thin a cell was |
@@ -66,7 +68,7 @@ dropped, and recent years do not look artificially fast.
 | `fill_per_rpt` | Fills divided by reports. Not a percentage; routinely exceeds 1 |
 
 **Alleys** — `alley_rpt_n`, `alley_close_p50_d`, `alley_close_le7_share`, from
-PHB requests. There is no per-mile or per-capita variant: the city publishes no
+PHB requests. There is no per-mile or per-capita variant: the City publishes no
 alley centerline layer.
 
 **Change** — on `CHG_*` periods only, for `rpt_per_mi`, `fill_per_mi` and
@@ -83,7 +85,7 @@ rate across every area tested on that layer. METHODS §6.6.
 | Flag | Meaning |
 |---|---|
 | `PARTIAL_YEAR` | The calendar year has not ended. Not comparable to a full year |
-| `YTD` | A January 1 – August 31 window, matched across years |
+| `YTD` | A <!-- gen:ytd-window -->Jan 1–Aug 31<!-- /gen:ytd-window --> window, matched across years |
 | `TRANSITION_2019` | Includes 2019, or compares against it (a blank 2020 `rpt_yoy_pct`). 2019 is the first full year of the current 311 system; duplicate flagging and entry practice differ from later years, and its records are misallocated at several times the later rate — see the limitation below |
 | `PRE2023_WARD` | A ward figure for a period ending before the 2023 remap, shown on today's map, or a comparison that uses one |
 | `SPLIT_2023` | A ward figure for a period straddling the 2023-05-15 remap, or a comparison that uses one |
@@ -103,12 +105,12 @@ group.
 
 | Column | Values |
 |---|---|
-| `street_mi` | Street miles, 4 decimals. Excludes expressways, the Skyway and ramps; includes Lake Shore Drive. A segment on a shared boundary counts once, for the lower `geo_id` |
+| `street_mi` | Street miles, at most 4 decimals. Excludes expressways, the Skyway and ramps; includes Lake Shore Drive. A segment on a shared boundary counts once, for the lower `geo_id` |
 | `pop2020` | Residents, 2020 Census |
-| `poverty_rate`, `lep_hh_share`, `broadband_hh_share` | **Shares on a 0–1 scale**, 6 decimals — not percentages. Poverty rate, limited-English households, households with broadband (ACS 5-year) |
-| `pct_hispanic`, `pct_nh_black`, `pct_nh_white`, `pct_nh_asian` | Also **0–1 shares** despite the `pct_` prefix, 6 decimals. 2020 Census, non-Hispanic except `pct_hispanic` |
+| `poverty_rate`, `lep_hh_share`, `broadband_hh_share` | **Shares on a 0–1 scale**, at most 6 decimals — not percentages. Poverty rate, limited-English households, households with broadband (ACS 5-year) |
+| `pct_hispanic`, `pct_nh_black`, `pct_nh_white`, `pct_nh_asian` | Also **0–1 shares** despite the `pct_` prefix, at most 6 decimals. 2020 Census, non-Hispanic except `pct_hispanic` |
 | `acs_vintage` | The ACS 5-year vintage the covariates come from, as a year |
-| `centerline_rows_updated` | When the city last updated the street centerline dataset, ISO-8601 UTC |
+| `centerline_rows_updated` | When the City last updated the street centerline dataset, ISO-8601 UTC |
 
 The covariate columns are empty on the `UNASSIGNED` and `EXCLUDED` rows.
 

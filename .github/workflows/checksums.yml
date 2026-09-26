@@ -1,0 +1,25 @@
+name: Checksums
+
+# Verifies the data files against checksums.sha256 at the root, and the map's files against
+# site/checksums.sha256.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: "23 7 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  checksums:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Verify the data files against checksums.sha256
+        run: shasum -a 256 -c checksums.sha256
+      - name: Verify the map files against site/checksums.sha256
+        run: (cd site && shasum -a 256 -c checksums.sha256)

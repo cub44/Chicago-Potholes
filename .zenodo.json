@@ -1,0 +1,29 @@
+{
+  "upload_type": "dataset",
+  "title": "Chicago potholes",
+  "description": "Pothole reports, time to close and potholes filled in Chicago, by community area and ward, derived from the City of Chicago's 311 and Potholes Patched records. Reports measure attention and fills measure work; neither measures pavement.",
+  "creators": [
+    {
+      "name": "Blandford, Connor Ulrich",
+      "orcid": "0009-0009-5938-7151"
+    }
+  ],
+  "license": "cc-by-4.0",
+  "access_right": "open",
+  "version": "2026-09-26",
+  "language": "eng",
+  "keywords": [
+    "Chicago",
+    "potholes",
+    "311 service requests",
+    "open data",
+    "infrastructure"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://connorblandford.com/data/chicago-potholes/",
+      "relation": "isDocumentedBy",
+      "resource_type": "publication-other"
+    }
+  ]
+}

@@ -1,10 +1,10 @@
 {
  "schema": 1,
  "project": "chicago-potholes",
- "release": "2026-09-24",
- "snapshot_date": "2026-09-21",
- "data_currency": "2026-09-20",
- "methods_version": "0.5",
+ "release": "2026-09-26",
+ "snapshot_date": "2026-09-26",
+ "data_currency": "2026-09-25",
+ "methods_version": "0.5.1",
  "coverage": {
   "download_start": "2019",
   "map_start": "2020",
@@ -18,67 +18,73 @@
    "id": "sr_311",
    "name": "311 Service Requests (pothole codes PHF and PHB) (City of Chicago data portal, v6vf-nfxy)",
    "url": "https://data.cityofchicago.org/d/v6vf-nfxy",
-   "pulled": "2026-09-21"
+   "pulled": "2026-09-26"
   },
   {
    "id": "patched",
    "name": "Potholes Patched (City of Chicago data portal, wqdh-9gek)",
    "url": "https://data.cityofchicago.org/d/wqdh-9gek",
-   "pulled": "2026-09-21"
+   "pulled": "2026-09-26"
   },
   {
    "id": "wards_2023",
    "name": "Boundaries - Wards (2023-) (City of Chicago data portal, p293-wvbd)",
    "url": "https://data.cityofchicago.org/d/p293-wvbd",
-   "pulled": "2026-09-21"
+   "pulled": "2026-09-26"
   },
   {
    "id": "wards_2015",
    "name": "Boundaries - Wards (2015-2023) (City of Chicago data portal, k9yb-bpqx)",
    "url": "https://data.cityofchicago.org/d/k9yb-bpqx",
-   "pulled": "2026-09-21"
+   "pulled": "2026-09-26"
   },
   {
    "id": "community_areas",
    "name": "Boundaries - Community Areas (City of Chicago data portal, igwz-8jzy)",
    "url": "https://data.cityofchicago.org/d/igwz-8jzy",
-   "pulled": "2026-09-21"
+   "pulled": "2026-09-26"
   },
   {
    "id": "centerlines",
    "name": "Street Center Lines (City of Chicago data portal, pr57-gg9e)",
    "url": "https://data.cityofchicago.org/d/pr57-gg9e",
-   "pulled": "2026-09-21"
+   "pulled": "2026-09-26"
   },
   {
    "id": "census_pl_2020",
    "name": "2020 Census P.L. 94-171 redistricting tables (U.S. Census Bureau)",
    "url": "https://api.census.gov/data/2020/dec/pl",
-   "pulled": "2026-09-21"
+   "pulled": "2026-09-26"
   },
   {
    "id": "acs_2023",
    "name": "American Community Survey 5-year tract tables, 2023 vintage",
    "url": "https://api.census.gov/data/2023/acs/acs5",
-   "pulled": "2026-09-21"
+   "pulled": "2026-09-26"
   },
   {
    "id": "tiger_2020",
    "name": "TIGER/Line 2020 tract geometry (U.S. Census Bureau)",
    "url": "https://www2.census.gov/geo/tiger/",
-   "pulled": "2026-09-21"
+   "pulled": "2026-09-26"
   },
   {
    "id": "ghcnd_ohare",
    "name": "NOAA GHCN-Daily, O'Hare (USW00094846), via the NCEI Access Data Service",
-   "url": "https://www.ncei.noaa.gov/access/services/data/v1",
-   "pulled": "2026-09-21"
+   "url": "https://www.ncei.noaa.gov/cdo-web/datasets/GHCND/stations/GHCND:USW00094846/detail",
+   "pulled": "2026-09-26"
   },
   {
    "id": "ghcnd_midway",
    "name": "NOAA GHCN-Daily, Midway (USW00014819), via the NCEI Access Data Service",
-   "url": "https://www.ncei.noaa.gov/access/services/data/v1",
-   "pulled": "2026-09-21"
+   "url": "https://www.ncei.noaa.gov/cdo-web/datasets/GHCND/stations/GHCND:USW00014819/detail",
+   "pulled": "2026-09-26"
+  },
+  {
+   "id": "ghcnd",
+   "name": "Global Historical Climatology Network – Daily (GHCN-Daily), NOAA NCEI",
+   "url": "https://doi.org/10.7289/V5D21VHZ",
+   "pulled": "2026-09-26"
   }
  ],
  "facts": {
@@ -96,7 +102,7 @@
    "unit": "figures"
   },
   "long_csv_mb": {
-   "value": 5.366717,
+   "value": 5.366172,
    "display": "5.4 MB",
    "label": "Size of potholes_long.csv",
    "definition": "Its size in bytes divided by 1,000,000.",
@@ -179,6 +185,18 @@
    ],
    "rounding": null,
    "unit": "winters"
+  },
+  "ytd_window": {
+   "value": 8,
+   "display": "Jan 1–Aug 31",
+   "label": "Year-to-date window",
+   "definition": "The days every YTD{YYYY}-08 period covers in its own year, January 1 through the end of month 08; the value is that month, the last full month that ended at least 7 days before the data currency.",
+   "source_file": "potholes_long.csv",
+   "sources": [
+    "sr_311"
+   ],
+   "rounding": null,
+   "unit": "month"
   },
   "rpt_n_cy2025": {
    "value": 20911,
@@ -369,8 +387,8 @@
    "unit": "percent"
   },
   "patch_linked_pairs": {
-   "value": 234815,
-   "display": "234,815",
+   "value": 234966,
+   "display": "234,966",
    "label": "Linked patch–report pairs",
    "definition": "D4's n: the linked pairs tested.",
    "source_file": "qa_report.json",
@@ -406,9 +424,9 @@
    "unit": "areas"
   },
   "alley_close_withheld_ytd2025_08": {
-   "value": 32,
-   "display": "32",
-   "label": "Community areas with alley closing time withheld, Jan–Aug 2025",
+   "value": 31,
+   "display": "31",
+   "label": "Community areas with alley closing time withheld, 2025-01 to 2025-08",
    "definition": "alley_close_p50_d rows for YTD2025-08 that are blank under the minimum-n rule, of 76 community areas with a row.",
    "source_file": "potholes_long.csv",
    "sources": [
@@ -418,9 +436,9 @@
    "unit": "areas"
   },
   "alley_close_withheld_ytd2026_08": {
-   "value": 26,
-   "display": "26",
-   "label": "Community areas with alley closing time withheld, Jan–Aug 2026",
+   "value": 25,
+   "display": "25",
+   "label": "Community areas with alley closing time withheld, 2026-01 to 2026-08",
    "definition": "alley_close_p50_d rows for YTD2026-08 that are blank under the minimum-n rule, of 76 community areas with a row.",
    "source_file": "potholes_long.csv",
    "sources": [
@@ -537,6 +555,70 @@
     "wards_2015"
    ],
    "rounding": null,
+   "unit": "percent"
+  },
+  "geography_loss_warn_pct": {
+   "value": 1.0,
+   "display": "1%",
+   "label": "Geography loss warning line (V3w)",
+   "definition": "Warning V3w's line: a count-year whose unplaced share is above it, and within the V3 cap, is reported.",
+   "source_file": "qa_report.json",
+   "sources": [
+    "sr_311"
+   ],
+   "rounding": "nearest percent",
+   "unit": "percent"
+  },
+  "portal_drift_tol_pct": {
+   "value": 0.5,
+   "display": "0.5%",
+   "label": "Portal drift tolerance (V1c, REF)",
+   "definition": "The share by which V1c lets the current partial year differ from the portal's count at the pull, and beyond which warning REF reports the portal differing from the reference pull.",
+   "source_file": "qa_report.json",
+   "sources": [
+    "sr_311",
+    "patched"
+   ],
+   "rounding": null,
+   "unit": "percent"
+  },
+  "winter_crosscheck_min_rho": {
+   "value": 0.85,
+   "display": "0.85",
+   "label": "Midway cross-check target (W9)",
+   "definition": "Warning W9's floor on the Spearman rank correlation between Midway's and O'Hare's winter scores over the reference winters.",
+   "source_file": "qa_report.json",
+   "sources": [
+    "ghcnd_ohare",
+    "ghcnd_midway"
+   ],
+   "rounding": null,
+   "unit": "rank correlation"
+  },
+  "ward_pop_dev_trigger_pct": {
+   "value": 5.0,
+   "display": "5%",
+   "label": "Ward population spread trigger (D7)",
+   "definition": "Diagnostic D7's trigger: when every ward's 2020 population is within this share of the ward average, the ward reports-per-1,000 view carries caveat C-WARDPOP.",
+   "source_file": "qa_report.json",
+   "sources": [
+    "census_pl_2020",
+    "wards_2023"
+   ],
+   "rounding": "nearest percent",
+   "unit": "percent"
+  },
+  "ward_pop_max_dev_pct": {
+   "value": 4.97,
+   "display": "4.97%",
+   "label": "Largest ward population gap from the average (D7)",
+   "definition": "Diagnostic D7: the largest gap between a ward's 2020 Census population and the average ward's, as a share of the average.",
+   "source_file": "qa_report.json",
+   "sources": [
+    "census_pl_2020",
+    "wards_2023"
+   ],
+   "rounding": "nearest hundredth of a percent",
    "unit": "percent"
   },
   "road_snap_ft": {

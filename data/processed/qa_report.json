@@ -27,7 +27,7 @@
   {
    "id": "D4",
    "check": "Patch completion minus 311 close, linked pairs",
-   "result": "99.95% within 60 seconds; 100.0% within a day (n = 234,815)",
+   "result": "99.95% within 60 seconds; 100.0% within a day (n = 234,966)",
    "threshold": "report only",
    "status": "report only",
    "decision": "patch_* is 311 close time on the linked subset, not an independent clock; disclosed"
@@ -52,9 +52,9 @@
    "id": "D7",
    "check": "Max |deviation| of ward population from the mean",
    "result": "4.97%",
-   "threshold": "<= 5% adds tooltip note",
-   "status": "report only",
-   "decision": "per-capita ~ raw count on wards"
+   "threshold": "<= 5% adds caveat C-WARDPOP",
+   "status": "tripped",
+   "decision": "caveat C-WARDPOP on the ward reports-per-1,000 view: per-capita tracks the raw count on wards"
   },
   {
    "id": "D8",
@@ -113,10 +113,10 @@
     },
     {
      "yr": 2026,
-     "as_defined": 27275,
-     "with_crew": 34124,
-     "with_salesforce": 27724,
-     "raw_dup_flag": 25885
+     "as_defined": 27352,
+     "with_crew": 34226,
+     "with_salesforce": 27802,
+     "raw_dup_flag": 25870
     }
    ],
    "decision": "published as a methods note"
@@ -215,9 +215,9 @@
   },
   {
    "id": "V1c",
-   "check": "Citywide totals equal the portal's live SoQL aggregate (exact for closed years; partial year within drift tolerance)",
+   "check": "Citywide totals equal the portal's SoQL aggregates recorded at pull time (exact for closed years; the partial year within 0.5%)",
    "status": "PASS",
-   "detail": "0 year(s) differ: []"
+   "detail": "16 year totals compared with the record taken 2026-09-26T00:50:17+00:00; 0 differ: none"
   },
   {
    "id": "V2",
@@ -229,8 +229,8 @@
    "id": "V3",
    "check": "Geography loss <= 1.5% per count metric per CY",
    "status": "FAIL",
-   "detail": "12 cell(s) over 1.5%: crew_n CY2021 ward2023 2.164%; rpt_n CY2019 ward2023 2.107%; rpt_n CY2019 community_area 2.095%; crew_n CY2021 community_area 2.04%; crew_n CY2022 community_area 1.95%; crew_n CY2022 ward2023 1.94%; crew_n CY2026 ward2023 1.791%; staff_n CY2019 community_area 1.775%; staff_n CY2019 ward2023 1.775%; crew_n CY2026 community_area 1.762%; rpt_all_n CY2019 ward2023 1.675%; rpt_all_n CY2019 community_area 1.66%",
-   "accepted": "Restored to METHODS' 1.5% cap (a 0.4-era config change had raised it to 2.25% without a changelog entry). These count-years exceed it and are published as they are, with each loss in join_loss: 2019 is the 311 system's first full year and is kept off the map; crew_n and staff_n are city-entered records outside demand and never mapped; CY2026 is a partial year.",
+   "detail": "12 cell(s) over 1.5%: crew_n CY2021 ward2023 2.164%; rpt_n CY2019 ward2023 2.107%; rpt_n CY2019 community_area 2.095%; crew_n CY2021 community_area 2.04%; crew_n CY2022 community_area 1.95%; crew_n CY2022 ward2023 1.94%; crew_n CY2026 ward2023 1.8%; staff_n CY2019 community_area 1.775%; staff_n CY2019 ward2023 1.775%; crew_n CY2026 community_area 1.756%; rpt_all_n CY2019 ward2023 1.675%; rpt_all_n CY2019 community_area 1.66%",
+   "accepted": "Restored to METHODS' 1.5% cap (a config change before the 0.3 release had raised it to 2.25% without a changelog entry). These count-years exceed it and are published as they are, with each loss in join_loss: 2019 is the 311 system's first full year and is kept off the map; crew_n and staff_n are City-entered records outside demand and never mapped; CY2026 is a partial year.",
    "accepted_cells": 12
   },
   {
@@ -253,7 +253,7 @@
   },
   {
    "id": "V7a",
-   "check": "KM fixtures match hand-computed and lifelines values",
+   "check": "KM fixtures match independently computed and lifelines values",
    "status": "PASS",
    "detail": "8 of 8 fixtures pass"
   },
@@ -261,15 +261,15 @@
    "id": "V7b",
    "check": "KM p50 within 0.5 day of the completed-only p50 where under 0.5% of the cohort is open",
    "status": "FAIL",
-   "detail": "2375 cohorts tested, 11 outside tolerance: [('community_area', '29', 'CY2023', 'close', 13.6, 12.97), ('ward2023', '18', 'CY2024', 'close', 10.7, 10.13), ('community_area', '42', 'CY2024', 'close', 14.1, 12.99), ('ward2023', '34', 'CY2025', 'close', 9.7, 9.03)]",
+   "detail": "2398 cohorts tested, 12 outside tolerance: [('community_area', '29', 'CY2023', 'close', 13.6, 12.97), ('ward2023', '18', 'CY2024', 'close', 10.7, 10.13), ('ward2023', '24', 'CY2024', 'close', 32.0, 31.11), ('community_area', '42', 'CY2024', 'close', 14.1, 12.99), ('community_area', '22', 'CY2025', 'close', 32.6, 32.02), ('ward2023', '34', 'CY2025', 'close', 9.7, 9.03), ('ward2023', '5', 'CY2023-2025', 'close', 14.8, 14.24), ('ward2023', '16', 'CY2023-2025', 'alley_close', 43.8, 43.13), ('ward2023', '29', 'CY2023-2025', 'alley_close', 52.0, 51.03), ('ward2023', '21', 'CY2020-2025', 'alley_close', 17.9, 17.11), ('ward2023', '29', 'CY2020-2025', 'alley_close', 39.2, 38.29), ('ward2023', '4', 'CY2020-2025', 'alley_close', 21.8, 21.03)]",
    "accepted": "KM is correct in every listed cohort (V7c: its median is the closed order statistic at rank ceil(n/2) with the one or two open reports counted). The completed-only median is one rank lower, and in these cohorts adjacent closing times are more than 0.5 day apart, so the 0.5-day tolerance cannot hold. The tolerance is kept as METHODS states it.",
-   "accepted_cells": 11
+   "accepted_cells": 12
   },
   {
    "id": "V7c",
    "check": "KM p50 equals the closed-report order statistic at rank ceil(n/2), n counting open reports, in every V7b cohort whose open reports are all censored after the median",
    "status": "PASS",
-   "detail": "2375 cohorts tested exactly, 0 differ: []"
+   "detail": "2398 cohorts tested exactly, 0 differ: []"
   },
   {
    "id": "V8",
@@ -309,7 +309,7 @@
   },
   {
    "id": "V14",
-   "check": "Change-statistic fixtures (log-ratio se, Greenwood, dispersion, BH) match hand-computed and lifelines values to 1e-9",
+   "check": "Change-statistic fixtures (log-ratio se, Greenwood, dispersion, BH) match independently computed and lifelines values to 1e-9",
    "status": "PASS",
    "detail": "10 of 10 fixtures pass"
   },
@@ -317,13 +317,13 @@
    "id": "V15",
    "check": "Caveat registry: every published flag has a caveat; every caveat <= 40 words with no causal verb, grade or name slot",
    "status": "PASS",
-   "detail": "11 flags in use, 16 caveats; no_entry=[], dangling=[], copy=[]"
+   "detail": "11 flags in use, 17 caveats; no_entry=[], dangling=[], copy=[]"
   },
   {
    "id": "V11a",
    "check": "Two builds of the same snapshot and code are byte-identical",
    "status": "PASS",
-   "detail": "24 release files byte-identical to an earlier build of snapshot 2026-09-21T012058Z (qa_report.json excluded: it records live portal queries)"
+   "detail": "25 release files byte-identical to an earlier build of snapshot 2026-09-26T004723Z (qa_report.json excluded: it records live portal queries)"
   },
   {
    "id": "V11c",
@@ -341,13 +341,19 @@
  "gate2": [
   {
    "id": "V1d",
-   "check": "Current partial year drifted since the pull",
-   "status": "WARN",
-   "detail": "phf_rows 2026: ours 52,853 vs live 53,001 (-0.279%)"
+   "check": "Current partial year differs from its pull-time aggregate (within the V1c tolerance)",
+   "status": "ok",
+   "detail": ""
+  },
+  {
+   "id": "V1e",
+   "check": "Live portal differs from the pull-time aggregates beyond the V1c rule (any closed-year change, or the partial year beyond the tolerance)",
+   "status": "ok",
+   "detail": "queried 2026-09-26T03:51:38+00:00; phf_rows 2026: at pull 53,684 vs live 53,686 (-0.004%)"
   },
   {
    "id": "REF",
-   "check": "Reference pull drift > 0.5%",
+   "check": "Pull-time portal aggregates differ from the reference pull by more than 0.5%",
    "status": "ok",
    "detail": "[]"
   },
@@ -355,19 +361,19 @@
    "id": "V3w",
    "check": "Geography loss over 1.0% (and within the V3 cap)",
    "status": "WARN",
-   "detail": "crew_n CY2019 community_area 1.353%; crew_n CY2019 ward2023 1.353%; crew_n CY2020 community_area 1.432%; crew_n CY2020 ward2023 1.432%; crew_n CY2025 community_area 1.194%; crew_n CY2025 ward2023 1.194%; rpt_n CY2026 community_area 1.019%; rpt_n CY2026 ward2023 1.03%"
+   "detail": "crew_n CY2019 community_area 1.353%; crew_n CY2019 ward2023 1.353%; crew_n CY2020 community_area 1.432%; crew_n CY2020 ward2023 1.432%; crew_n CY2025 community_area 1.194%; crew_n CY2025 ward2023 1.194%; rpt_n CY2026 community_area 1.027%; rpt_n CY2026 ward2023 1.038%"
   },
   {
    "id": "W1",
    "check": "Citywide rpt_dup_share moves > 15 pts from the prior year",
    "status": "ok",
-   "detail": "CY2021 +0.5 pts; CY2022 +10.9 pts; CY2023 -11.3 pts; CY2024 +9.1 pts; CY2025 +9.5 pts; YTD2026-08 -1.5 pts"
+   "detail": "CY2021 +0.5 pts; CY2022 +10.9 pts; CY2023 -11.3 pts; CY2024 +9.1 pts; CY2025 +9.5 pts; YTD2026-08 -1.0 pts"
   },
   {
    "id": "W2",
    "check": "Citywide crew_logged share of non-duplicate PHF moves > 10 pts from the prior year",
    "status": "ok",
-   "detail": "2021 +0.3 pts; 2022 -6.6 pts; 2023 +9.5 pts; 2024 -3.0 pts; 2025 +2.5 pts; 2026 -9.9 pts"
+   "detail": "2021 +0.3 pts; 2022 -6.6 pts; 2023 +9.5 pts; 2024 -3.0 pts; 2025 +2.5 pts; 2026 -9.8 pts"
   },
   {
    "id": "W3",
@@ -385,7 +391,7 @@
    "id": "W5",
    "check": "data_currency more than 3 days older than snapshot_id",
    "status": "ok",
-   "detail": "currency=2026-09-20 19:02:51, snapshot_id=2026-09-21T012058Z (pull finished 2026-09-21T01:29:48.062991+00:00)"
+   "detail": "currency=2026-09-25T19:05:08, snapshot_id=2026-09-26T004723Z (pull finished 2026-09-26T00:50:19.486451+00:00)"
   },
   {
    "id": "W6",
@@ -397,7 +403,7 @@
    "id": "W7",
    "check": "community_area rpt_per_mi_chgcls: > 40% of published geographies non-zero",
    "status": "ok",
-   "detail": "long 3.9% of 77 (phi 10.7755); last 0.0% of 77 (phi 3.6066); ytd 4.0% of 75 (phi 3.5865)"
+   "detail": "long 3.9% of 77 (phi 10.7755); last 0.0% of 77 (phi 3.6066); ytd 4.0% of 75 (phi 3.5735)"
   },
   {
    "id": "W7",
@@ -409,13 +415,13 @@
    "id": "W7",
    "check": "community_area close_le7_share_chgcls: > 40% of published geographies non-zero",
    "status": "ok",
-   "detail": "long 1.3% of 77 (phi 14.13); last 0.0% of 77 (phi 10.3878); ytd 1.3% of 75 (phi 3.6358)"
+   "detail": "long 1.3% of 77 (phi 14.13); last 0.0% of 77 (phi 10.3878); ytd 1.3% of 75 (phi 3.6311)"
   },
   {
    "id": "W7",
    "check": "ward2023 rpt_per_mi_chgcls: > 40% of published geographies non-zero",
    "status": "ok",
-   "detail": "long 0.0% of 50 (phi 19.6057); last 0.0% of 50 (phi 4.9452); ytd 4.0% of 50 (phi 4.4296)"
+   "detail": "long 0.0% of 50 (phi 19.6057); last 0.0% of 50 (phi 4.9452); ytd 4.0% of 50 (phi 4.3935)"
   },
   {
    "id": "W7",
@@ -427,7 +433,7 @@
    "id": "W7",
    "check": "ward2023 close_le7_share_chgcls: > 40% of published geographies non-zero",
    "status": "ok",
-   "detail": "long 0.0% of 50 (phi 28.4153); last 0.0% of 50 (phi 15.797); ytd 8.0% of 50 (phi 5.4125)"
+   "detail": "long 0.0% of 50 (phi 28.4153); last 0.0% of 50 (phi 15.797); ytd 8.0% of 50 (phi 5.2588)"
   },
   {
    "id": "W8",
@@ -448,154 +454,177 @@
    "metric": "fill_n",
    "year": 2019,
    "ours": 434689,
+   "portal_at_pull": 434689,
    "portal_live": 434689,
    "reference": 434689,
-   "drift_vs_reference_pct": 0.0,
-   "ours_vs_live_pct": 0.0
+   "ours_vs_pull_pct": 0.0,
+   "live_vs_pull_pct": 0.0,
+   "drift_vs_reference_pct": 0.0
   },
   {
    "metric": "fill_n",
    "year": 2020,
    "ours": 371877,
+   "portal_at_pull": 371877,
    "portal_live": 371877,
    "reference": 371877,
-   "drift_vs_reference_pct": 0.0,
-   "ours_vs_live_pct": 0.0
+   "ours_vs_pull_pct": 0.0,
+   "live_vs_pull_pct": 0.0,
+   "drift_vs_reference_pct": 0.0
   },
   {
    "metric": "fill_n",
    "year": 2021,
    "ours": 274918,
+   "portal_at_pull": 274918,
    "portal_live": 274918,
    "reference": 274918,
-   "drift_vs_reference_pct": 0.0,
-   "ours_vs_live_pct": 0.0
+   "ours_vs_pull_pct": 0.0,
+   "live_vs_pull_pct": 0.0,
+   "drift_vs_reference_pct": 0.0
   },
   {
    "metric": "fill_n",
    "year": 2022,
    "ours": 489943,
+   "portal_at_pull": 489943,
    "portal_live": 489943,
    "reference": 489943,
-   "drift_vs_reference_pct": 0.0,
-   "ours_vs_live_pct": 0.0
+   "ours_vs_pull_pct": 0.0,
+   "live_vs_pull_pct": 0.0,
+   "drift_vs_reference_pct": 0.0
   },
   {
    "metric": "fill_n",
    "year": 2023,
    "ours": 366510,
+   "portal_at_pull": 366510,
    "portal_live": 366510,
    "reference": 366510,
-   "drift_vs_reference_pct": 0.0,
-   "ours_vs_live_pct": 0.0
+   "ours_vs_pull_pct": 0.0,
+   "live_vs_pull_pct": 0.0,
+   "drift_vs_reference_pct": 0.0
   },
   {
    "metric": "fill_n",
    "year": 2024,
    "ours": 319240,
+   "portal_at_pull": 319240,
    "portal_live": 319240,
    "reference": 319240,
-   "drift_vs_reference_pct": 0.0,
-   "ours_vs_live_pct": 0.0
+   "ours_vs_pull_pct": 0.0,
+   "live_vs_pull_pct": 0.0,
+   "drift_vs_reference_pct": 0.0
   },
   {
    "metric": "fill_n",
    "year": 2025,
    "ours": 248541,
+   "portal_at_pull": 248541,
    "portal_live": 248541,
    "reference": 248541,
-   "drift_vs_reference_pct": 0.0,
-   "ours_vs_live_pct": 0.0
+   "ours_vs_pull_pct": 0.0,
+   "live_vs_pull_pct": 0.0,
+   "drift_vs_reference_pct": 0.0
   },
   {
    "metric": "fill_n",
    "year": 2026,
-   "ours": 260883,
-   "portal_live": 260883,
+   "ours": 262135,
+   "portal_at_pull": 262135,
+   "portal_live": 262135,
    "reference": null,
-   "drift_vs_reference_pct": null,
-   "ours_vs_live_pct": 0.0
-  },
-  {
-   "metric": "phf_rows",
-   "year": 2018,
-   "ours": null,
-   "portal_live": 1122,
-   "reference": null,
-   "drift_vs_reference_pct": null,
-   "ours_vs_live_pct": null
+   "ours_vs_pull_pct": 0.0,
+   "live_vs_pull_pct": 0.0,
+   "drift_vs_reference_pct": null
   },
   {
    "metric": "phf_rows",
    "year": 2019,
    "ours": 84097,
+   "portal_at_pull": 84097,
    "portal_live": 84097,
    "reference": 84097,
-   "drift_vs_reference_pct": 0.0,
-   "ours_vs_live_pct": 0.0
+   "ours_vs_pull_pct": 0.0,
+   "live_vs_pull_pct": 0.0,
+   "drift_vs_reference_pct": 0.0
   },
   {
    "metric": "phf_rows",
    "year": 2020,
    "ours": 39967,
+   "portal_at_pull": 39967,
    "portal_live": 39967,
    "reference": 39967,
-   "drift_vs_reference_pct": 0.0,
-   "ours_vs_live_pct": 0.0
+   "ours_vs_pull_pct": 0.0,
+   "live_vs_pull_pct": 0.0,
+   "drift_vs_reference_pct": 0.0
   },
   {
    "metric": "phf_rows",
    "year": 2021,
    "ours": 38557,
+   "portal_at_pull": 38557,
    "portal_live": 38557,
    "reference": 38557,
-   "drift_vs_reference_pct": 0.0,
-   "ours_vs_live_pct": 0.0
+   "ours_vs_pull_pct": 0.0,
+   "live_vs_pull_pct": 0.0,
+   "drift_vs_reference_pct": 0.0
   },
   {
    "metric": "phf_rows",
    "year": 2022,
    "ours": 64138,
+   "portal_at_pull": 64138,
    "portal_live": 64138,
    "reference": 64138,
-   "drift_vs_reference_pct": 0.0,
-   "ours_vs_live_pct": 0.0
+   "ours_vs_pull_pct": 0.0,
+   "live_vs_pull_pct": 0.0,
+   "drift_vs_reference_pct": 0.0
   },
   {
    "metric": "phf_rows",
    "year": 2023,
    "ours": 49066,
+   "portal_at_pull": 49066,
    "portal_live": 49066,
    "reference": 49066,
-   "drift_vs_reference_pct": 0.0,
-   "ours_vs_live_pct": 0.0
+   "ours_vs_pull_pct": 0.0,
+   "live_vs_pull_pct": 0.0,
+   "drift_vs_reference_pct": 0.0
   },
   {
    "metric": "phf_rows",
    "year": 2024,
    "ours": 51243,
+   "portal_at_pull": 51243,
    "portal_live": 51243,
    "reference": 51243,
-   "drift_vs_reference_pct": 0.0,
-   "ours_vs_live_pct": 0.0
+   "ours_vs_pull_pct": 0.0,
+   "live_vs_pull_pct": 0.0,
+   "drift_vs_reference_pct": 0.0
   },
   {
    "metric": "phf_rows",
    "year": 2025,
    "ours": 44729,
+   "portal_at_pull": 44729,
    "portal_live": 44729,
    "reference": 44729,
-   "drift_vs_reference_pct": 0.0,
-   "ours_vs_live_pct": 0.0
+   "ours_vs_pull_pct": 0.0,
+   "live_vs_pull_pct": 0.0,
+   "drift_vs_reference_pct": 0.0
   },
   {
    "metric": "phf_rows",
    "year": 2026,
-   "ours": 52853,
-   "portal_live": 53001,
+   "ours": 53684,
+   "portal_at_pull": 53684,
+   "portal_live": 53686,
    "reference": null,
-   "drift_vs_reference_pct": null,
-   "ours_vs_live_pct": -0.2792
+   "ours_vs_pull_pct": 0.0,
+   "live_vs_pull_pct": 0.0037,
+   "drift_vs_reference_pct": null
   }
  ],
  "join_loss": [
@@ -716,16 +745,16 @@
    "period": "CY2026",
    "geo_type": "community_area",
    "unassigned": 5,
-   "total": 6404,
-   "pct": 0.078
+   "total": 6522,
+   "pct": 0.077
   },
   {
    "metric": "alley_rpt_n",
    "period": "CY2026",
    "geo_type": "ward2023",
    "unassigned": 5,
-   "total": 6404,
-   "pct": 0.078
+   "total": 6522,
+   "pct": 0.077
   },
   {
    "metric": "crew_n",
@@ -844,16 +873,16 @@
    "period": "CY2026",
    "geo_type": "community_area",
    "unassigned": 120,
-   "total": 6811,
-   "pct": 1.762
+   "total": 6832,
+   "pct": 1.756
   },
   {
    "metric": "crew_n",
    "period": "CY2026",
    "geo_type": "ward2023",
-   "unassigned": 122,
-   "total": 6811,
-   "pct": 1.791
+   "unassigned": 123,
+   "total": 6832,
+   "pct": 1.8
   },
   {
    "metric": "fill_n",
@@ -972,16 +1001,16 @@
    "period": "CY2026",
    "geo_type": "community_area",
    "unassigned": 1901,
-   "total": 260883,
-   "pct": 0.729
+   "total": 262135,
+   "pct": 0.725
   },
   {
    "metric": "fill_n",
    "period": "CY2026",
    "geo_type": "ward2023",
    "unassigned": 1909,
-   "total": 260883,
-   "pct": 0.732
+   "total": 262135,
+   "pct": 0.728
   },
   {
    "metric": "fill_wo_n",
@@ -1100,16 +1129,16 @@
    "period": "CY2026",
    "geo_type": "community_area",
    "unassigned": 144,
-   "total": 23305,
-   "pct": 0.618
+   "total": 23459,
+   "pct": 0.614
   },
   {
    "metric": "fill_wo_n",
    "period": "CY2026",
    "geo_type": "ward2023",
    "unassigned": 146,
-   "total": 23305,
-   "pct": 0.626
+   "total": 23459,
+   "pct": 0.622
   },
   {
    "metric": "rpt_all_n",
@@ -1227,17 +1256,17 @@
    "metric": "rpt_all_n",
    "period": "CY2026",
    "geo_type": "community_area",
-   "unassigned": 368,
-   "total": 45233,
-   "pct": 0.814
+   "unassigned": 374,
+   "total": 46028,
+   "pct": 0.813
   },
   {
    "metric": "rpt_all_n",
    "period": "CY2026",
    "geo_type": "ward2023",
-   "unassigned": 375,
-   "total": 45233,
-   "pct": 0.829
+   "unassigned": 381,
+   "total": 46028,
+   "pct": 0.828
   },
   {
    "metric": "rpt_n",
@@ -1355,17 +1384,17 @@
    "metric": "rpt_n",
    "period": "CY2026",
    "geo_type": "community_area",
-   "unassigned": 278,
-   "total": 27275,
-   "pct": 1.019
+   "unassigned": 281,
+   "total": 27352,
+   "pct": 1.027
   },
   {
    "metric": "rpt_n",
    "period": "CY2026",
    "geo_type": "ward2023",
-   "unassigned": 281,
-   "total": 27275,
-   "pct": 1.03
+   "unassigned": 284,
+   "total": 27352,
+   "pct": 1.038
   },
   {
    "metric": "staff_n",
@@ -1484,7 +1513,7 @@
    "period": "CY2026",
    "geo_type": "community_area",
    "unassigned": 0,
-   "total": 324,
+   "total": 327,
    "pct": 0.0
   },
   {
@@ -1492,13 +1521,13 @@
    "period": "CY2026",
    "geo_type": "ward2023",
    "unassigned": 0,
-   "total": 324,
+   "total": 327,
    "pct": 0.0
   }
  ],
- "snapshot_id": "2026-09-21T012058Z",
- "data_currency": "2026-09-20 19:02:51",
- "methods_version": "0.5",
+ "snapshot_id": "2026-09-26T004723Z",
+ "data_currency": "2026-09-25T19:05:08",
+ "methods_version": "0.5.1",
  "has_census": true,
  "summary": {
   "gate1": {
@@ -1528,6 +1557,10 @@
   },
   "gate2": {
    "defined": [
+    "V1d",
+    "V1e",
+    "V3w",
+    "REF",
     "W1",
     "W2",
     "W3",
@@ -1539,10 +1572,6 @@
     "W9"
    ],
    "open": [
-    {
-     "id": "V1d",
-     "check": "Current partial year drifted since the pull"
-    },
     {
      "id": "V3w",
      "check": "Geography loss over 1.0% (and within the V3 cap)"
@@ -1564,9 +1593,8 @@
      "check": "Midway vs O'Hare harshness: Spearman < 0.85 over reference winters"
     }
    ],
-   "open_count": 6,
+   "open_count": 5,
    "open_ids": [
-    "V1d",
     "V3w",
     "W3",
     "W4",

@@ -3,8 +3,8 @@ cff-version: 1.2.0
 message: "If you use this dataset, please cite it as below."
 type: dataset
 title: "Chicago potholes"
-abstract: "Pothole reports, time to close and potholes filled in Chicago, by community area and
-  ward, derived from the City of Chicago's 311 and Potholes Patched records. Reports measure
+abstract: "Pothole reports, time to close and potholes filled in Chicago, by community area and ward,
+  derived from the City of Chicago's 311 and Potholes Patched records. Reports measure
   attention and fills measure work; neither measures pavement."
 authors:
   - family-names: Blandford
@@ -13,8 +13,8 @@ authors:
 license: CC-BY-4.0
 repository-code: "https://github.com/cub44/Chicago-Potholes"
 url: "https://connorblandford.com/data/chicago-potholes/"
-version: "2026-09-24"
-date-released: 2026-09-24
+version: "2026-09-26"
+date-released: 2026-09-26
 keywords:
   - Chicago
   - potholes

@@ -1,6 +1,6 @@
 {
- "_note": "METHODS §8.3 caveat registry, the source of site/data/caveats.json. export resolves {YYYY} and {Mon DD} for the snapshot; V15 checks every flag in potholes_long.csv has an entry and every text keeps to the §8.4 copy rules.",
- "methods_version": "0.5",
+ "_note": "METHODS §8.3 caveat registry, the source of site/data/caveats.json. export resolves {YYYY} and {Mon DD} for the snapshot; V15 checks every flag in potholes_long.csv has an entry and every text keeps to the §8.4 copy rules. Text is prose, so apostrophes are curly (’); flag and caveat ids stay ASCII.",
+ "methods_version": "0.5.1",
  "flags": {
   "PARTIAL_YEAR": "C-YTD",
   "YTD": "C-YTD",
@@ -18,20 +18,21 @@
  },
  "text": {
   "C-REPORTS": "Reports count when residents and ward offices tell 311 about a pothole, with repeat reports removed. They are not a count of potholes; weather, awareness, app use, and ward-office practice all move this number.",
-  "C-CREW": "Many city pothole records are entered by CDOT itself and closed the same day. We treat them as crew-initiated work, not resident reports, and count them separately.",
-  "C-CLOSE": "Time to close is how long 311 took to mark a report complete. Closing doesn't always mean patching. Still-open reports are included with a survival estimate, so recent years don't look artificially fast.",
+  "C-CREW": "Many City pothole records are entered by CDOT itself and closed the same day. We treat them as crew-initiated work, not resident reports, and count them separately.",
+  "C-CLOSE": "Time to close is how long 311 took to mark a report complete. Closing doesn’t always mean patching. Still-open reports are included with a survival estimate, so recent years don’t look artificially fast.",
   "C-PATCH": "Time to patch covers only reports with a linked patch record. For those, the patch date equals the 311 closing time within a minute, so it is closing time on that subset, not a separate clock. Unsettled years are withheld.",
   "C-FILLS": "Potholes filled is the per-block count crews enter when they finish work. One report can lead to patching a whole block, so fills can exceed reports.",
-  "C-EXTREME": "Some crew entries list 150+ potholes on one block. They're kept as recorded, and they make up at least 10% of this area's total for this year.",
-  "C-YTD": "2026 isn't over. Year-to-date views compare Jan. 1–Aug. 31 in every year, and response times use only what was known by the same date each year.",
-  "C-2019": "2019 was the first full year of the current 311 system. Its records go unplaced and duplicate-flagged far more often than later years', so it is published on its own and left out of every comparison.",
-  "C-WARD-PRE2023": "Years before 2023-05-15 are shown on today's ward map for comparison. This area was then split among different wards and alderpersons. These figures say nothing about any current alderperson.",
-  "C-2023": "2023 straddles the ward remap. Reports before May 15 were made under the old boundaries.",
-  "C-ALLEY": "Alley potholes are a separate request type with different handling, and city data has no alley mileage. They're shown only as counts and response times.",
-  "C-EQUITY": "Groups are census tracts ranked by poverty rate (ACS) or grouped by majority race/ethnicity (2020 Census). Majority-Asian tracts are counted under no majority. Differences are descriptive and don't show why service differs or how any individual was treated.",
+  "C-EXTREME": "Some crew entries list 150+ potholes on one block. They’re kept as recorded, and they make up at least 10% of this area’s total for this year.",
+  "C-YTD": "2026 isn’t over. Year-to-date views compare Jan 1–Aug 31 in every year, and response times use only what was known by the same date each year.",
+  "C-2019": "2019 was the first full year of the current 311 system. Its records go unplaced and duplicate-flagged far more often than later years’, so it is published on its own and left out of every comparison.",
+  "C-WARD-PRE2023": "Years before 2023-05-15 are shown on today’s ward map for comparison. This area was then split among different wards and alderpersons. These figures say nothing about any current alderperson.",
+  "C-2023": "2023 straddles the ward remap. Reports before 2023-05-15 were made under the old boundaries.",
+  "C-ALLEY": "Alley potholes are a separate request type with different handling, and City data has no alley mileage. They’re shown only as counts and response times.",
+  "C-EQUITY": "Groups are census tracts ranked by poverty rate (ACS) or grouped by majority race/ethnicity (2020 Census). Majority-Asian tracts are counted under no majority. Differences are descriptive and don’t show why service differs or how any individual was treated.",
   "C-SUPPRESS": "Not shown: too few requests, or too little street mileage or population, for a stable figure.",
   "C-CHANGE": "Change compares the same months or years before and after. Areas are colored only where the gap from the city trend exceeds how much areas usually vary, allowing for testing every area at once. It shows where, not why.",
-  "C-WEATHER": "Winter harshness comes only from O'Hare weather records: wet freeze–thaw days, cold, precipitation, and snow, scored against 30 past winters. It is context for reading reports and response times. It never adjusts them and doesn't measure street damage.",
-  "C-WARDOFFICE": "Ward office requests are pothole reports filed by an alderperson's office, often for residents who called it. A high share can reflect how an office handles calls, not how many potholes there are."
+  "C-WEATHER": "Winter harshness comes only from O’Hare weather records: wet freeze–thaw days, cold, precipitation, and snow, scored against 30 past winters. It is context for reading reports and response times. It never adjusts them and doesn’t measure street damage.",
+  "C-WARDOFFICE": "Ward office requests are pothole reports filed by an alderperson’s office, often for residents who called it. A high share can reflect how an office handles calls, not how many potholes there are.",
+  "C-WARDPOP": "Ward populations in the 2020 Census are all within 5% of the ward average, so a ward’s reports per 1,000 residents track its raw report count closely."
  }
 }

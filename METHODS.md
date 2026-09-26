@@ -700,18 +700,18 @@ A failure is never fixed by moving its threshold. It is either fixed in the data
 
 ### Releases
 
-Every published release, oldest first. The first hash is the SHA-256 of the release's `checksums.sha256`, as published at its tag `chicago-potholes-<date>`; that manifest gives each file's own hash. The table is written at publish from the release history the build keeps.
+Every published release, oldest first. The first hash is the SHA-256 of the release's `checksums.sha256`, as published at its tag `chicago-potholes-<date>`; that manifest gives each file's own hash. The table is written at publish from the release history the build keeps. The DOI is the one Zenodo gave the release when it archived it; Zenodo has archived each release since 2026-09-26, so earlier rows have none. The concept DOI, [10.5281/zenodo.22972211](https://doi.org/10.5281/zenodo.22972211), stands for all releases and resolves to the latest.
 
 <!-- gen:release-history -->
-| Release | Methods | Source snapshot | `checksums.sha256` SHA-256 | `site/checksums.sha256` SHA-256 | Note |
-|---|---|---|---|---|---|
-| 2026-09-16 | 0.3 | 2026-09-16 | `8e975620df383c2819eb3ccc5147eb1074311f522adb929fdf3459489e97bb19` | — | First release, methods 0.3. |
-| 2026-09-20 | 0.4 | 2026-09-21 | `f9d162d792f2f1423dc4061489353aa87e1ef17878c22ae149619da55397edb0` | — | Methods 0.4: the winter harshness index (§11), from a new snapshot. |
-| 2026-09-21 | 0.5 | 2026-09-21 | `17e8472cb16ca6f2c06ddc1bc9ca9679cc16378effb29cce0ae7eb22ea14da13` | — | Methods 0.5: the pre-showcase audit. Superseded the next day: see 2026-09-22. |
-| 2026-09-22 | 0.5 | 2026-09-21 | `069eb20391b733528051a7c6e0db8c6141cb9ca7be2f8d2430fc1144157258f5` | — | Republished under the same methods version. The §4.4 lowest-id tie rule for the road-class snap moved 81 rows of potholes_long.csv and 3 of change_summary.csv; all 143 rows of geo_denominators.csv now write acs_vintage as a year and centerline_rows_updated as an ISO-8601 timestamp; qa_report.json changed with them. A definition change that should have carried a new version (see 0.5.1 in §13). Its CITATION.cff gave date-released 2026-09-21. |
-| 2026-09-23 | 0.5 | 2026-09-21 | `2c3e4722d349e24ce824e813bd89082e24f1b7938ca92d9570237b2b81d525ab` | — | Adds facts.json and the two summary tables. No figure changed; every other data file except qa_report.json is byte-identical to 2026-09-22. |
-| 2026-09-24 | 0.5 | 2026-09-21 | `3bf5e617a56a2733dc5339d478333e6a9171060692055d200223707e0520488e` | `dffbe4e119eaaa7e27845f3d2d489bec6c798427b703cc1365a2b3da013df27d` | Adds the V7b open-share threshold to facts.json and publishes the files of the map under site/, with site/checksums.sha256. Same snapshot, validation not rerun; every data file except facts.json and qa_report.json is byte-identical to 2026-09-23. |
-| 2026-09-26 | 0.5.1 | 2026-09-26 | `db3a901cf1fac3a5f4acc1566a5996b8454505cc67d1e207264ea3252938febf` | `11c3c7af84e0d9c31f21b645a80b6f716e3c1b2e705b5275a79fa2b35b58eedf` | Methods 0.5.1, from a new snapshot: V1c compares the snapshot with portal counts recorded at the pull, and the release adds the ytd_window, D7 and warning-line facts, caveat C-WARDPOP and site/data/city_series.json (§13). |
+| Release | Methods | Source snapshot | DOI | `checksums.sha256` SHA-256 | `site/checksums.sha256` SHA-256 | Note |
+|---|---|---|---|---|---|---|
+| 2026-09-16 | 0.3 | 2026-09-16 |  | `8e975620df383c2819eb3ccc5147eb1074311f522adb929fdf3459489e97bb19` | — | First release, methods 0.3. |
+| 2026-09-20 | 0.4 | 2026-09-21 |  | `f9d162d792f2f1423dc4061489353aa87e1ef17878c22ae149619da55397edb0` | — | Methods 0.4: the winter harshness index (§11), from a new snapshot. |
+| 2026-09-21 | 0.5 | 2026-09-21 |  | `17e8472cb16ca6f2c06ddc1bc9ca9679cc16378effb29cce0ae7eb22ea14da13` | — | Methods 0.5: the pre-showcase audit. Superseded the next day: see 2026-09-22. |
+| 2026-09-22 | 0.5 | 2026-09-21 |  | `069eb20391b733528051a7c6e0db8c6141cb9ca7be2f8d2430fc1144157258f5` | — | Republished under the same methods version. The §4.4 lowest-id tie rule for the road-class snap moved 81 rows of potholes_long.csv and 3 of change_summary.csv; all 143 rows of geo_denominators.csv now write acs_vintage as a year and centerline_rows_updated as an ISO-8601 timestamp; qa_report.json changed with them. A definition change that should have carried a new version (see 0.5.1 in §13). Its CITATION.cff gave date-released 2026-09-21. |
+| 2026-09-23 | 0.5 | 2026-09-21 |  | `2c3e4722d349e24ce824e813bd89082e24f1b7938ca92d9570237b2b81d525ab` | — | Adds facts.json and the two summary tables. No figure changed; every other data file except qa_report.json is byte-identical to 2026-09-22. |
+| 2026-09-24 | 0.5 | 2026-09-21 |  | `3bf5e617a56a2733dc5339d478333e6a9171060692055d200223707e0520488e` | `dffbe4e119eaaa7e27845f3d2d489bec6c798427b703cc1365a2b3da013df27d` | Adds the V7b open-share threshold to facts.json and publishes the files of the map under site/, with site/checksums.sha256. Same snapshot, validation not rerun; every data file except facts.json and qa_report.json is byte-identical to 2026-09-23. |
+| 2026-09-26 | 0.5.1 | 2026-09-26 | [10.5281/zenodo.22972212](https://doi.org/10.5281/zenodo.22972212) | `db3a901cf1fac3a5f4acc1566a5996b8454505cc67d1e207264ea3252938febf` | `11c3c7af84e0d9c31f21b645a80b6f716e3c1b2e705b5275a79fa2b35b58eedf` | Methods 0.5.1, from a new snapshot: V1c compares the snapshot with portal counts recorded at the pull, and the release adds the ytd_window, D7 and warning-line facts, caveat C-WARDPOP and site/data/city_series.json (§13). |
 <!-- /gen:release-history -->
 
 ---

@@ -1,6 +1,6 @@
 # Data dictionary and limitations
 
-<!-- gen:release -->Data release **2026-09-26** by Connor Ulrich Blandford, licensed under [CC BY 4.0](../LICENSE). Cite as: Blandford, Connor Ulrich. “Chicago potholes.” Data set, release 2026-09-26. connorblandford.com. https://connorblandford.com/data/chicago-potholes/. Source snapshot: **2026-09-26**, holding records through **2026-09-25**; methods version **0.5.1**; coverage **2019 to 2026-08** in full-year and year-to-date periods, with a partial **CY2026** that runs to the last record.<!-- /gen:release -->
+<!-- gen:release -->Data release **2026-09-26** by Connor Ulrich Blandford, licensed under [CC BY 4.0](../LICENSE). Cite as: Blandford, Connor Ulrich. “Chicago potholes.” Data set, release 2026-09-26. connorblandford.com. https://connorblandford.com/data/chicago-potholes/. https://doi.org/10.5281/zenodo.22972211. Source snapshot: **2026-09-26**, holding records through **2026-09-25**; methods version **0.5.1**; coverage **2019 to 2026-08** in full-year and year-to-date periods, with a partial **CY2026** that runs to the last record.<!-- /gen:release -->
 
 Thirteen files, verified by `../checksums.sha256`. The map’s files are under `../site/`, verified by `../site/checksums.sha256`. `METHODS.md` in the repository
 root is the authority for every definition; this file is the working reference.

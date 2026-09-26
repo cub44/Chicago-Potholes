@@ -13,6 +13,7 @@ authors:
 license: CC-BY-4.0
 repository-code: "https://github.com/cub44/Chicago-Potholes"
 url: "https://connorblandford.com/data/chicago-potholes/"
+doi: 10.5281/zenodo.22972211
 version: "2026-09-26"
 date-released: 2026-09-26
 keywords:
